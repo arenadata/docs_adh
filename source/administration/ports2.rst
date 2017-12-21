@@ -166,23 +166,7 @@ _______________
            + Параметр конфигурации: mapred.task.tracker.http.address
 
 
-    * - History Server WebUI
-      -      
-         + Порт по умолчанию -- 51111
-        
-           + Протокол: http
-           + Описание: Web-интерфейс для истории заданий
-           + Доступ пользователям: Да
-           + Параметр конфигурации: mapreduce.history.server.http.address
 
-
-    * - MapReduce Shuffle Port
-      -       
-         + Порт по умолчанию -- 13562
-        
-           + Описание: Порт, на котором работает ShuffleHandler	
-           + Доступ пользователям: Нет
-           + Параметр конфигурации: mapreduce.shuffle.port
 
 
 
@@ -201,7 +185,23 @@ __________
 
 
 
+    * - History Server WebUI
+      -      
+         + Порт по умолчанию -- 51111
+        
+           + Протокол: http
+           + Описание: Web-интерфейс для истории заданий
+           + Доступ пользователям: Да
+           + Параметр конфигурации: mapreduce.history.server.http.address
 
+
+    * - MapReduce Shuffle Port
+      -       
+         + Порт по умолчанию -- 13562
+        
+           + Описание: Порт, на котором работает ShuffleHandler	
+           + Доступ пользователям: Нет
+           + Параметр конфигурации: mapreduce.shuffle.port
 
 
 
