@@ -185,15 +185,108 @@ _______________
           + Параметр конфигурации: mapreduce.shuffle.port
 
 
-
-
-
-
-        
+     
 Порты YARN
 __________
 
 Список портов, используемых по умолчанию для различных **YARN** сервисов, представлен в таблице.
+
+.. list-table:: Порты YARN
+   :header-rows: 1   
+   :widths: 20, 80
+   :class: longtable
+    
+   * - Сервис
+     - Характеристика
+   * - ResourceManager WebUI
+     - 
+        Сервер -- Master Nodes
+        
+        + Порт по умолчанию -- 8088
+        
+          + Протокол: http
+          + Описание: Web-интерфейс для Resource Manager
+          + Доступ пользователям: Да
+          + Параметр конфигурации: yarn.resourcemanager.webapp.address
+
+
+   * - ResourceManager
+     - 
+        Сервер -- Master Nodes (ResourceManager Node)
+        
+        + Порт по умолчанию -- 8050
+        
+          + Протокол: IPC
+          + Описание: Для публикации заданий
+          + Доступ пользователям: Да (все клиенты, которым требуется запуск YARN приложений)
+          + Параметр конфигурации: yarn.resourcemanager.address
+
+        + Порт по умолчанию -- 8025
+        
+          + Протокол: http
+          + Описание: Web-интерфейс для DataNode (логи, статус)
+          + Доступ пользователям: Да (все клиенты, которым требуется запуск YARN приложений)
+          + Параметр конфигурации: mapred.task.tracker.http.address
+
+        + Порт по умолчанию -- 9099
+        
+          + Протокол: http
+          + Описание: Прокси для Resource Manager
+          + Доступ пользователям: Да
+          + Параметр конфигурации: yarn.web-proxy.address
+
+        + Порт по умолчанию -- 8141
+        
+          + Протокол: http
+          + Описание: Адрес планировщика
+          + Доступ пользователям: Да (администратор, разработчик, поддержка)
+          + Параметр конфигурации: yarn.resourcemanager.admin.address
+
+
+   * - Scheduler
+     - 
+        Сервер -- Master Nodes
+        
+        + Порт по умолчанию -- 8030
+        
+          + Описание: Адрес планировщика
+          + Доступ пользователям: Да (администратор, разработчик, поддержка)
+          + Параметр конфигурации: yarn.resourcemanager.scheduler.address
+
+
+   * - NodeManager
+     - 
+        Сервер -- Master Nodes
+        
+        + Порт по умолчанию -- 45454
+        
+          + Протокол: http
+          + Описание: Адрес NodeManager
+          + Параметр конфигурации: yarn.nodemanager.address
+
+        Сервер -- Slave Nodes
+        
+        + Порт по умолчанию -- 8040
+        
+          + Описание: NodeManager
+          + Параметр конфигурации: yarn.nodemanager.localizer.address
+
+        + Порт по умолчанию -- 8042
+        
+          + Протокол: http
+          + Описание: NodeManager
+          + Параметр конфигурации: yarn.nodemanager.webapp.address
+
+        + Порт по умолчанию -- 8044
+        
+          + Протокол: https
+          + Описание: NodeManager
+          + Параметр конфигурации: yarn.nodemanager.webapp.https.address
+
+
+
+
+
 
 
 
