@@ -173,7 +173,7 @@
 
 .. _install_installation_welcom-to-ambari-before-config:
 
-.. figure:: ../imgs/install_installation_welcom-to-ambari-before-config*
+.. figure:: ../imgs/install_installation_welcom-to-ambari-before-config.*
    :align: center
    
    Веб-интерфейс Ambari до настройки кластера
