@@ -20,6 +20,17 @@
    Apache Zeppelin
 
  
- 
- 
- 
+Поиск данных, их анализ, отчетность и визуализация являются ключевыми компонентами рабочего процесса в области данных. **Zeppelin** предоставляет "Modern Data Science Studio" (“Современную научную студию данных”), которые поддерживает **Spark** и **Hive** из коробки.  Фактически, **Zeppelin** поддерживает несколько серверных языков, которые в свою очередь имеют поддержку растущей экосистемы источников данных. Блокноты **Zeppelin** обеспечивают интерактивный сниппет-в опыт для ученого данных.  Вы можете увидеть коллекцию записных книжек Zeppelin в галерее Hortonworks.
+
+Обнаружение данных, разведка, отчетность и визуализация являются ключевыми компонентами рабочего процесса в области данных. Zeppelin предоставляет «Современную научную студию данных», которая поддерживает Spark и Hive из коробки. Фактически, Zeppelin поддерживает многоязычные серверы, которые поддерживают растущую экосистему источников данных. Ноутбуки Zeppelin обеспечивают интерактивный отрывок по времени ученым-ученым. Вы можете увидеть коллекцию ноутбуков Zeppelin в галерее Hortonworks.
+
+Data discovery, exploration, reporting and visualization are key components of the data science workflow.  Zeppelin provides a “Modern Data Science Studio” that supports Spark and Hive out of the box.   Actually, Zeppelin supports multiple language backends which has support for a growing ecosystem of data sources.   Zeppelin’s notebooks provides interactive snippet-at-time experience to data scientist.  You can see a collection of Zeppelin notebooks in the Hortonworks Gallery.
+
+
+
+
+
+
+
+
+
