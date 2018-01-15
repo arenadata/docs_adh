@@ -78,6 +78,38 @@
 
 Данная команда загружает артефакт **maven** *groupId1:artifact1:version1* и все его зависимости в каталог *interpreter/interpreter1*.
 
+Установка нескольких сторонних интерпретаторов осуществляется командой, где аргументы *--name* и *--artifact* указываются списком через запятую:
+
+  :command:`./bin/install-interpreter.sh --name interpreter1,interpreter2 --artifact groupId1:artifact1:version1,groupId2:artifact2:version2`
 
 
+Предоставляемые сообществом интерпретаторы
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Список интерпретаторов, предоставляемых сообществом, приведен в таблице. Также данную информацию можно найти в файле *conf/interpreter-list*. 
+
+.. csv-table:: Предоставляемые сообществом интерпретаторы
+   :header: "Параметр --name", "Maven Artifact", "Описание"
+   :widths: 20, 15, 15
+
+   "alluxio", "org.apache.zeppelin:zeppelin-alluxio:0.7.3", "Интерпретатор Alluxio"
+   "angular", "org.apache.zeppelin:zeppelin-angular:0.7.3", "Просмотр HTML и AngularJS"
+   "beam", "org.apache.zeppelin:zeppelin-beam:0.7.3", "Интерпретатор Beam"
+   "bigquery", "org.apache.zeppelin:zeppelin-bigquery:0.7.3", "Интерпретатор BigQuery"
+   "cassandra", "org.apache.zeppelin:zeppelin-cassandra_2.11:0.7.3", "Интерпретатор Cassandra, построенный с помощью Scala 2.11"
+   "elasticsearch", "org.apache.zeppelin:zeppelin-elasticsearch:0.7.3", "Интерпретатор Elasticsearch"
+   "file", "org.apache.zeppelin:zeppelin-file:0.7.3", "Интерпретатор файлов HDFS"
+   "flink", "org.apache.zeppelin:zeppelin-flink_2.11:0.7.3", "Интерпретатор Flink, построенный с помощью Scala 2.11"
+   "hbase", "org.apache.zeppelin:zeppelin-hbase:0.7.3", "Интерпретатор Hbase"
+   "ignite", "org.apache.zeppelin:zeppelin-ignite_2.11:0.7.3", "Интерпретатор Ignite, построенный с помощью Scala 2.11"
+   "jdbc", "org.apache.zeppelin:zeppelin-jdbc:0.7.3", "Интерпретатор Jdbc"
+   "kylin", "org.apache.zeppelin:zeppelin-kylin:0.7.3", "Интерпретатор Kylin"
+   "lens", "org.apache.zeppelin:zeppelin-lens:0.7.3", "Интерпретатор Lens"
+   "livy", "org.apache.zeppelin:zeppelin-livy:0.7.3", "Интерпретатор Livy"
+   "md", "org.apache.zeppelin:zeppelin-markdown:0.7.3", "Поддержка Markdown"
+   "pig", "org.apache.zeppelin:zeppelin-pig:0.7.3", "Интерпретатор Pig"
+   "postgresql", "org.apache.zeppelin:zeppelin-postgresql:0.7.3", "Интерпретатор Postgresql"
+   "python", "org.apache.zeppelin:zeppelin-python:0.7.3", "Интерпретатор Python"
+   "scio", "org.apache.zeppelin:zeppelin-scio_2.11:0.7.3", "Интерпретатор Scio, построенный с помощью Scala 2.11"
+   "shell", "org.apache.zeppelin:zeppelin-shell:0.7.3", "Команда Shell"
 
