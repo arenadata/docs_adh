@@ -42,7 +42,7 @@
 
 .. csv-table:: Параметры интерпретаторов для Scala
    :header: "Параметр --name", "Параметр --artifact для Scala 2.10", "Параметр --artifact для Scala 2.11"
-   :widths: 20, 15, 15
+   :widths: 20, 40, 40
 
    "cassandra", "org.apache.zeppelin:zeppelin-cassandra_2.10:0.7.3", "org.apache.zeppelin:zeppelin-cassandra_2.11:0.7.3"
    "flink", "org.apache.zeppelin:zeppelin-flink_2.10:0.7.3", "org.apache.zeppelin:zeppelin-flink_2.11:0.7.3"
@@ -60,9 +60,10 @@
 
 Дистрибутив **Spark** построен с помощью **Scala 2.10** до версии *1.6.2*. При установленном *SPARK_HOME*, указывающим на версию **Spark** ниже *2.0.0*, необходимо скачать интерпретатор **Spark**, упакованный в **Scala 2.10**. Для этого следует выполнить команду:
 
-  :command:`rm -rf ./interpreter/spark`
-  
-  :command:`./bin/install-interpreter.sh --name spark --artifact org.apache.zeppelin:zeppelin-spark_2.10:0.7.3`
+   ::
+    
+    rm -rf ./interpreter/spark
+    ./bin/install-interpreter.sh --name spark --artifact org.apache.zeppelin:zeppelin-spark_2.10:0.7.3
 
 
 Сторонние интерпретаторы
@@ -76,7 +77,9 @@
 
 Установка нескольких сторонних интерпретаторов осуществляется командой, где аргументы *--name* и *--artifact* указываются списком через запятую:
 
-  :command:`./bin/install-interpreter.sh --name interpreter1,interpreter2 --artifact groupId1:artifact1:version1,groupId2:artifact2:version2`
+   ::
+    
+    ./bin/install-interpreter.sh --name interpreter1,interpreter2 --artifact groupId1:artifact1:version1,groupId2:artifact2:version2
 
 
 Предоставляемые сообществом интерпретаторы
@@ -86,7 +89,7 @@
 
 .. csv-table:: Предоставляемые сообществом интерпретаторы
    :header: "Параметр --name", "Maven Artifact", "Описание"
-   :widths: 20, 15, 15
+   :widths: 20, 40, 40
 
    "alluxio", "org.apache.zeppelin:zeppelin-alluxio:0.7.3", "Интерпретатор Alluxio"
    "angular", "org.apache.zeppelin:zeppelin-angular:0.7.3", "Просмотр HTML и AngularJS"
