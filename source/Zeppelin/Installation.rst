@@ -30,3 +30,47 @@
 Для установки отдельно выбранных интерпретаторов необходимо воспользоваться слудующей командой:
 
   :command:`./bin/install-interpreter.sh --name md,shell,jdbc,python`
+
+Для получения полного списка интерпретаторов сообщества следует выполнить команду:
+
+  :command:`./bin/install-interpreter.sh --list`
+
+
+Установка интерпретатора, построенного с помощью Scala 2.10
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Zeppelin** поддерживает **Scala 2.10** и **2.11** для нескольких интерпретаторов, как показано в таблице.
+
+.. csv-table:: Параметры интерпретаторов Scala
+   :header: "name", "Maven artifact для Scala 2.10", "Maven artifact для Scala 2.11"
+   :widths: 20, 15, 15
+
+   "cassandra", "org.apache.zeppelin:zeppelin-cassandra_2.10:0.7.3", "org.apache.zeppelin:zeppelin-cassandra_2.11:0.7.3"
+   "flink", "org.apache.zeppelin:zeppelin-flink_2.10:0.7.3", "org.apache.zeppelin:zeppelin-flink_2.11:0.7.3"
+   "ignite", "org.apache.zeppelin:zeppelin-ignite_2.10:0.7.3", "org.apache.zeppelin:zeppelin-ignite_2.11:0.7.3"
+   "scio", "org.apache.zeppelin:zeppelin-scio_2.10:0.7.3", "org.apache.zeppelin:zeppelin-scio_2.11:0.7.3"
+   "spark", "org.apache.zeppelin:zeppelin-spark_2.10:0.7.3", "org.apache.zeppelin:zeppelin-spark_2.11:0.7.3"
+
+
+Если установить один из этих интерпретаторов только с параметром *--name*, программа установки загружает по умолчанию интерпретатор, построенный с помощью **Scala 2.11**. Для указания версии **Scala** следует добавить параметр *--artifact*. Далее приведен пример установки интерпретатора *flink*, построенного с помощью **Scala 2.10**:
+
+  :command:`./bin/install-interpreter.sh --name flink --artifact org.apache.zeppelin:zeppelin-flink_2.10:0.7.3`
+
+
+Установка интерпретатора Spark, построенного с помощью Scala 2.10
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Дистрибутив Искра была построена в Scala 2.10 до 1.6.2. Если у вас есть SPARK_HOME комплект указывая на искру версии ниже 2.0.0, вам нужно скачать Спарк переводчик заготовок со Scala 2.10. Для этого выполните команду:
+
+Распределительный пакет Spark был построен с Scala 2.10 до 1.6.2. Если у вас установлен SPARK_HOME, указывающий на версию Spark раньше 2.0.0, вам нужно скачать интерпретатор Spark, упакованный в Scala 2.10. Для этого используйте следующую команду:
+
+Spark distribution package has been built with Scala 2.10 until 1.6.2. If you have SPARK_HOME set pointing to Spark version earlier than 2.0.0, you need to download Spark interpreter packaged with Scala 2.10. To do so, use follow command:
+
+
+
+
+
+
+
+
+
