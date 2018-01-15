@@ -72,10 +72,11 @@
 Сторонние интерпретаторы
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
+Сторонние интерпретаторы из репозитория **maven** можно установить при помощи следующей команды: 
 
+  :command:`./bin/install-interpreter.sh --name interpreter1 --artifact groupId1:artifact1:version1`
 
-
-
+Данная команда загружает артефакт **maven** *groupId1:artifact1:version1* и все его зависимости в каталог *interpreter/interpreter1*.
 
 
 
