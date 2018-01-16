@@ -44,6 +44,9 @@
    "ZEPPELIN_NOTEBOOK_HOMESCREEN",	"zeppelin.notebook.homescreen", " ", "Отображение идентификаторов заметок на рабочем столе Apache Zeppelin. Например, 2A94M5J1Z"
    "ZEPPELIN_NOTEBOOK_HOMESCREEN_HIDE",	"zeppelin.notebook.homescreen.hide",	"false", "Скрытие идентификатора заметки, установленной ZEPPELIN_NOTEBOOK_HOMESCREEN на рабочем столе Apache Zeppelin"
    "ZEPPELIN_WAR_TEMPDIR",	"zeppelin.war.tempdir",	"webapps", "Расположение временного каталога jetty"
+   "ZEPPELIN_NOTEBOOK_DIR",	"zeppelin.notebook.dir",	"notebook", "Каталог root, в котором хранятся каталоги для ноутбуков"
+   "ZEPPELIN_NOTEBOOK_S3_BUCKET",	"zeppelin.notebook.s3.bucket",	"zeppelin", "S3 Bucket, где будут сохраняться файлы для ноутбуков"
+   
    
 
 
