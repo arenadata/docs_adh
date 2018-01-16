@@ -133,6 +133,38 @@
 Включение проверки подлинности сертификата на стороне клиента
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Для включения аутентификации сертификата на стороне клиента необходимо обновить в *zeppelin-site.xml* следующие свойства:
+
+   ::
+    <property>
+      <name>zeppelin.server.ssl.port</name>
+      <value>8443</value>
+      <description>Server ssl port. (used when ssl property is set to true)</description>
+    </property>
+
+    <property>
+      <name>zeppelin.ssl.client.auth</name>
+      <value>true</value>
+      <description>Should client authentication be used for SSL connections?</description>
+    </property>
+
+    <property>
+      <name>zeppelin.ssl.truststore.path</name>
+      <value>truststore</value>
+      <description>Path to truststore relative to Zeppelin configuration directory. Defaults to the keystore path</description>
+    </property>
+
+    <property>
+      <name>zeppelin.ssl.truststore.type</name>
+      <value>JKS</value>
+      <description>The format of the given truststore (e.g. JKS or PKCS12). Defaults to the same type as the keystore type</description>
+    </property>
+
+    <property>
+      <name>zeppelin.ssl.truststore.password</name>
+      <value>change me</value>
+      <description>Truststore password. Can be obfuscated by the Jetty Password tool. Defaults to the keystore password</description>
+    </property>
 
 
 Скрытие паролей с помощью Jetty Password Tool
