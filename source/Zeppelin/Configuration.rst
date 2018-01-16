@@ -29,7 +29,7 @@
    "ZEPPELIN_MEM",	"N/A",	"-Xmx1024m -XX:MaxPermSize=512m", "Параметры JVM mem"
    "ZEPPELIN_INTP_MEM",	"N/A",	"ZEPPELIN_MEM", "Параметры JVM mem для процесса интерпретатора"
    "ZEPPELIN_JAVA_OPTS",	"N/A", " ", "Параметры JVM"
-   "ZEPPELIN_ALLOWED_ORIGINS",	"zeppelin.server.allowed.origins",	" * ", "Позволяет знаком запятой (,) разделять разрешенные источники в списке для REST и websockets. Например, http://localhost:8080"
+   "ZEPPELIN_ALLOWED_ORIGINS",	"zeppelin.server.allowed.origins",	"*", "Позволяет знаком запятой (,) разделять разрешенные источники в списке для REST и websockets. Например, http://localhost:8080"
    "N/A",	"zeppelin.anonymous.allowed",	"true", "Допуск анонимного пользователя по умолчанию"
    "ZEPPELIN_SERVER_CONTEXT_PATH",	"zeppelin.server.context.path",	"/", "Контекстный путь веб-приложения"
    "ZEPPELIN_SSL",	"zeppelin.ssl",	"false",	" "
