@@ -136,6 +136,7 @@
 Для включения аутентификации сертификата на стороне клиента необходимо обновить в *zeppelin-site.xml* следующие свойства:
 
    ::
+   
     <property>
       <name>zeppelin.server.ssl.port</name>
       <value>8443</value>
