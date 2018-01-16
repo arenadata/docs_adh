@@ -65,23 +65,69 @@
    "ZEPPELIN_WEBSOCKET_MAX_TEXT_MESSAGE_SIZE",	"zeppelin.websocket.max.text.message.size",	"1024000", "Размер (в символах) максимального текстового сообщения, которое может быть получено от websocket"
    "ZEPPELIN_SERVER_DEFAULT_DIR_ALLOWED",	"zeppelin.server.default.dir.allowed",	"false", "Включить списки каталогов на сервере"
    
-   
-
-
-
-
-
+  
 Конфигурация SSL
 ^^^^^^^^^^^^^^^^
+
+Включение **SSL** требует некоторых изменений конфигурации -- необходимо создать сертификаты, а затем обновить необходимые настройки для подключения проверки подлинности **SSL** со стороны сервера и/или клиентской стороны.
 
 
 Создание и настройка сертификатов
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Информацию о создании сертификатов и хранилище ключей можно найти по `ссылке <https://wiki.eclipse.org/Jetty/Howto/Configure_SSL>`_. Сжатый пример можно найти в верхнем ответе на запись `StackOverflow <http://stackoverflow.com/questions/4008837/configure-ssl-on-jetty>`_.
+
+Хранилище ключей **keystore** содержит закрытый ключ и сертификат на сервер, а хранилище **trustore** содержит клиентские сертификаты. Необходимо убедиться, что путь и пароль для этих двух хранилищ правильно настроены в полях пароля ниже. Они могут быть скрыты с помощью инструмента паролей **Jetty**. После переноса **Maven** всех зависимостей для создания **Zeppelin**, один из jar-файлов **Jetty** будет содержать инструмент "Password". Необходимо вызвать эту команду из каталога сборки *Zeppelin Home* с соответствующей версией, пользователем и паролем:
+
+   ::
+   
+    java -cp ./zeppelin-server/target/lib/jetty-all-server-<version>.jar org.eclipse.jetty.util.security.Password <user> <password>
+
+Если используется самоподписанный сертификат, сертификат, подписанный недоверенным центром сертификации, или если включена аутентификация клиента, то у клиента должен быть установлен браузер, создающий исключения как для обычного https-порта, так и для websocket-порта. Это можно сделать, установив соединение HTTPS с обоими портами в браузере (например, если порты *443* и *8443*, перейти на *https://127.0.0.1:443* и *https://127.0.0.1:8443*). Данный шаг может быть пропущен, если сертификат сервера подписан доверенным центром сертификации и аутентификация клиента отключена.
+
 
 Настройка SSL на стороне сервера
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Для включения **SSL** на стороне сервера необходимо обновить в *zeppelin-site.xml* следующие свойства: 
+
+   ::
+   
+    <property>
+      <name>zeppelin.server.ssl.port</name>
+      <value>8443</value>
+      <description>Server ssl port. (used when ssl property is set to true)</description>
+    </property>
+
+    <property>
+      <name>zeppelin.ssl</name>
+      <value>true</value>
+      <description>Should SSL be used by the servers?</description>
+    </property>
+
+    <property>
+      <name>zeppelin.ssl.keystore.path</name>
+      <value>keystore</value>
+      <description>Path to keystore relative to Zeppelin configuration directory</description>
+    </property>
+
+    <property>
+      <name>zeppelin.ssl.keystore.type</name>
+      <value>JKS</value>
+      <description>The format of the given keystore (e.g. JKS or PKCS12)</description>
+    </property>
+
+    <property>
+      <name>zeppelin.ssl.keystore.password</name>
+      <value>change me</value>
+      <description>Keystore password. Can be obfuscated by the Jetty Password tool</description>
+    </property>
+
+    <property>
+      <name>zeppelin.ssl.key.manager.password</name>
+      <value>change me</value>
+      <description>Key Manager password. Defaults to keystore password. Can be obfuscated.</description>
+    </property>
 
 
 Включение проверки подлинности сертификата на стороне клиента
