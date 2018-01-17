@@ -152,7 +152,7 @@
        zeppelin.server.allowed.origins
        
      - 
-        символ *
+        *символ <*>*
         
         Позволяет знаком запятой разделять разрешенные источники в списке для REST и websockets. Например, http://localhost:8080
 
@@ -173,14 +173,14 @@
 
    * - + zeppelin-env.sh:	
          
-       ZEPPELIN_SERVER_CONTEXT _PATH
+       ZEPPELIN_SERVER_CONTEXT_PATH
        
        + zeppelin-site.xml:
        
        zeppelin.server.context.path
        
      - 
-        символ /
+        *символ </>*
         
         Контекстный путь веб-приложения
 
@@ -235,7 +235,7 @@
 
    * - + zeppelin-env.sh:	
          
-       ZEPPELIN_SSL_KEYSTORE _PASSWORD
+       ZEPPELIN_SSL_KEYSTORE_PASSWORD
        
        + zeppelin-site.xml:
        
@@ -250,7 +250,7 @@
        
        + zeppelin-site.xml:
        
-       zeppelin.ssl.key.manager. password
+       zeppelin.ssl.key.manager.password
        
      - 
  
@@ -283,7 +283,7 @@
        
        + zeppelin-site.xml:
        
-       zeppelin.ssl.truststore. password
+       zeppelin.ssl.truststore.password
        
      - 
  
@@ -306,7 +306,7 @@
        
        + zeppelin-site.xml:
        
-       zeppelin.notebook.homescreen. hide
+       zeppelin.notebook.homescreen.hide
        
      - 
         *false*
@@ -386,11 +386,11 @@
 
    * - + zeppelin-env.sh:	
          
-       ZEPPELIN_NOTEBOOK_S3_KMS _KEY_ID
+       ZEPPELIN_NOTEBOOK_S3_KMS_KEY_ID
        
        + zeppelin-site.xml:
        
-       zeppelin.notebook.s3. kmsKeyID
+       zeppelin.notebook.s3.kmsKeyID
        
      -                
         Идентификатор ключа AWS KMS, используемый для шифрования данных в S3 (опционально)
@@ -414,7 +414,7 @@
        
        + zeppelin-site.xml:
        
-       zeppelin.notebook.azure. connectionString
+       zeppelin.notebook.azure.connectionString
        
      -                
         Строка подключения учетной записи Azure. Например, DefaultEndpointsProtocol=https; AccountName=<accountName>; AccountKey=<accountKey>
@@ -422,11 +422,11 @@
 
    * - + zeppelin-env.sh:	
          
-       ZEPPELIN_NOTEBOOK_AZURE _SHARE
+       ZEPPELIN_NOTEBOOK_AZURE_SHARE
        
        + zeppelin-site.xml:
        
-       zeppelin.notebook.azure. share
+       zeppelin.notebook.azure.share
        
      - 
         *zeppelin*
@@ -436,11 +436,11 @@
 
    * - + zeppelin-env.sh:	
          
-       ZEPPELIN_NOTEBOOK_AZURE _USER
+       ZEPPELIN_NOTEBOOK_AZURE_USER
        
        + zeppelin-site.xml:
        
-       zeppelin.notebook.azure. user
+       zeppelin.notebook.azure.user
        
      - 
         *user*
@@ -457,18 +457,18 @@
        zeppelin.notebook.storage
        
      - 
-        *org.apache.zeppelin.notebook. repo.GitNotebookRepo*
+        *org.apache.zeppelin.notebook.repo. GitNotebookRepo*
         
         Разделенный запятыми список мест хранения блокнотов
 
 
    * - + zeppelin-env.sh:	
          
-       ZEPPELIN_NOTEBOOK_ONE_WAY _SYNC
+       ZEPPELIN_NOTEBOOK_ONE_WAY_SYNC
        
        + zeppelin-site.xml:
        
-       zeppelin.notebook.one.way. sync
+       zeppelin.notebook.one.way.sync
        
      - 
         *false*
@@ -524,7 +524,7 @@
        
        + zeppelin-site.xml:
        
-       zeppelin.interpreter.dep. mvnRepo
+       zeppelin.interpreter.dep.mvnRepo
        
      - 
         *http://repo1.maven.org/maven2/*
@@ -548,11 +548,11 @@
 
    * - + zeppelin-env.sh:	
          
-       ZEPPELIN_HELIUM_NPM _REGISTRY
+       ZEPPELIN_HELIUM_NPM_REGISTRY
        
        + zeppelin-site.xml:
        
-       zeppelin.helium.npm. registry
+       zeppelin.helium.npm.registry
        
      - 
         *http://registry.npmjs.org/*
@@ -566,7 +566,7 @@
        
        + zeppelin-site.xml:
        
-       zeppelin.interpreter.output. limit
+       zeppelin.interpreter.output.limit
        
      - 
         *102400*
@@ -580,7 +580,7 @@
        
        + zeppelin-site.xml:
        
-       zeppelin.websocket.max.text. message. size	
+       zeppelin.websocket.max.text.message.size	
        
      - 
         *1024000*
@@ -594,7 +594,7 @@
        
        + zeppelin-site.xml:
        
-       zeppelin.server.default.dir. allowed	
+       zeppelin.server.default.dir.allowed	
        
      - 
         *false*
