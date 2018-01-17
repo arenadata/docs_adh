@@ -83,7 +83,7 @@
        zeppelin.server.port
        
      - 
-        8080
+        *8080*
         
         Порт сервера Zeppelin. Примечание: необходимо убедиться, что не используется тот же порт, что для разработки веб-приложений Zeppelin (по умолчанию: 9000)
         
@@ -97,7 +97,7 @@
        zeppelin.server.ssl.port
        
      - 
-        8443
+        *8443*
         
         Ssl-сервер порта Zeppelin (используется, когда значение ssl environment/ property имеет значение true)
 
@@ -111,7 +111,7 @@
        N/A
        
      - 
-        -Xmx1024m -XX:MaxPermSize=512m
+        *-Xmx1024m -XX:MaxPermSize=512m*
         
         Параметры JVM mem
 
@@ -152,7 +152,7 @@
        zeppelin.server.allowed.origins
        
      - 
-        *
+        ***
         
         Позволяет знаком запятой (,) разделять разрешенные источники в списке для REST и websockets. Например, http://localhost:8080
 
@@ -166,7 +166,7 @@
        zeppelin.anonymous.allowed
        
      - 
-        true
+        *true*
         
         Допуск анонимного пользователя по умолчанию
 
@@ -180,7 +180,7 @@
        zeppelin.server.context.path
        
      - 
-        /
+        */*
         
         Контекстный путь веб-приложения
 
@@ -194,7 +194,7 @@
        zeppelin.ssl
        
      - 
-        false
+        *false*
 
 
    * - + zeppelin-env.sh:	
@@ -206,7 +206,7 @@
        zeppelin.ssl.client.auth
        
      - 
-        false
+        *false*
 
 
    * - + zeppelin-env.sh:	
@@ -218,7 +218,7 @@
        zeppelin.ssl.keystore.path
        
      - 
-        keystore
+        *keystore*
  
 
    * - + zeppelin-env.sh:	
@@ -230,7 +230,7 @@
        zeppelin.ssl.keystore.type
        
      - 
-        JKS
+        *JKS*
  
 
    * - + zeppelin-env.sh:	
@@ -309,7 +309,7 @@
        zeppelin.notebook.homescreen.hide
        
      - 
-        false
+        *false*
         
         Скрытие идентификатора заметки, установленной ZEPPELIN_NOTEBOOK_HOMESCREEN на рабочем столе Apache Zeppelin
 
@@ -323,7 +323,7 @@
        zeppelin.war.tempdir
        
      - 
-        webapps
+        *webapps*
         
         Расположение временного каталога jetty
 
@@ -337,7 +337,7 @@
        zeppelin.notebook.dir
        
      - 
-        notebook
+        *notebook*
         
         Каталог root, в котором хранятся каталоги для блокнотов
 
@@ -351,7 +351,7 @@
        zeppelin.notebook.s3.bucket
        
      - 
-        zeppelin
+        *zeppelin*
         
         S3 Bucket, где будут сохраняться файлы для блокнотов
 
@@ -365,7 +365,7 @@
        zeppelin.notebook.s3.user
        
      - 
-        user
+        *user*
         
         Имя пользователя S3 Bucket. Например, bucket/user/notebook/2A94M5J1Z/note.json
 
