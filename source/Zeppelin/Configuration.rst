@@ -171,7 +171,30 @@
 Скрытие паролей с помощью Jetty Password Tool
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Рекомендации по безопасности рекомендуют не использовать текстовые пароли, а с помощью утилиты **Jetty Password Tool** (см. `документацию <http://www.eclipse.org/jetty/documentation/current/configuring-security-secure-passwords.html>`_) можно запутывать пароли, используемые для доступа к **KeyStore** и **TrustStore**.
+
+После установки **Jetty Password Tool**:
+
+   ::
+   
+    java -cp $ZEPPELIN_HOME/zeppelin-server/target/lib/jetty-util-9.2.15.v20160210.jar \
+             org.eclipse.jetty.util.security.Password  \
+             password
+    
+    2016-12-15 10:46:47.931:INFO::main: Logging initialized @101ms
+    password
+    OBF:1v2j1uum1xtv1zej1zer1xtn1uvk1v1v
+    MD5:5f4dcc3b5aa765d61d8327deb882cf99
+
+Затем необходимо обновить конфигурацию со скрытым паролем:
+
+   ::
+   
+    <property>
+      <name>zeppelin.ssl.keystore.password</name>
+      <value>OBF:1v2j1uum1xtv1zej1zer1xtn1uvk1v1v</value>
+      <description>Keystore password. Can be obfuscated by the Jetty Password tool</description>
+    </property>
 
 
-
-
+.. important:: После обновления настроек сервер Zeppelin необходимо перезапустить
