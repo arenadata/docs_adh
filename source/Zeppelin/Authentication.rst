@@ -172,6 +172,13 @@ LDAP
 РАМ
 ~~~~
 
+Поддержка аутентификации `PAM <https://en.wikipedia.org/wiki/Pluggable_authentication_module>`_ позволяет повторно использовать существующие модули аутентификации на хосте, где запущен **Zeppelin**. В типичных системных модулях, например, *sshd*, *passwd* и других сервис настраивается в */etc/pam.d/*. Можно повторно использовать один из этих сервисов или создать свой собственный для **Zeppelin**. Для активации аутентификации **PAM** требуется два параметра: 1 -- realm: использование **Shiro realm**; 2 -- service: настроенный в */etc/pam.d/* сервис. Название должно совпадать с именем файла в */etc/pam.d/*.
+
+   ::
+    
+    [main]
+     pamRealm=org.apache.zeppelin.realm.PamRealm
+     pamRealm.service=sshd
 
 
 ZeppelinHub
