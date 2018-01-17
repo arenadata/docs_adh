@@ -65,7 +65,62 @@
    "ZEPPELIN_WEBSOCKET_MAX_TEXT_MESSAGE_SIZE",	"zeppelin.websocket.max.text.message.size",	"1024000", "Размер (в символах) максимального текстового сообщения, которое может быть получено от websocket"
    "ZEPPELIN_SERVER_DEFAULT_DIR_ALLOWED",	"zeppelin.server.default.dir.allowed",	"false", "Включить списки каталогов на сервере"
    
-  
+
+
+.. list-table:: Параметры Zeppelin, их значения и описание
+   :header-rows: 1   
+   :widths: 50, 50
+   :class: longtable
+    
+   * - Параметр Zeppelin
+     - Значение и описание
+   * - + zeppelin-env.sh:	
+         
+       ZEPPELIN_PORT
+       
+       + zeppelin-site.xml:
+       
+       zeppelin.server.port
+       
+     - 
+        8080
+        
+        Порт сервера Zeppelin. Примечание: необходимо убедиться, что не используется тот же порт, что для разработки веб-приложений Zeppelin (по умолчанию: 9000)
+        
+        
+   * - + zeppelin-env.sh:	
+         
+       ZEPPELIN_SSL_PORT
+       
+       + zeppelin-site.xml:
+       
+       zeppelin.server.ssl.port
+       
+     - 
+        8443
+        
+        Ssl-сервер порта Zeppelin (используется, когда значение ssl environment/ property имеет значение true)
+
+
+   * - + zeppelin-env.sh:	
+         
+       ZEPPELIN_MEM
+       
+       + zeppelin-site.xml:
+       
+       N/A
+       
+     - 
+        -Xmx1024m -XX:MaxPermSize=512m
+        
+        Параметры JVM mem
+
+
+
+
+
+
+
 Конфигурация SSL
 ^^^^^^^^^^^^^^^^
 
