@@ -200,6 +200,17 @@ ZeppelinHub
 Безопасное Cookie для сессий Zeppelin (опционально)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+**Zeppelin** может быть настроен для установки **HttpOnly** в сессии **cookie**. С такой конфигурацией cookie-файлы **Zeppelin** не могут быть доступны через скрипты на стороне клиента, тем самым предотвращая большинство атак типа **Cross-Site scripting** (**XSS**).
+
+Чтобы включить безопасную поддержку файлов **cookie** через **Shiro**, необходимо добавить следующие строки в *conf/shiro.ini* в секцию *[main]*, а затем задать *sessionManager*:
+
+   ::
+    
+    cookie = org.apache.shiro.web.servlet.SimpleCookie
+    cookie.name = JSESSIONID
+    cookie.secure = true
+    cookie.httpOnly = true
+    sessionManager.sessionIdCookie = $cookie
 
 
 Защитита информации Zeppelin (опционально)
