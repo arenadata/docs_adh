@@ -114,6 +114,7 @@
 Настройка Realm (опционально)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+**Realms** отвечают за аутентификацию и авторизацию в **Apache Zeppelin**. По умолчанию **Apache Zeppelin** использует `IniRealm <https://shiro.apache.org/static/latest/apidocs/org/apache/shiro/realm/text/IniRealm.html>`_ (пользователи и группы настраиваются в файле *conf/shiro.ini* в секциях *[user]* и *[group]*). Также можно использовать **Shiro Realms**, такие как `JndiLdapRealm <https://shiro.apache.org/static/latest/apidocs/org/apache/shiro/realm/ldap/JndiLdapRealm.html>`_, `JdbcRealm <https://shiro.apache.org/static/latest/apidocs/org/apache/shiro/realm/jdbc/JdbcRealm.html>`_ или `создать собственный <https://shiro.apache.org/static/latest/apidocs/org/apache/shiro/realm/AuthorizingRealm.html>`_. Подробная документация о **Apache Shiro Realm** представлена в документации по `ссылке <http://shiro.apache.org/realm.html>`_.
 
 
 Active Directory
