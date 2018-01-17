@@ -148,6 +148,25 @@ Active Directory
 LDAP
 ~~~~
 
+Для настройки диапазона **LDAP Realm** существует два варианта. Проще использовать **LdapGroupRealm**. Однако, он имеет ограниченную гибкость при сопоставлении групп **LDAP** для пользователей и для авторизации групп пользователей. Далее приведен пример файла конфигурации:
+
+   ::
+   
+    ldapRealm = org.apache.zeppelin.realm.LdapGroupRealm
+    # search base for ldap groups (only relevant for LdapGroupRealm):
+    ldapRealm.contextFactory.environment[ldap.searchBase] = dc=COMPANY,dc=COM
+    ldapRealm.contextFactory.url = ldap://ldap.test.com:389
+    ldapRealm.userDnTemplate = uid={0},ou=Users,dc=COMPANY,dc=COM
+    ldapRealm.contextFactory.authenticationMechanism = simple
+
+Другим более гибким вариантом является использование **LdapRealm**. Он позволяет сопоставлять *ldapgroups* с ролями, а также допускает проверку подлинности на основе ролей/групп на сервере *zeppelin*. Пример конфигурации приведен ниже:
+
+   ::
+   
+    ldapRealm=org.apache.zeppelin.realm.LdapRealm
+
+    ldapRealm.contextFactory.authenticationMechanism=simple ldapRealm.contextFactory.url=ldap://localhost:33389  ldapRealm.userDnTemplate=uid={0},ou=people,dc=hadoop,dc=apache,dc=org
+   
 
 
 РАМ
