@@ -184,7 +184,17 @@ LDAP
 ZeppelinHub
 ~~~~~~~~~~~
 
+`ZeppelinHub <https://www.zeppelinhub.com/>`_ -- это сервис, синхронизурующий блокноты **Apache Zeppelin** и обеспечивающий легкое взаимодействие с ними. Для подключения **ZeppelinHub** необходимо применить следующее изменение в *conf/shiro.ini* в секции *[main]*:
 
+   ::
+    
+    ### A sample for configuring ZeppelinHub Realm
+    zeppelinHubRealm = org.apache.zeppelin.realm.ZeppelinHubRealm
+    ## Url of ZeppelinHub
+    zeppelinHubRealm.zeppelinhubUrl = https://www.zeppelinhub.com
+    securityManager.realms = $zeppelinHubRealm
+
+.. important:: ZeppelinHub не связан с проектом Apache Zeppelin
 
 
 Безопасное Cookie для сессий Zeppelin (опционально)
