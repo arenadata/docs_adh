@@ -106,7 +106,7 @@
        zeppelin.server.allowed.origins
        
      - 
-        *символ "*"*
+        *символ* "*"
         
         Позволяет знаком запятой разделять разрешенные источники в списке для REST и websockets. Например, http://localhost:8080
 
