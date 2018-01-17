@@ -116,6 +116,268 @@
         Параметры JVM mem
 
 
+   * - + zeppelin-env.sh:	
+         
+       ZEPPELIN_INTP_MEM
+       
+       + zeppelin-site.xml:
+       
+       N/A
+       
+     - 
+        ZEPPELIN_MEM
+        
+        Параметры JVM mem для процесса интерпретатора
+
+
+   * - + zeppelin-env.sh:	
+         
+       ZEPPELIN_JAVA_OPTS
+       
+       + zeppelin-site.xml:
+       
+       N/A
+       
+     - 
+        
+        Параметры JVM
+
+
+   * - + zeppelin-env.sh:	
+         
+       ZEPPELIN_ALLOWED_ORIGINS
+       
+       + zeppelin-site.xml:
+       
+       zeppelin.server.allowed.origins
+       
+     - 
+        *
+        
+        Позволяет знаком запятой (,) разделять разрешенные источники в списке для REST и websockets. Например, http://localhost:8080
+
+
+   * - + zeppelin-env.sh:	
+         
+       N/A
+       
+       + zeppelin-site.xml:
+       
+       zeppelin.anonymous.allowed
+       
+     - 
+        true
+        
+        Допуск анонимного пользователя по умолчанию
+
+
+   * - + zeppelin-env.sh:	
+         
+       ZEPPELIN_SERVER_CONTEXT_PATH
+       
+       + zeppelin-site.xml:
+       
+       zeppelin.server.context.path
+       
+     - 
+        /
+        
+        Контекстный путь веб-приложения
+
+
+   * - + zeppelin-env.sh:	
+         
+       ZEPPELIN_SSL
+       
+       + zeppelin-site.xml:
+       
+       zeppelin.ssl
+       
+     - 
+        false
+
+
+   * - + zeppelin-env.sh:	
+         
+       ZEPPELIN_SSL_CLIENT_AUTH
+       
+       + zeppelin-site.xml:
+       
+       zeppelin.ssl.client.auth
+       
+     - 
+        false
+
+
+   * - + zeppelin-env.sh:	
+         
+       ZEPPELIN_SSL_KEYSTORE_PATH
+       
+       + zeppelin-site.xml:
+       
+       zeppelin.ssl.keystore.path
+       
+     - 
+        keystore
+ 
+
+   * - + zeppelin-env.sh:	
+         
+       ZEPPELIN_SSL_KEYSTORE_TYPE
+       
+       + zeppelin-site.xml:
+       
+       zeppelin.ssl.keystore.type
+       
+     - 
+        JKS
+ 
+
+   * - + zeppelin-env.sh:	
+         
+       ZEPPELIN_SSL_KEYSTORE_PASSWORD
+       
+       + zeppelin-site.xml:
+       
+       zeppelin.ssl.keystore.password
+       
+     - 
+ 
+
+   * - + zeppelin-env.sh:	
+         
+       ZEPPELIN_SSL_KEY_MANAGER_PASSWORD
+       
+       + zeppelin-site.xml:
+       
+       zeppelin.ssl.key.manager.password
+       
+     - 
+ 
+
+   * - + zeppelin-env.sh:	
+         
+       ZEPPELIN_SSL_TRUSTSTORE_PATH
+       
+       + zeppelin-site.xml:
+       
+       zeppelin.ssl.truststore.path
+       
+     - 
+  
+
+   * - + zeppelin-env.sh:	
+         
+       ZEPPELIN_SSL_TRUSTSTORE_TYPE
+       
+       + zeppelin-site.xml:
+       
+       zeppelin.ssl.truststore.type
+       
+     - 
+  
+
+   * - + zeppelin-env.sh:	
+         
+       ZEPPELIN_SSL_TRUSTSTORE_PASSWORD
+       
+       + zeppelin-site.xml:
+       
+       zeppelin.ssl.truststore.password
+       
+     - 
+ 
+
+   * - + zeppelin-env.sh:	
+         
+       ZEPPELIN_NOTEBOOK_HOMESCREEN
+       
+       + zeppelin-site.xml:
+       
+       zeppelin.notebook.homescreen
+       
+     - 
+        Отображение идентификаторов заметок на рабочем столе Apache Zeppelin. Например, 2A94M5J1Z
+
+
+   * - + zeppelin-env.sh:	
+         
+       ZEPPELIN_NOTEBOOK_HOMESCREEN_HIDE
+       
+       + zeppelin-site.xml:
+       
+       zeppelin.notebook.homescreen.hide
+       
+     - 
+        false
+        
+        Скрытие идентификатора заметки, установленной ZEPPELIN_NOTEBOOK_HOMESCREEN на рабочем столе Apache Zeppelin
+
+
+   * - + zeppelin-env.sh:	
+         
+       ZEPPELIN_WAR_TEMPDIR
+       
+       + zeppelin-site.xml:
+       
+       zeppelin.war.tempdir
+       
+     - 
+        webapps
+        
+        Расположение временного каталога jetty
+
+
+   * - + zeppelin-env.sh:	
+         
+       ZEPPELIN_NOTEBOOK_DIR
+       
+       + zeppelin-site.xml:
+       
+       zeppelin.notebook.dir
+       
+     - 
+        notebook
+        
+        Каталог root, в котором хранятся каталоги для блокнотов
+
+
+   * - + zeppelin-env.sh:	
+         
+       ZEPPELIN_NOTEBOOK_S3_BUCKET
+       
+       + zeppelin-site.xml:
+       
+       zeppelin.notebook.s3.bucket
+       
+     - 
+        zeppelin
+        
+        S3 Bucket, где будут сохраняться файлы для блокнотов
+
+
+   * - + zeppelin-env.sh:	
+         
+       ZEPPELIN_NOTEBOOK_S3_USER
+       
+       + zeppelin-site.xml:
+       
+       zeppelin.notebook.s3.user
+       
+     - 
+        user
+        
+        Имя пользователя S3 Bucket. Например, bucket/user/notebook/2A94M5J1Z/note.json
+
+ 
+ 
+ 
+ 
+                        
+                     
+        
+
+
 
 
 
