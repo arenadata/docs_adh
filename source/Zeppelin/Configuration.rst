@@ -173,7 +173,7 @@
 
    * - + zeppelin-env.sh:	
          
-       ZEPPELIN_SERVER_CONTEXT_PATH
+       ZEPPELIN_SERVER_CONTEXT _PATH
        
        + zeppelin-site.xml:
        
@@ -235,7 +235,7 @@
 
    * - + zeppelin-env.sh:	
          
-       ZEPPELIN_SSL_KEYSTORE_PASSWORD
+       ZEPPELIN_SSL_KEYSTORE _PASSWORD
        
        + zeppelin-site.xml:
        
@@ -246,11 +246,11 @@
 
    * - + zeppelin-env.sh:	
          
-       ZEPPELIN_SSL_KEY_MANAGER_PASSWORD
+       ZEPPELIN_SSL_KEY_MANAGER _PASSWORD
        
        + zeppelin-site.xml:
        
-       zeppelin.ssl.key.manager.password
+       zeppelin.ssl.key.manager. password
        
      - 
  
@@ -279,11 +279,11 @@
 
    * - + zeppelin-env.sh:	
          
-       ZEPPELIN_SSL_TRUSTSTORE_PASSWORD
+       ZEPPELIN_SSL_TRUSTSTORE _PASSWORD
        
        + zeppelin-site.xml:
        
-       zeppelin.ssl.truststore.password
+       zeppelin.ssl.truststore. password
        
      - 
  
@@ -302,11 +302,11 @@
 
    * - + zeppelin-env.sh:	
          
-       ZEPPELIN_NOTEBOOK_HOMESCREEN_HIDE
+       ZEPPELIN_NOTEBOOK_HOMESCREEN _HIDE
        
        + zeppelin-site.xml:
        
-       zeppelin.notebook.homescreen.hide
+       zeppelin.notebook.homescreen. hide
        
      - 
         *false*
@@ -386,11 +386,11 @@
 
    * - + zeppelin-env.sh:	
          
-       ZEPPELIN_NOTEBOOK_S3_KMS_KEY_ID
+       ZEPPELIN_NOTEBOOK_S3_KMS _KEY_ID
        
        + zeppelin-site.xml:
        
-       zeppelin.notebook.s3.kmsKeyID
+       zeppelin.notebook.s3. kmsKeyID
        
      -                
         Идентификатор ключа AWS KMS, используемый для шифрования данных в S3 (опционально)
@@ -410,11 +410,11 @@
 
    * - + zeppelin-env.sh:	
          
-       ZEPPELIN_NOTEBOOK_AZURE_ CONNECTION_STRING	
+       ZEPPELIN_NOTEBOOK_AZURE _CONNECTION_STRING	
        
        + zeppelin-site.xml:
        
-       zeppelin.notebook.azure.connectionString
+       zeppelin.notebook.azure. connectionString
        
      -                
         Строка подключения учетной записи Azure. Например, DefaultEndpointsProtocol=https; AccountName=<accountName>; AccountKey=<accountKey>
@@ -422,11 +422,11 @@
 
    * - + zeppelin-env.sh:	
          
-       ZEPPELIN_NOTEBOOK_AZURE_SHARE
+       ZEPPELIN_NOTEBOOK_AZURE _SHARE
        
        + zeppelin-site.xml:
        
-       zeppelin.notebook.azure.share
+       zeppelin.notebook.azure. share
        
      - 
         *zeppelin*
@@ -436,11 +436,11 @@
 
    * - + zeppelin-env.sh:	
          
-       ZEPPELIN_NOTEBOOK_AZURE_USER
+       ZEPPELIN_NOTEBOOK_AZURE _USER
        
        + zeppelin-site.xml:
        
-       zeppelin.notebook.azure.user
+       zeppelin.notebook.azure. user
        
      - 
         *user*
@@ -464,11 +464,11 @@
 
    * - + zeppelin-env.sh:	
          
-       ZEPPELIN_NOTEBOOK_ONE_WAY_SYNC
+       ZEPPELIN_NOTEBOOK_ONE_WAY _SYNC
        
        + zeppelin-site.xml:
        
-       zeppelin.notebook.one.way.sync
+       zeppelin.notebook.one.way. sync
        
      - 
         *false*
@@ -520,11 +520,11 @@
 
    * - + zeppelin-env.sh:	
          
-       ZEPPELIN_INTERPRETER_DEP_MVNREPO
+       ZEPPELIN_INTERPRETER_DEP _MVNREPO
        
        + zeppelin-site.xml:
        
-       zeppelin.interpreter.dep.mvnRepo
+       zeppelin.interpreter.dep. mvnRepo
        
      - 
         *http://repo1.maven.org/maven2/*
@@ -548,11 +548,11 @@
 
    * - + zeppelin-env.sh:	
          
-       ZEPPELIN_HELIUM_NPM_REGISTRY
+       ZEPPELIN_HELIUM_NPM _REGISTRY
        
        + zeppelin-site.xml:
        
-       zeppelin.helium.npm.registry
+       zeppelin.helium.npm. registry
        
      - 
         *http://registry.npmjs.org/*
@@ -562,11 +562,11 @@
 
    * - + zeppelin-env.sh:	
          
-       ZEPPELIN_INTERPRETER_OUTPUT_LIMIT
+       ZEPPELIN_INTERPRETER_OUTPUT _LIMIT
        
        + zeppelin-site.xml:
        
-       zeppelin.interpreter.output.limit
+       zeppelin.interpreter.output. limit
        
      - 
         *102400*
@@ -576,11 +576,11 @@
 
    * - + zeppelin-env.sh:	
          
-       ZEPPELIN_WEBSOCKET_MAX_TEXT_MESSAGE_SIZE
+       ZEPPELIN_WEBSOCKET_MAX_TEXT _MESSAGE_SIZE
        
        + zeppelin-site.xml:
        
-       zeppelin.websocket.max.text.message. size	
+       zeppelin.websocket.max.text. message. size	
        
      - 
         *1024000*
@@ -590,11 +590,11 @@
 
    * - + zeppelin-env.sh:	
          
-       ZEPPELIN_SERVER_DEFAULT_DIR_ALLOWED
+       ZEPPELIN_SERVER_DEFAULT_DIR _ALLOWED
        
        + zeppelin-site.xml:
        
-       zeppelin.server.default.dir.allowed	
+       zeppelin.server.default.dir. allowed	
        
      - 
         *false*
