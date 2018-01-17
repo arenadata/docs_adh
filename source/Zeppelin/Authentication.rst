@@ -120,6 +120,30 @@
 Active Directory
 ~~~~~~~~~~~~~~~~
 
+   ::
+   
+    activeDirectoryRealm = org.apache.zeppelin.realm.ActiveDirectoryGroupRealm
+    activeDirectoryRealm.systemUsername = userNameA
+    activeDirectoryRealm.systemPassword = passwordA
+    activeDirectoryRealm.hadoopSecurityCredentialPath = jceks://file/user/zeppelin/conf/zeppelin.jceks
+    activeDirectoryRealm.searchBase = CN=Users,DC=SOME_GROUP,DC=COMPANY,DC=COM
+    activeDirectoryRealm.url = ldap://ldap.test.com:389
+    activeDirectoryRealm.groupRolesMap = "CN=aGroupName,OU=groups,DC=SOME_GROUP,DC=COMPANY,DC=COM":"group1"
+    activeDirectoryRealm.authorizationCachingEnabled = false
+    activeDirectoryRealm.principalSuffix = @corp.company.net
+
+
+Кроме того, вместо указания *systemPassword* в тексте в *shiro.ini* администратор может указать то же самое в *hadoop credential*. Необходимо создать keystore-файл, используя командную строку *hadoop credential*, для этого *hadoop* должен быть в *classpath*:
+
+   ::
+   
+    hadoop credential create activeDirectoryRealm.systempassword -provider jceks://file/user/zeppelin/conf/zeppelin.jceks
+
+Далее следует изменить следующие значения в файле *Shiro.ini* и раскомментировать строку:
+
+   ::
+   
+    activeDirectoryRealm.hadoopSecurityCredentialPath = jceks://file/user/zeppelin/conf/zeppelin.jceks
 
 LDAP
 ~~~~
