@@ -3,12 +3,6 @@
 
 + `Обзор`_;
 + `Настройка безопасности`_;
-  
-  + `Права Shiro`_;
-  + `Безопасный канал Websocket`_;
-  + `Запуск Zeppelin`_;
-  + `Авторизация`_;
-
 + `Группы и разрешения (опционально)`_;
 + `Настройка Realm (опционально)`_;
   
@@ -60,7 +54,25 @@
 
 **4. Авторизация**
 
-Теперь можно войти в систему, используя комбинацию имени и пароля пользователя ().
+Теперь можно войти в систему, используя комбинацию имени и пароля пользователя (:numref:`Рис.%s.<zeppelin_authentication_login>`).
+
+.. _zeppelin_authentication_login:
+
+.. figure:: ../imgs/zeppelin_authentication_login.*
+   :align: center
+
+   Авторизация Apache Zeppelin
+
+Можно установить роли для каждого пользователя рядом с паролем:
+
+   ::
+   
+    [users]
+
+    admin = password1, admin
+    user1 = password2, role1, role2
+    user2 = password3, role3
+    user3 = password4, role2
 
 
 
