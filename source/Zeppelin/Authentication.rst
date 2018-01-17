@@ -61,7 +61,7 @@
 .. figure:: ../imgs/zeppelin_authentication_login.*
    :align: center
 
-   Авторизация Apache Zeppelin
+   Авторизация в Apache Zeppelin
 
 Можно установить роли для каждого пользователя рядом с паролем:
 
@@ -79,6 +79,36 @@
 Группы и разрешения (опционально)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Для использования групп пользователей и разрешений, необходимо применить одну из следующих конфигураций для **LDAP** или **AD** в *[main]* в файле *shiro.ini*:
+
+   ::
+    
+    activeDirectoryRealm = org.apache.zeppelin.realm.ActiveDirectoryGroupRealm
+    activeDirectoryRealm.systemUsername = userNameA
+    activeDirectoryRealm.systemPassword = passwordA
+    activeDirectoryRealm.searchBase = CN=Users,DC=SOME_GROUP,DC=COMPANY,DC=COM
+    activeDirectoryRealm.url = ldap://ldap.test.com:389
+    activeDirectoryRealm.groupRolesMap = "CN=aGroupName,OU=groups,DC=SOME_GROUP,DC=COMPANY,DC=COM":"group1"
+    activeDirectoryRealm.authorizationCachingEnabled = false
+    activeDirectoryRealm.principalSuffix = @corp.company.net
+
+    ldapRealm = org.apache.zeppelin.server.LdapGroupRealm
+    # search base for ldap groups (only relevant for LdapGroupRealm):
+    ldapRealm.contextFactory.environment[ldap.searchBase] = dc=COMPANY,dc=COM
+    ldapRealm.contextFactory.url = ldap://ldap.test.com:389
+    ldapRealm.userDnTemplate = uid={0},ou=Users,dc=COMPANY,dc=COM
+    ldapRealm.contextFactory.authenticationMechanism = simple
+
+
+И определить роли/группы, которые необходимо иметь в системе, например:
+
+   ::
+    
+    [roles]
+    admin = *
+    hr = *
+    finance = *
+    group1 = *
 
 
 Настройка Realm (опционально)
