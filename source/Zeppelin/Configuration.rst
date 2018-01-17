@@ -125,7 +125,7 @@
        N/A
        
      - 
-        ZEPPELIN_MEM
+        *ZEPPELIN_MEM*
         
         Параметры JVM mem для процесса интерпретатора
 
@@ -152,9 +152,9 @@
        zeppelin.server.allowed.origins
        
      - 
-        ***
+        символ *
         
-        Позволяет знаком запятой (,) разделять разрешенные источники в списке для REST и websockets. Например, http://localhost:8080
+        Позволяет знаком запятой разделять разрешенные источники в списке для REST и websockets. Например, http://localhost:8080
 
 
    * - + zeppelin-env.sh:	
@@ -180,7 +180,7 @@
        zeppelin.server.context.path
        
      - 
-        */*
+        символ /
         
         Контекстный путь веб-приложения
 
@@ -367,20 +367,239 @@
      - 
         *user*
         
-        Имя пользователя S3 Bucket. Например, bucket/user/notebook/2A94M5J1Z/note.json
+        Имя пользователя S3 Bucket. Например, bucket/user/notebook/2A94M5J1Z/ note.json
 
- 
- 
- 
- 
-                        
-                     
+
+   * - + zeppelin-env.sh:	
+         
+       ZEPPELIN_NOTEBOOK_S3_ENDPOINT
+       
+       + zeppelin-site.xml:
+       
+       zeppelin.notebook.s3.endpoint
+       
+     - 
+        *s3.amazonaws.com*
         
+        Конечная точка для Bucket
 
 
+   * - + zeppelin-env.sh:	
+         
+       ZEPPELIN_NOTEBOOK_S3_KMS_KEY_ID
+       
+       + zeppelin-site.xml:
+       
+       zeppelin.notebook.s3.kmsKeyID
+       
+     -                
+        Идентификатор ключа AWS KMS, используемый для шифрования данных в S3 (опционально)
 
 
+   * - + zeppelin-env.sh:	
+         
+       ZEPPELIN_NOTEBOOK_S3_EMP
+       
+       + zeppelin-site.xml:
+       
+       zeppelin.notebook.s3. encryptionMaterialsProvider
+       
+     -                
+        Имя класса реализации поставщика материалов шифрования пользовательского S3 для шифрования данных в S3 (опционально)
 
+
+   * - + zeppelin-env.sh:	
+         
+       ZEPPELIN_NOTEBOOK_AZURE_ CONNECTION_STRING	
+       
+       + zeppelin-site.xml:
+       
+       zeppelin.notebook.azure.connectionString
+       
+     -                
+        Строка подключения учетной записи Azure. Например, DefaultEndpointsProtocol=https; AccountName=<accountName>; AccountKey=<accountKey>
+
+
+   * - + zeppelin-env.sh:	
+         
+       ZEPPELIN_NOTEBOOK_AZURE_SHARE
+       
+       + zeppelin-site.xml:
+       
+       zeppelin.notebook.azure.share
+       
+     - 
+        *zeppelin*
+        
+        Azure Share, где будут сохраняться файлы блокнотов
+
+
+   * - + zeppelin-env.sh:	
+         
+       ZEPPELIN_NOTEBOOK_AZURE_USER
+       
+       + zeppelin-site.xml:
+       
+       zeppelin.notebook.azure.user
+       
+     - 
+        *user*
+        
+        Необязательное имя пользователя для совместно используемого файла Azure. Например, share/user/notebook/2A94M5J1Z/ note.json
+
+
+   * - + zeppelin-env.sh:	
+         
+       ZEPPELIN_NOTEBOOK_STORAGE
+       
+       + zeppelin-site.xml:
+       
+       zeppelin.notebook.storage
+       
+     - 
+        *org.apache.zeppelin.notebook. repo.GitNotebookRepo*
+        
+        Разделенный запятыми список мест хранения блокнотов
+
+
+   * - + zeppelin-env.sh:	
+         
+       ZEPPELIN_NOTEBOOK_ONE_WAY_SYNC
+       
+       + zeppelin-site.xml:
+       
+       zeppelin.notebook.one.way.sync
+       
+     - 
+        *false*
+        
+        Если есть несколько мест для хранения блокнотов, следует ли рассматривать первое как единственное?
+
+
+   * - + zeppelin-env.sh:	
+         
+       ZEPPELIN_NOTEBOOK_PUBLIC
+       
+       + zeppelin-site.xml:
+       
+       zeppelin.notebook.public
+       
+     - 
+        *true*
+        
+        Сделать блокнот общедоступным по умолчанию при создании или импортировании (установив только владельцев). Если установлено значение false, необходимо добавить user, readers и writers и сделать его конфиденциальным и невидимым для других пользователей, не имующих прав
+
+
+   * - + zeppelin-env.sh:	
+         
+       ZEPPELIN_INTERPRETERS
+       
+       + zeppelin-site.xml:
+       
+       zeppelin.interpreters
+       
+     - 
+        *org.apache.zeppelin.spark.SparkInterpreter, org.apache.zeppelin.spark.PySparkInterpreter, org.apache.zeppelin.spark.SparkSqlInterpreter, org.apache.zeppelin.spark.DepInterpreter, org.apache.zeppelin.markdown.Markdown, org.apache.zeppelin.shell.ShellInterpreter, ...*
+        
+        Конфигурации интерпретатора с разделителями-запятыми [Class]. Примечание: это свойство устарело с Zeppelin-0.6.0 и не будет поддерживаться Zeppelin-0.7.0
+
+
+   * - + zeppelin-env.sh:	
+         
+       ZEPPELIN_INTERPRETER_DIR
+       
+       + zeppelin-site.xml:
+       
+       zeppelin.interpreter.dir
+       
+     - 
+        *interpreter*
+        
+        Каталог интерпретатора
+
+
+   * - + zeppelin-env.sh:	
+         
+       ZEPPELIN_INTERPRETER_DEP_MVNREPO
+       
+       + zeppelin-site.xml:
+       
+       zeppelin.interpreter.dep.mvnRepo
+       
+     - 
+        *http://repo1.maven.org/maven2/*
+        
+        Удаленный основной репозиторий для дополнительной загрузки зависимостей интерпретатора
+
+
+   * - + zeppelin-env.sh:	
+         
+       ZEPPELIN_DEP_LOCALREPO
+       
+       + zeppelin-site.xml:
+       
+       zeppelin.dep.localrepo
+       
+     - 
+        *local-repo*
+        
+        Локальный репозиторий для загрузки зависимостей. Модули npm
+
+
+   * - + zeppelin-env.sh:	
+         
+       ZEPPELIN_HELIUM_NPM_REGISTRY
+       
+       + zeppelin-site.xml:
+       
+       zeppelin.helium.npm.registry
+       
+     - 
+        *http://registry.npmjs.org/*
+        
+        Удаленный реестр Npm для загрузчки зависимостей Helium
+
+
+   * - + zeppelin-env.sh:	
+         
+       ZEPPELIN_INTERPRETER_OUTPUT_LIMIT
+       
+       + zeppelin-site.xml:
+       
+       zeppelin.interpreter.output.limit
+       
+     - 
+        *102400*
+        
+        Скрыть выходное сообщение от интерпретатора, превышающего лимит
+
+
+   * - + zeppelin-env.sh:	
+         
+       ZEPPELIN_WEBSOCKET_MAX_TEXT_MESSAGE_SIZE
+       
+       + zeppelin-site.xml:
+       
+       zeppelin.websocket.max.text.message. size	
+       
+     - 
+        *1024000*
+        
+        Размер (в символах) максимального текстового сообщения, которое может быть получено от websocket
+
+
+   * - + zeppelin-env.sh:	
+         
+       ZEPPELIN_SERVER_DEFAULT_DIR_ALLOWED
+       
+       + zeppelin-site.xml:
+       
+       zeppelin.server.default.dir.allowed	
+       
+     - 
+        *false*
+        
+        Включить списки каталогов на сервере
 
 
 Конфигурация SSL
