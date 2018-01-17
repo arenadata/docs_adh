@@ -367,7 +367,7 @@
      - 
         *user*
         
-        Имя пользователя S3 Bucket. Например, bucket/user/notebook/2A94M5J1Z/ note.json
+        Имя пользователя S3 Bucket. Например, bucket/user/notebook/2A94M5J1Z/note.json
 
 
    * - + zeppelin-env.sh:	
