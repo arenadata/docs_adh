@@ -9,7 +9,7 @@
 Главная страница
 ^^^^^^^^^^^^^^^^
 
-При первом подключении к **Apache Zeppelin** открывается главная страница, представленная на :numref:`Рис.%s.<zeppelin_ui_main-home>`.
+При первом подключении к **Apache Zeppelin** открывается главная страница, представленная на :numref:`Рис.%s.<zeppelin_ui_main-home>`
 
 .. _zeppelin_ui_main-home:
 
@@ -51,9 +51,60 @@
    Панель меню Notebook
 
 
-Это меню дает вам доступ к настройкам и отображает информацию о Zeppelin. Имя пользователя задано как *anonymous*, если вы используете конфигурацию по умолчанию. Если вы хотите настроить аутентификацию, см. Широ аутентификацию.
+Меню настроек дает доступ к конфигурации и отображает информацию о **Zeppelin** (:numref:`Рис.%s.<zeppelin_ui_settings>`). При использовании настроек по умолчанию имя пользователя задается как *anonymous*. Конфигурация аутентификации описана в разделе `Аутентификация Apache Shiro для Apache Zeppelin <http://docs.arenadata.io/adh/v1.4/Zeppelin/Authentication.html>`_.
 
-This menu gives you access to settings and displays information about Zeppelin. User name is set to anonymous if you use default shiro configuration. If you want to set up authentification, see Shiro authentication.
+.. _zeppelin_ui_settings:
+
+.. figure:: ../imgs/zeppelin_ui_settings.*
+   :align: center
+
+   Меню настроек
+
+
+По ссылке "About Zeppelin" можно получить информацию об установленной версии **Apache Zeppelin** (:numref:`Рис.%s.<zeppelin_ui_about>`).
+
+.. _zeppelin_ui_about:
+
+.. figure:: ../imgs/zeppelin_ui_about.*
+   :align: center
+
+   About Zeppelin
+
+
+По ссылке "Interpreter" можно выполнить следующие функции (:numref:`Рис.%s.<zeppelin_ui_interpreters>`):
+
++ Настроить существующий интерпретатор;
++ Добавить/удалить интерпретатор.
+
+
+.. _zeppelin_ui_interpreters:
+
+.. figure:: ../imgs/zeppelin_ui_interpreters.*
+   :align: center
+
+   Управление интерпретаторами
+
+
+Ссылка "Credential" позволяет сохранять учетные данные для источников данных, которые передаются интерпретаторам (:numref:`Рис.%s.<zeppelin_ui_credentials>`).
+
+
+.. _zeppelin_ui_credentials:
+
+.. figure:: ../imgs/zeppelin_ui_credentials.*
+   :align: center
+
+   Учетные данные
+
+
+Ссылка "Configuration" отображает всю конфигурацию **Apache Zeppelin**, которая задана в файле конфигурации *$ZEPPELIN_HOME/conf/zeppelin-site.xml* (:numref:`Рис.%s.<zeppelin_ui_configurations>`).
+
+
+.. _zeppelin_ui_configurations:
+
+.. figure:: ../imgs/zeppelin_ui_configurations.*
+   :align: center
+
+   Конфигурация Apache Zeppelin
 
 
 
