@@ -61,7 +61,7 @@
    Меню настроек
 
 
-По ссылке "About Zeppelin" можно получить информацию об установленной версии **Apache Zeppelin** (:numref:`Рис.%s.<zeppelin_ui_about>`).
+По ссылке "About Zeppelin" (см. :numref:`Рис.%s.<zeppelin_ui_settings>`) можно получить информацию об установленной версии **Apache Zeppelin** (:numref:`Рис.%s.<zeppelin_ui_about>`).
 
 .. _zeppelin_ui_about:
 
@@ -71,7 +71,7 @@
    About Zeppelin
 
 
-По ссылке "Interpreter" можно выполнить следующие функции (:numref:`Рис.%s.<zeppelin_ui_interpreters>`):
+По ссылке "Interpreter" (см. :numref:`Рис.%s.<zeppelin_ui_settings>`) можно выполнить следующие функции (:numref:`Рис.%s.<zeppelin_ui_interpreters>`):
 
 + Настроить существующий интерпретатор;
 + Добавить/удалить интерпретатор.
@@ -85,7 +85,7 @@
    Управление интерпретаторами
 
 
-Ссылка "Credential" позволяет сохранять учетные данные для источников данных, которые передаются интерпретаторам (:numref:`Рис.%s.<zeppelin_ui_credentials>`).
+Ссылка "Credential" (см. :numref:`Рис.%s.<zeppelin_ui_settings>`) позволяет сохранять учетные данные для источников данных, которые передаются интерпретаторам (:numref:`Рис.%s.<zeppelin_ui_credentials>`).
 
 
 .. _zeppelin_ui_credentials:
@@ -96,7 +96,7 @@
    Учетные данные
 
 
-Ссылка "Configuration" отображает всю конфигурацию **Apache Zeppelin**, которая задана в файле конфигурации *$ZEPPELIN_HOME/conf/zeppelin-site.xml* (:numref:`Рис.%s.<zeppelin_ui_configurations>`).
+Ссылка "Configuration" (см. :numref:`Рис.%s.<zeppelin_ui_settings>`) отображает всю конфигурацию **Apache Zeppelin**, которая задана в файле конфигурации *$ZEPPELIN_HOME/conf/zeppelin-site.xml* (:numref:`Рис.%s.<zeppelin_ui_configurations>`).
 
 
 .. _zeppelin_ui_configurations:
@@ -110,5 +110,42 @@
 
 Набор инструментов
 ^^^^^^^^^^^^^^^^^^
+
+Каждая заметка **Apache Zeppelin** состоит из нескольких параграфов (:numref:`Рис.%s.<zeppelin_ui_layout>`). Заметки можно рассматривать как контейнер параграфов.
+
+
+.. _zeppelin_ui_layout:
+
+.. figure:: ../imgs/zeppelin_ui_layout.*
+   :align: center
+
+   Note Layout
+
+Каждый параграф состоит из двух разделов: *code section*, в который помещается исходный код, и *result section*, где можно увидеть результат выполнения кода (:numref:`Рис.%s.<zeppelin_ui_paragraph>`).
+
+
+.. _zeppelin_ui_paragraph:
+
+.. figure:: ../imgs/zeppelin_ui_paragraph.*
+   :align: center
+
+   Разделы параграфа
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
