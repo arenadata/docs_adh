@@ -156,12 +156,27 @@ Python 2 & 3 Interpreter для Apache Zeppelin
  
 Существует удобный интерпретатор *%python.sql*, который соответствует опыту **Apache Spark** в **Zeppelin** и позволяет использовать язык **SQL** для запроса **Pandas DataFrames** и визуализации результатов через встроенную систему отображения таблиц `Table Display System <https://zeppelin.apache.org/docs/0.7.3/displaysystem/basicdisplaysystem.html#table>`_.
  
+Предварительные запросы:
+
++ Pandas *pip install pandas*
++ PandaSQL *pip install -U pandasql*
  
+В случае, если по умолчанию выбран интерпретатор **Python** (первый в списке интерпретаторов под значком шестеренки), можно его указывать просто *%sql*:
+
++ Первый параграф:
+
+   ::
+   
+    import pandas as pd
+    rates = pd.read_csv("bank.csv", sep=";")
  
++ Следующий параграф:
+
+   ::
+   
+    %sql
+    SELECT * FROM rates WHERE age < 40
  
- 
- 
- 
- 
+В противном случае -- *%python.sql*.
  
  
