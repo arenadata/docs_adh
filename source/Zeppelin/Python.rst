@@ -151,6 +151,8 @@ Python 2 & 3 Interpreter для Apache Zeppelin
    z.show(rates)
  
  
+ SQL поверх Pandas DataFrames
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
  
  
  
