@@ -36,7 +36,7 @@ Python 2 & 3 Interpreter для Apache Zeppelin
 
 + Conda
 
-**Conda** -- это система управления пакетами и экосистемой для *python*. Интерпретатор *%python.conda* позволяет переключаться между средами
+**Conda** -- это система управления пакетами и экосистемой для *python*. Интерпретатор *%python.conda* позволяет переключаться между средами.
 
 Перечень экосистем:
 
@@ -52,7 +52,7 @@ Python 2 & 3 Interpreter для Apache Zeppelin
 
 + Докер
 
-Интерпретатор *%python.docker* позволяет *PythonInterpreter* создавать процесс *python* в указанном докер-контейнере 
+Интерпретатор *%python.docker* позволяет *PythonInterpreter* создавать процесс *python* в указанном докер-контейнере. 
 
 Активация экосистемы:
 
@@ -64,7 +64,7 @@ Python 2 & 3 Interpreter для Apache Zeppelin
 
 Деактивация экосистемы:
 
-:command:`%python.docker deactivate`
+  :command:`%python.docker deactivate`
 
 Пример:
 
@@ -74,8 +74,30 @@ Python 2 & 3 Interpreter для Apache Zeppelin
    %python.docker activate gcr.io/tensorflow/tensorflow:latest
 
 
+Использование Zeppelin Dynamic Forms
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Динамическую форму **Zeppelin** можно использовать внутри кода **Python** (см. `подробное описание <https://zeppelin.apache.org/docs/0.7.3/manual/dynamicform.html>`_).
+
+**Zeppelin Dynamic Form** может использоваться только в том случае, если в системе установлена *py4j Python library*. Ее можно установить с помощью *pip install py4j*.
+
+Пример:
+
+  ::
+  
+   %python
+   ### Input form
+   print (z.input("f1","defaultValue"))
+
+   ### Select form
+   print (z.select("f1",[("o1","1"),("o2","2")],"2"))
+
+   ### Checkbox form
+   print("".join(z.checkbox("f3", [("o1","1"), ("o2","2")],["1"])))
 
 
+Интеграция Matplotlib
+^^^^^^^^^^^^^^^^^^^^^
 
 
 
