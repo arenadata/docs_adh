@@ -6,6 +6,12 @@ Python 2 & 3 Interpreter для Apache Zeppelin
 
 
 
+.. csv-table:: Дополнительные компоненты
+   :header: "Параметр", "Значение по умолчанию", "Описание"
+   :widths: 10, 45, 45
+
+   "zeppelin.python", "python", "Путь к уже установленному бинарному Python (может быть *python2* или *python3*). Если *python* нет в  *$PATH*, можно установить полный каталог (например: */usr/bin/python*)"
+   "zeppelin.python.maxResult", "1000", "Максимальное количество строк данных для отображения"
 
 
 
