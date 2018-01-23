@@ -139,3 +139,25 @@ Python 2 & 3 Interpreter для Apache Zeppelin
    Интеграция Matplotlib
 
  
+ Интеграция Pandas
+ ^^^^^^^^^^^^^^^^^
+ 
+Система отображения таблиц **Apache Zeppelin** предоставляет встроенные возможности визуализации данных. Интерпретатор **Python** использует его для визуализации **Pandas DataFrames**, аналогично функции *z.show()* интеграциb библиотек *matplotlib* (`Интеграция Matplotlib`_). Например:
+
+  ::
+  
+   import pandas as pd
+   rates = pd.read_csv("bank.csv", sep=";")
+   z.show(rates)
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
