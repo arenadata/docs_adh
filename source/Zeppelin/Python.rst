@@ -153,8 +153,8 @@ Python 2 & 3 Interpreter для Apache Zeppelin
    z.show(rates)
  
  
- SQL поверх Pandas DataFrames
- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+SQL поверх Pandas DataFrames
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
  
 Существует удобный интерпретатор *%python.sql*, который соответствует опыту **Apache Spark** в **Zeppelin** и позволяет использовать язык **SQL** для запроса **Pandas DataFrames** и визуализации результатов через встроенную систему отображения таблиц `Table Display System <https://zeppelin.apache.org/docs/0.7.3/displaysystem/basicdisplaysystem.html#table>`_.
  
