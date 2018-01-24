@@ -130,7 +130,7 @@ Python 2 & 3 Interpreter для Apache Zeppelin
    z.show(plt, width='50px')
    z.show(plt, height='150px', fmt='svg')
 
-
+Рисунок:
 
 .. _zeppelin_python_matplotlib:
 
