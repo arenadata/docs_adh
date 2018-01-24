@@ -134,11 +134,10 @@ Python 2 & 3 Interpreter для Apache Zeppelin
 
 .. _zeppelin_python_matplotlib:
 
-.. figure:: ../imgs/zeppelin_python_matplotlib.*
+.. figure:: ../imgs/zeppelin_python_matplotlib.* 
    :align: center
 
    Интеграция Matplotlib
-
 
 
  
