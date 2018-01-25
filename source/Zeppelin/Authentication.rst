@@ -20,7 +20,7 @@
 
 `Apache Shiro <http://shiro.apache.org/>`_ -- это мощная и простая в использовании платформа безопасности **Java**, выполняющая аутентификацию, авторизацию, криптографию и управление сессиями. В данном разделе объясняется, как **Shiro** работает для аутентификации блокнота **Zeppelin**.
 
-При подключении к **Apache Zeppelin** предлагается ввести учетные данные. После входа в систему появляется доступ ко всем заметкам, включая заметки других пользователей.
+При подключении к **Apache Zeppelin** необходимо ввести учетные данные. После входа в систему появляется доступ ко всем заметкам, включая заметки других пользователей.
 
 
 Настройка безопасности
@@ -62,7 +62,7 @@
 
    Авторизация в Apache Zeppelin
 
-Можно установить роли для каждого пользователя рядом с паролем:
+Рядом с паролем можно установить роли для каждого пользователя:
 
    ::
    
@@ -78,7 +78,7 @@
 Группы и разрешения (опционально)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Для использования групп пользователей и разрешений, необходимо применить одну из следующих конфигураций для **LDAP** или **AD** в *[main]* в файле *shiro.ini*:
+Для использования групп пользователей и разрешений необходимо применить одну из следующих конфигураций для **LDAP** или **AD** в секции *[main]* в файле *shiro.ini*:
 
    ::
     
@@ -113,7 +113,7 @@
 Настройка Realm (опционально)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Realms** отвечают за аутентификацию и авторизацию в **Apache Zeppelin**. По умолчанию **Apache Zeppelin** использует `IniRealm <https://shiro.apache.org/static/latest/apidocs/org/apache/shiro/realm/text/IniRealm.html>`_ (пользователи и группы настраиваются в файле *conf/shiro.ini* в секциях *[user]* и *[group]*). Также можно использовать **Shiro Realms**, такие как `JndiLdapRealm <https://shiro.apache.org/static/latest/apidocs/org/apache/shiro/realm/ldap/JndiLdapRealm.html>`_, `JdbcRealm <https://shiro.apache.org/static/latest/apidocs/org/apache/shiro/realm/jdbc/JdbcRealm.html>`_ или `создать собственный <https://shiro.apache.org/static/latest/apidocs/org/apache/shiro/realm/AuthorizingRealm.html>`_. Подробная документация о **Apache Shiro Realm** представлена в документации по `ссылке <http://shiro.apache.org/realm.html>`_.
+**Realms** отвечают за аутентификацию и авторизацию в **Apache Zeppelin**. По умолчанию **Apache Zeppelin** использует `IniRealm <https://shiro.apache.org/static/latest/apidocs/org/apache/shiro/realm/text/IniRealm.html>`_ (пользователи и группы настраиваются в файле *conf/shiro.ini* в секциях *[user]* и *[group]*). Также можно использовать **Shiro Realms**, такие как `JndiLdapRealm <https://shiro.apache.org/static/latest/apidocs/org/apache/shiro/realm/ldap/JndiLdapRealm.html>`_, `JdbcRealm <https://shiro.apache.org/static/latest/apidocs/org/apache/shiro/realm/jdbc/JdbcRealm.html>`_ или `создать собственный <https://shiro.apache.org/static/latest/apidocs/org/apache/shiro/realm/AuthorizingRealm.html>`_. Подробная документация о **Apache Shiro Realm** представлена по `ссылке <http://shiro.apache.org/realm.html>`_.
 
 
 Active Directory
@@ -212,7 +212,7 @@ ZeppelinHub
     sessionManager.sessionIdCookie = $cookie
 
 
-Защитита информации Zeppelin (опционально)
+Защита информации Zeppelin (опционально)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 По умолчанию любой пользователь, определенный в *[users]*, может видеть информацию о параметрах интерпретатора, учетные данные и настройки в **Apache Zeppelin**. В случае если данную информацию необходимо скрыть, поскольку **Shiro** обеспечивает защиту на основе url, следует закомментировать или раскомментировать приведенные ниже строки в *conf/shiro.ini*:
@@ -225,7 +225,7 @@ ZeppelinHub
     /api/configurations/** = authc, roles[admin]
     /api/credential/** = authc, roles[admin]
 
-В таком случае информацию о настройках интерпретатора, учетных данных и конфигурации в **Apache Zeppelin** могут видеть только пользователи с ролью *admin*. При необходимости предоставления прав другим пользователям, следует изменить роли в секции *[users]*.
+В таком случае информацию о настройках интерпретатора, учетных данных и конфигурации в **Apache Zeppelin** могут видеть только пользователи с ролью *admin*. При необходимости предоставления прав другим пользователям следует изменить роли в секции *[users]*.
 
 
 
