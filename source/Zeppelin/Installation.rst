@@ -9,7 +9,7 @@
 
 + `Предоставляемые сообществом интерпретаторы`_
 
-.. important:: После установки интерпретаторов необходимо перезапустить Apache Zeppelin, выполнить настройку интерпретатора и привязать его к блокноту (`Apache Zeppelin <http://docs.arenadata.io/adh/v1.4/Zeppelin/Interpreters.html>`_)
+.. important:: После установки интерпретаторов необходимо перезапустить Apache Zeppelin, выполнить настройку интерпретатора и привязать его к блокноту (`Интерпретаторы в Apache Zeppelin <http://docs.arenadata.io/adh/v1.4/Zeppelin/Interpreters.html>`_)
 
 
 Установка интерпретаторов сообщества
