@@ -231,4 +231,4 @@ ZeppelinHub
 
 Альтернативные методы аутентификации
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-`HTTP аутентификация с помощью NGINX https://zeppelin.apache.org/docs/0.7.3/security/authentication.html`_
+`HTTP аутентификация с помощью NGINX <https://zeppelin.apache.org/docs/0.7.3/security/authentication.html>`_
