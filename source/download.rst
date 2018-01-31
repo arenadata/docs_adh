@@ -19,3 +19,6 @@
 
 `Скачать Release Notes`_
  .. _Скачать Release Notes: https://storage.googleapis.com/arenadata-repo/docs/adh/pdf/v1.4/Release%20Notes.pdf
+
+`Скачать руководство по работе с Apache Zeppelin`_
+ .. _Скачать руководство по работе с Apache Zeppelin: https://storage.googleapis.com/arenadata-repo/docs/adh/pdf/v1.4/Руководство%20по%20работе%20с%20Apache%20Zeppelin.pdf
