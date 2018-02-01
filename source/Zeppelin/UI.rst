@@ -13,7 +13,7 @@
 
 .. _zeppelin_ui_main-home:
 
-.. figure:: ../imgs/zeppelin_ui_main-home.*у
+.. figure:: ../imgs/zeppelin_ui_main-home.*
    :align: center
 
    Главная страница Apache Zeppelin
