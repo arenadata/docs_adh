@@ -169,27 +169,48 @@ LDAP
     ldapRealm.contextFactory.authenticationMechanism=simple ldapRealm.contextFactory.url=ldap://localhost:33389  ldapRealm.userDnTemplate=uid={0},ou=people,dc=hadoop,dc=apache,dc=org
 
 **Возможность задать параметр ldap paging. Размер по умолчанию - 100**
-ldapRealm.pagingSize = 200 ldapRealm.authorizationEnabled=true ldapRealm.contextFactory.systemAuthenticationMechanism=simple ldapRealm.searchBase=dc=hadoop,dc=apache,dc=org ldapRealm.userSearchBase = dc=hadoop,dc=apache,dc=org ldapRealm.groupSearchBase = ou=groups,dc=hadoop,dc=apache,dc=org ldapRealm.groupObjectClass=groupofnames
+
+   ::
+    
+    ldapRealm.pagingSize = 200 ldapRealm.authorizationEnabled=true ldapRealm.contextFactory.systemAuthenticationMechanism=simple ldapRealm.searchBase=dc=hadoop,dc=apache,dc=org ldapRealm.userSearchBase = dc=hadoop,dc=apache,dc=org ldapRealm.groupSearchBase = ou=groups,dc=hadoop,dc=apache,dc=org ldapRealm.groupObjectClass=groupofnames
 
 **Возможность  настройки параметра userSearchAttribute**
-ldapRealm.userSearchAttributeName = sAMAccountName ldapRealm.memberAttribute=member
+
+   ::
+    
+    ldapRealm.userSearchAttributeName = sAMAccountName ldapRealm.memberAttribute=member
 
 **Возврат имен пользователей из ldap в ниженем регистре  для использования в AD**
-ldapRealm.userLowerCase = true
+
+   ::
+    
+    ldapRealm.userLowerCase = true
 
 **Возможность установить парметр searchScopes в одно из трех значений: subtree (по умолчанию), one или base**
-ldapRealm.userSearchScope = subtree; ldapRealm.groupSearchScope = subtree; ldapRealm.memberAttributeValueTemplate=cn={0},ou=people,dc=hadoop,dc=apache,dc=org ldapRealm.contextFactory.systemUsername=uid=guest,ou=people,dc=hadoop,dc=apache,dc=org ldapRealm.contextFactory.systemPassword=S{ALIAS=ldcSystemPassword}
+
+   ::
+    
+    ldapRealm.userSearchScope = subtree; ldapRealm.groupSearchScope = subtree; ldapRealm.memberAttributeValueTemplate=cn={0},ou=people,dc=hadoop,dc=apache,dc=org ldapRealm.contextFactory.systemUsername=uid=guest,ou=people,dc=hadoop,dc=apache,dc=org ldapRealm.contextFactory.systemPassword=S{ALIAS=ldcSystemPassword}
 
 **Включение поддержки вложенных групп при помощи оператора LDAPMATCHINGRULEINCHAIN**
-ldapRealm.groupSearchEnableMatchingRuleInChain = true
+
+   ::
+    
+    ldapRealm.groupSearchEnableMatchingRuleInChain = true
 
 **Дополительная настройка соответствий между физическими группами и  логическими ролями приложений**
-ldapRealm.rolesByGroup = LDNUSERS: userrole, NYKUSERS: userrole, HKGUSERS: userrole, GLOBALADMIN: adminrole
+
+   ::
+    
+    ldapRealm.rolesByGroup = LDNUSERS: userrole, NYKUSERS: userrole, HKGUSERS: userrole, GLOBALADMIN: adminrole
 
 **Дополнительный список ролей, которым разрешена аутентификация. В случае если список не представлен, всем ролям разрешается аутентификация (вход)**
 
-**Данные изменения не влияют на специфические права url. Для url будут работать те права, котрые указаны в разделе [urls].**
-ldapRealm.allowedRolesForAuthentication = adminrole,userrole ldapRealm.permissionsByRole= userrole = :ToDoItemsJdo::, *:ToDoItem::*; adminrole = * securityManager.sessionManager = $sessionManager securityManager.realms = $ldapRealm ```
+**Данные изменения не влияют на специфические права url. Для url будут работать те права, котрые указаны в разделе [urls]**
+
+   ::
+    
+    ldapRealm.allowedRolesForAuthentication = adminrole,userrole ldapRealm.permissionsByRole= userrole = :ToDoItemsJdo::, *:ToDoItem::*; adminrole = * securityManager.sessionManager = $sessionManager securityManager.realms = $ldapRealm ```
 
 
 РАМ
