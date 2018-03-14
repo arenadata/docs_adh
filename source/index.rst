@@ -69,7 +69,7 @@
    SecurityAmbari/index
    HDFSadmin/index
    ReleaseNotes/index
-   Zeppelin/index
+   Grid/index
    Glossary
 
 .. toctree::
