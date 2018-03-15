@@ -21,14 +21,16 @@
 # sys.path.insert(0, os.path.abspath('.'))
 import sphinx_rtd_theme
 import datetime
-import subprocess
 
 from string import Template
 
 # -- General configuration ------------------------------------------------
 now = datetime.datetime.now()
-branch = subprocess.check_output(['git', 'rev-parse', '--abbrev-ref', 'HEAD']).decode('utf-8')
 
+# branch = subprocess.Popen(['git', 'rev-parse', '--abbrev-ref', 'HEAD'],
+#                           stdout=subprocess.PIPE).communicate()[0].decode('utf-8')
+
+branch = "v1.4"
 title = Template(r"""
             \pagenumbering{Roman} %%% to avoid page 1 conflict with actual page 1
             \begin{titlepage}
@@ -82,7 +84,6 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-
 
 project = u'Arenadata'
 copyright = u'{}, Arenadata.io'.format(now.year)
@@ -157,7 +158,7 @@ html_sidebars = {
 # Output file base name for HTML help builder.
 htmlhelp_basename = 'Arenadatadoc'
 
-today = '{}, Arenadata™'.format(branch)
+today = '{}, Arenadata™'.format(now.year)
 latex_keep_old_macro_names = True
 latex_logo = '../_static/logo.png'
 
@@ -233,7 +234,6 @@ latex_elements = {
 
         \renewcommand{\baselinestretch}{1}
     ''',
-
 
     'maketitle': title,
 
