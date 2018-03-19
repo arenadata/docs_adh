@@ -284,8 +284,29 @@
    cfg.setDiscoverySpi(discoverySpi);
 
 
+Принудительный режим сервера на клиентских узлах
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Для запуска клиентских узлов требуются активные серверные узлы.
 
+Однако, чтобы запустить клиентский узел без запущенного узла сервера, можно принудительно выполнить режим сервера на клиентских узлах следующим образом:
 
++ Java:
+
+  ::
+  
+   IgniteConfiguration cfg = new IgniteConfiguration();
+   
+   cfg.setClientMode(true);
+   
+   // Configure Ignite here.
+   
+   TcpDiscoverySpi discoverySpi = new TcpDiscoverySpi();
+   
+   discoverySpi.setForceServerMode(true);
+   
+   cfg.setDiscoverySpi(discoverySpi);
+
+В этом случае запуск будет происходить так, как если бы все узлы были активными узлами сервера. При этом все адреса, используемые **SPI** запуск на всех узлах, должны быть взаимно достижимы.
 
 
