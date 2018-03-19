@@ -170,7 +170,7 @@
    clientCompute.broadcast(() -> System.out.println("Hello Client"));
 
 
-Управление медленными клиентами (Slow Clients)
+Управление "медленными" клиентами (Slow Clients)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Во многих случаях развертывания клиентские узлы запускаются вне основного кластера на более медленных машинах с худшей сетью. При этом возможно, что серверы будут генерировать нагрузку (например, уведомления о непрерывных запросах), которую клиенты не смогут обрабатывать, что в свою очередь приводит к увеличению очереди исходящих сообщений на серверах. Это может в конечном счете вызвать либо ситуацию с недостаточным объемом памяти на сервере, либо заблокировать весь кластер (если включен контроль обратного давления).
@@ -205,6 +205,87 @@
        </bean>
      </property>
    </bean>
+
+
+Повторное подключение клиента
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Клиентские узлы могут быть отключены от кластера в нескольких случаях:
+
++ Когда клиентский узел не может восстановить соединение с узлом сервера из-за сетевых проблем;
++ Соединение с узлом сервера нарушено в течение некоторого времени; клиентский узел может восстановить соединение с сервером, но сервер уже удалил клиентский узел, так как не получал сигнал;
++ "Медленные" клиенты могут быть отброшены узлами сервера.
+
+Когда клиент устанавливает отключение от кластера, он присваивает узлу новый идентификатор "id" и пытается подключиться к кластеру. Важно знать, что это имеет побочный эффект - свойство "id" локального *ClusterNode* изменится в случае повторного подключения клиента. Это означает, что может быть затронута любая логика приложения, основанная на значении "id".
+
+Пока клиент находится в отключенном состоянии, и выполняется попытка повторного подключения, API-интерфейс **Grid** генерирует специальное исключение - *IgniteClientDisconnectedException*. Это исключение обеспечивает *future*, которое будет завершено при повторном подключении клиента к кластеру (API-интерфейс *IgniteCache* выдает *CacheException*, у которого в этом случае *IgniteClientDisconnectedException*). Это *future* можно также получить с помощью метода *IgniteCluster.clientReconnectFuture()*.
+
+Кроме того, для повторного подключения клиента существуют специальные события (эти события являются локальными, то есть они запускаются только на клиентском узле):
+
++ *EventType.EVT_CLIENT_NODE_DISCONNECTED*
++ *EventType.EVT_CLIENT_NODE_RECONNECTED*
+
+В следующем примере показано, как использовать *IgniteClientDisconnectedException*:
+
++ Compute:
+
+  ::
+  
+   IgniteCompute compute = ignite.compute();
+   
+   while (true) {
+       try {
+           compute.run(job);
+       }
+       catch (IgniteClientDisconnectedException e) {
+           e.reconnectFuture().get(); // Wait for reconnection.
+   
+           // Can proceed and use the same IgniteCompute instance.
+       }
+   }
+
++ Cache:
+
+  ::
+  
+   IgniteCache cache = ignite.getOrCreateCache(new CacheConfiguration<>());
+   
+   while (true) {
+     try {
+       cache.put(key, val);
+     }
+     catch (CacheException e) {
+       if (e.getCause() instanceof IgniteClientDisconnectedException) {
+         IgniteClientDisconnectedException cause =
+           (IgniteClientDisconnectedException)e.getCause();
+   
+         cause.reconnectFuture().get(); // Wait for reconnection.
+   
+         // Can proceed and use the same IgniteCache instance.
+       }
+     }
+   }
+
+
+Автоматическое повторное подключение клиента можно отключить с помощью свойства *clientReconnectDisabled* на *TcpDiscoverySpi*. Если переподключение отключено, клиентский узел останавливается.
+
++ Java:
+
+  ::
+  
+   IgniteConfiguration cfg = new IgniteConfiguration();
+   
+   // Configure Ignite here.
+   
+   TcpDiscoverySpi discoverySpi = new TcpDiscoverySpi();
+   
+   discoverySpi.setClientReconnectDisabled(true);
+   
+   cfg.setDiscoverySpi(discoverySpi);
+
+
+
+
 
 
 
