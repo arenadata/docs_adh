@@ -116,6 +116,65 @@
    Ignite ignite = Ignition.start();
 
 
+Создание распределенных кэшей
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Всякий раз при создании кэшей в **Grid** в **XML** либо при помощи метода *Ignite.createCache(...)* или *Ignite.getOrCreateCache(...)*, **ADG** автоматически развертывает распределенный кэш на всех узлах сервера. 
+
+.. important:: Как только распределенный кэш будет создан, он будет автоматически развернут на всех существующих и будущих узлах сервера
+
++ Java:
+
+  ::
+  
+   // Enable client mode locally.
+   Ignition.setClientMode(true);
+   
+   // Start Ignite in client mode.
+   Ignite ignite = Ignition.start();
+   
+   CacheConfiguration cfg = new CacheConfiguration("myCache");
+   
+   // Set required cache configuration properties.
+   ...
+   
+   // Create cache on all the existing and future server nodes.
+   // Note that since the local node is a client, it will not 
+   // be caching any data.
+   IgniteCache<?, ?> cache = ignite.getOrCreateCache(cfg);
+
+
+Вычисление на клиентах или серверах
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+По умолчанию *IgniteCompute* выполняет задания на всех узлах сервера. Но при этом можно выбрать выполнение заданий только на узлах сервера или только на клиентских узлах, создав соответствующую группу кластеров:
+
++ Compute on Servers:
+
+  ::
+  
+   IgniteCompute compute = ignite.compute();
+   
+   // Execute computation on the server nodes (default behavior).
+   compute.broadcast(() -> System.out.println("Hello Server"));
+
++ Compute on Clients:
+
+  ::
+  
+   ClusterGroup clientGroup = ignite.cluster().forClients();
+   
+   IgniteCompute clientCompute = ignite.compute(clientGroup);
+   
+   // Execute computation on the client nodes.
+   clientCompute.broadcast(() -> System.out.println("Hello Client"));
+
+
+Управление медленными клиентами (Slow Clients)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
 
 
 
