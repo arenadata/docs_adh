@@ -173,11 +173,38 @@
 Управление медленными клиентами (Slow Clients)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Во многих случаях развертывания клиентские узлы запускаются вне основного кластера на более медленных машинах с худшей сетью. При этом возможно, что серверы будут генерировать нагрузку (например, уведомления о непрерывных запросах), которую клиенты не смогут обрабатывать, что в свою очередь приводит к увеличению очереди исходящих сообщений на серверах. Это может в конечном счете вызвать либо ситуацию с недостаточным объемом памяти на сервере, либо заблокировать весь кластер (если включен контроль обратного давления).
 
+Для управления подобными ситуациями можно настроить максимальное количество разрешенных исходящих сообщений для клиентских узлов. Тогда в случае если размер исходящей очереди превышает указанное значение, клиентский узел отключается от кластера, предотвращая глобальное замедление.
 
+В приведенных ниже примерах показано, как настроить ограничение очереди Slow Clients в коде и XML-конфигурации:
 
++ Java:
 
+  ::
+  
+   IgniteConfiguration cfg = new IgniteConfiguration();
+   
+   // Configure Ignite here.
+   
+   TcpCommunicationSpi commSpi = new TcpCommunicationSpi();
+   commSpi.setSlowClientQueueLimit(1000);
+   
+   cfg.setCommunicationSpi(commSpi);
 
++ XML:
+
+  ::
+  
+   <bean id="grid.cfg" class="org.apache.ignite.configuration.IgniteConfiguration">
+     <!-- Configure Ignite here. -->
+     
+     <property name="communicationSpi">
+       <bean class="org.apache.ignite.spi.communication.tcp.TcpCommunicationSpi">
+         <property name="slowClientQueueLimit" value="1000"/>
+       </bean>
+     </property>
+   </bean>
 
 
 
