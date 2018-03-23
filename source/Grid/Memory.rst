@@ -1,7 +1,7 @@
 Durable Memory
 --------------
 
-+ `Durable Memory`_
++ `Durable Memory <http://docs.arenadata.io/adh/v1.4/Grid/Memory.html#id1>`_
 + `Архитектура памяти`_
 + `Конфигурация памяти`_
 
