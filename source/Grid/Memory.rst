@@ -337,6 +337,64 @@ B+ деревья и индексные страницы
    // Applying the new configuration.
    cfg.setDataStorageConfiguration(storageCfg);
 
+Затем, чтобы использовать настроенную область, необходимо поручить **Grid caches** хранить там данные, передав имя области (*500MB_Region*) в метод *org.apache.ignite.configuration.CacheConfiguration.setDataRegionName(...)*:
+
++ XML:
+
+  ::
+  
+   <bean class="org.apache.ignite.configuration.IgniteConfiguration">
+       <!-- Durable Memory and other configuration parameters. -->
+       <!-- ....... -->
+     
+       <property name="cacheConfiguration">
+          <list>
+              <!-- Cache that is mapped to a specific data region. -->
+              <bean class="org.apache.ignite.configuration.CacheConfiguration">
+                 <!--
+                      Assigning the cache to the `500MB_Region` defined earlier.
+                  -->
+                  <property name="dataRegionName" value="500MB_Region"/>
+                  
+                	 <!-- Cache name. -->
+                  <property name="name" value="SampleCache"/>
+                
+                  <!-- Additional cache configuration parameters -->
+              </bean>
+          </list>
+       </property>
+       
+       <!-- The rest of the configuration. -->
+       <!-- ....... -->
+   </bean>  
+
++ Java:
+
+  ::
+  
+   // Ignite configuration.
+   IgniteConfiguration cfg = new IgniteConfiguration();
+   
+   // Durable Memory configuration and the rest of the configuration.
+   // ....
+   
+   // Creating a cache configuration.
+   CacheConfiguration cacheCfg = new CacheConfiguration();
+   
+   // Binding the cache to the earlier defined region.
+   cacheCfg.setDataRegionName("500MB_Region");
+           
+   // Setting the cache name.
+   cacheCfg.setName("SampleCache");
+   
+   // Applying the cache configuration.
+   cfg.setCacheConfiguration(cacheCfg);
+
+
+Как только узел кластера запускается с настроенной конфигурацией, долговременная память выделяет область данных, изначально потребляющую *100 МБ* **RAM**, и которая при этом может вырасти до *500 МБ*. Надмножество данных всегда хранится на диске, гарантируя, что потеря данных не произойдет, даже если в оперативной памяти больше не останется свободного места. **Grid** автоматически вытесняет наименее недавно используемые данные из **RAM** при включенном персистенсе. Заданная область хранит данные, добавленные только в *SampleCache*. Остальные кэши направляются к области данных по умолчанию, если не указана иная.
+
+
+
 
 Кэширование On-heap
 ~~~~~~~~~~~~~~~~~~~
