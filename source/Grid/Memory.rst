@@ -153,3 +153,69 @@ B+ деревья и индексные страницы
 Конфигурация памяти
 ^^^^^^^^^^^^^^^^^^^
 
+По умолчанию узлы **Grid** потребляют до *20%* оперативной памяти, доступной локально, и в большинстве случаев это единственный параметр, который может потребоваться изменить. Для этого следует внести правки в размер области данных, как показано ниже:
+
++ XML:
+
+  ::
+  
+   <bean class="org.apache.ignite.configuration.IgniteConfiguration">
+   
+   <!-- Redefining maximum memory size for the cluster node usage. -->  
+   <property name="dataStorageConfiguration">
+     <bean class="org.apache.ignite.configuration.DataStorageConfiguration">
+       <!-- Redefining the default region's settings -->
+       <property name="defaultDataRegionConfiguration">
+         <bean class="org.apache.ignite.configuration.DataRegionConfiguration">
+           <property name="name" value="Default_Region"/>
+           <!-- Setting the size of the default region to 4GB. -->
+           <property name="maxSize" value="#{4L * 1024 * 1024 * 1024}"/>
+         </bean>
+       </property>
+     </bean>
+   </property>
+     
+   <!-- The rest of the parameters. -->
+   </bean>
+
++ Java:
+
+  ::
+  
+   IgniteConfiguration cfg = new IgniteConfiguration();
+   
+   // Changing total RAM size to be used by Ignite Node.
+   DataStorageConfiguration storageCfg = new DataStorageConfiguration();
+   
+   // Setting the size of the default memory region to 4GB to achieve this.
+   storageCfg.getDefaultDataRegionConfiguration().setMaxSize(
+       4L * 1024 * 1024 * 1024);
+   
+   cfg.setDataStorageConfiguration(storageCfg);
+   
+   // Starting the node.
+   Ignition.start(cfg);
+
+
+Более подробные настройки долговоременной памяти приведены в следующих разделах:
+
++ `Общие параметры конфигурации`_
++ `Регионы данных`_
++ `Кэширование On-heap`_
+
+
+Общие параметры конфигурации
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Регионы данных
+~~~~~~~~~~~~~~
+
+
+Кэширование On-heap
+~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
