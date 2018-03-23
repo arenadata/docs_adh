@@ -267,6 +267,76 @@ B+ деревья и индексные страницы
 Области данных
 ~~~~~~~~~~~~~~
 
+По умолчанию долговременная память создает единую расширяемую область данных, которая может занимать до *20%* оперативной памяти, доступной на локальном компьютере, с отключенным персистенсом. Для определения нескольких областей данных с различными параметрами, такими как размер области, персистенс или политика вытеснения, используется класс *org.apache.ignite.configuration.DataRegionConfiguration*.
+
+Например, для создания области данных, потребляющей до *500 МБ* оперативной памяти и с включенным персистенсом, конфигурацию необходимо задать следующим образом:
+
++ XML:
+
+  ::
+  
+   <bean class="org.apache.ignite.configuration.IgniteConfiguration">
+     <!-- Durable memory configuration. -->
+     <property name="dataStorageConfiguration">
+       <bean class="org.apache.ignite.configuration.DataStorageConfiguration">
+         <property name="dataRegionConfigurations">
+           <list>
+             <!--
+                 Defining a data region that will consume up to 500 MB of RAM and 
+                 will have eviction and persistence enabled.
+             -->
+             <bean class="org.apache.ignite.configuration.DataRegionConfiguration">
+               <!-- Custom region name. -->
+               <property name="name" value="500MB_Region"/>
+   
+               <!-- 100 MB initial size. -->
+               <property name="initialSize" value="#{100L * 1024 * 1024}"/>
+   
+               <!-- 500 MB maximum size. -->
+               <property name="maxSize" value="#{500L * 1024 * 1024}"/>
+   
+               <!-- Enabling persistence for the region. -->
+               <property name="persistenceEnabled" value="true"/>
+             </bean>
+           </list>
+         </property>
+       </bean>
+     </property>
+     
+     <!-- Other configurations. -->
+   </bean>
+
++ Java:
+
+  ::
+  
+   // Ignite configuration.
+   IgniteConfiguration cfg = new IgniteConfiguration();
+   
+   // Durable Memory configuration.
+   DataStorageConfiguration storageCfg = new DataStorageConfiguration();
+   
+   // Creating a new data region.
+   DataRegionConfiguration regionCfg = new DataRegionConfiguration();
+   
+   // Region name.
+   regionCfg.setName("500MB_Region");
+   
+   // Setting initial RAM size.
+   regionCfg.setInitialSize(100L * 1024 * 1024);
+   
+   // Setting maximum RAM size.
+   regionCfg.setMaxSize(500L * 1024 * 1024);
+           
+   // Enable persistence for the region.
+   regionCfg.setPersistenceEnabled(true);
+           
+   // Setting the data region configuration.
+   storageCfg.setDataRegionConfigurations(regionCfg);
+           
+   // Applying the new configuration.
+   cfg.setDataStorageConfiguration(storageCfg);
+
 
 Кэширование On-heap
 ~~~~~~~~~~~~~~~~~~~
