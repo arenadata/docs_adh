@@ -224,9 +224,46 @@ B+ деревья и индексные страницы
    "setSystemRegionMaxSize(...)", "Устанавливает максимальный размер области данных, предназначенной для системных запросов. Не менее 10 МБ (из-за накладных расходов внутренних данных)", "100 MB"
    "setConcurrencyLevel(...)", "Устанавливает количество параллельных сегментов в таблицах сопоставления внутренних страниц ADG", "Общее количество доступных процессоров, умноженное на 4"
 
+В следующем примере показано, как изменить размер страницы и уровень параллелизма с помощью *DataStorageConfiguration*:
 
++ XML:
 
+  ::
+  
+   <bean class="org.apache.ignite.configuration.IgniteConfiguration">
+     <property name="dataStorageConfiguration">
+       <bean class="org.apache.ignite.configuration.DataStorageConfiguration">
+         <!-- Set concurrency level -->
+         <property name="concurrencyLevel" value="4"/>
+   
+         <!-- Set the page size to 8 KB -->
+         <property name="pageSize" value="8192"/>
+       </bean>
+     </property>
+     
+     <!--- Additional settings ---->
+   </bean>
 
++ Java:
+
+  ::
+  
+   // Ignite configuration.
+   IgniteConfiguration cfg = new IgniteConfiguration();
+   
+   // Durable memory configuration.
+   DataStorageConfiguration storageCfg = new DataStorageConfiguration();
+   
+   // Altering the concurrency level.
+   storageCfg.setConcurrencyLevel(4);
+   
+   // Changing the page size to 8 KB.
+   storageCfg.setPageSize(8192);
+   
+   // Applying the new configuration.
+   cfg.setDataStorageConfiguration(storageCfg);
+   
+   
 Области данных
 ~~~~~~~~~~~~~~
 
