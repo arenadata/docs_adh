@@ -27,6 +27,57 @@ IgniteCache.loadCache()
 
 .. important:: Персистенс ADG не требует прогрева оперативной памяти при перезапуске. Таким образом, методы загрузки, основаные на *IgniteCache.loadCache()*, не актуальны для данного вида персистентного хранения
 
+Для предварительной загрузки данных из стороннего хранилища, такого как реляционная база данных, следует использовать метод *IgniteCache.loadCache()*, позволяющий загружать данные кэша без передачи ключей, которые необходимо загрузить.
+
+Метод *IgniteCache.loadCache()* делегирует метод *CacheStore.loadCache()* для каждого элемента кластера. Чтобы вызвать загрузку только на локальном узле кластера, необходимо использовать метод *IgniteCache.localLoadCache()*.
+
+.. important:: В случае сегментированных кэшей и персистентности третьей стороны, такой как реляционная база данных, не сопоставленные с этим узлом ключи, так же как их овные и резервные копии, будут автоматически удалены. Это не относится к **Grid Persistent Store**, где каждый узел хранит только те данные, для которых он является основным или резервным
+
+Далее приведен пример использования реализации *CacheStore.loadCache()* для персистентности третьей стороны.
+
++ Java:
+
+  ::
+  
+   public class CacheJdbcPersonStore extends CacheStoreAdapter<Long, Person> {
+   	...
+     // This method is called whenever "IgniteCache.loadCache()" or
+     // "IgniteCache.localLoadCache()" methods are called.
+     @Override public void loadCache(IgniteBiInClosure<Long, Person> clo, Object... args) {
+       if (args == null || args.length == 0 || args[0] == null)
+         throw new CacheLoaderException("Expected entry count parameter is not provided.");
+   
+       final int entryCnt = (Integer)args[0];
+   
+       Connection conn = null;
+   
+       try (Connection conn = connection()) {
+         try (PreparedStatement st = conn.prepareStatement("select * from PERSONS")) {
+           try (ResultSet rs = st.executeQuery()) {
+             int cnt = 0;
+   
+             while (cnt < entryCnt && rs.next()) {
+               Person person = new Person(rs.getLong(1), rs.getString(2), rs.getString(3));
+   
+               clo.apply(person.getId(), person);
+   
+               cnt++;
+             }
+           }
+         }
+       }
+       catch (SQLException e) {
+         throw new CacheLoaderException("Failed to load values from cache store.", e);
+       }
+     }
+     ...
+   }
+
+
+Загрузка данных Partition-aware
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
 
 
 
