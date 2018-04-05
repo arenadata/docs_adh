@@ -401,4 +401,39 @@ SQL-запросы в **Grid** рассматриваются в разделе 
 
 .. important:: Независимо от режима синхронизации записи данные кэша всегда остаются полностью согласованными на всех участвующих узлах при использовании транзакций
 
+Режим синхронизации записи настраивается установкой свойства *writeSynchronizationMode* в параметре *CacheConfiguration*, например:
 
++ XML:
+
+  ::
+  
+   <bean class="org.apache.ignite.configuration.IgniteConfiguration">
+  	   ...
+       <property name="cacheConfiguration">
+           <bean class="org.apache.ignite.configuration.CacheConfiguration">
+              	<!-- Set a cache name. -->
+              	<property name="name" value="cacheName"/>
+             
+          	   <!-- Set write synchronization mode. -->
+    			   	<property name="writeSynchronizationMode" value="FULL_SYNC"/>      	
+    			   	... 
+           </bean>
+       </property>
+   </bean>
+
++ Java:
+
+  ::
+  
+   CacheConfiguration cacheCfg = new CacheConfiguration();
+   
+   cacheCfg.setName("cacheName");
+   
+   cacheCfg.setWriteSynchronizationMode(CacheWriteSynchronizationMode.FULL_SYNC);
+   
+   IgniteConfiguration cfg = new IgniteConfiguration();
+   
+   cfg.setCacheConfiguration(cacheCfg);
+   
+   // Start Ignite node.
+   Ignition.start(cfg);
