@@ -134,6 +134,131 @@ SQL-запросы в **Grid** рассматриваются в разделе 
    }
 
 
+Настройка запросов по аннотациям
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Индексы могут быть сконфигурированы из кода с помощью *@QuerySqlField* аннотаций. Чтобы сообщить **Grid**, какие типы следует индексировать, пары ключ-значение можно передать методу *CacheConfiguration.setIndexedTypes(MyKey.class, MyValue.class)*. Данный метод принимает только пары типов -- один для класса ключей и другой для класса значений.
+
++ Java:
+
+  ::
+   
+   public class Person implements Serializable {
+     /** Person ID (indexed). */
+     @QuerySqlField(index = true)
+     private long id;
+   
+     /** Organization ID (indexed). */
+     @QuerySqlField(index = true)
+     private long orgId;
+   
+     /** First name (not-indexed). */
+     @QuerySqlField
+     private String firstName;
+   
+     /** Last name (not indexed). */
+     @QuerySqlField
+     private String lastName;
+   
+     /** Resume text (create LUCENE-based TEXT index for this field). */
+     @QueryTextField
+     private String resume;
+   
+     /** Salary (indexed). */
+     @QuerySqlField(index = true)
+     private double salary;
+     
+     ...
+   }
+
+
+Настройка запросов с помощью QueryEntity
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Индексы и поля также можно настроить с помощью *org.apache.ignite.cache.QueryEntity*, удобным для конфигурации **XML** с **Spring**. Это эквивалентно использованию аннотации *@QuerySqlField*, поскольку аннотации классов преобразуются в сущности внутреннего запроса.
+
++ XML:
+
+  ::
+  
+   <bean class="org.apache.ignite.configuration.CacheConfiguration">
+       <property name="name" value="mycache"/>
+       <!-- Configure query entities -->
+       <property name="queryEntities">
+           <list>
+               <bean class="org.apache.ignite.cache.QueryEntity">
+                   <property name="keyType" value="java.lang.Long"/>
+                   <property name="valueType" value="org.apache.ignite.examples.Person"/>
+   
+                   <property name="fields">
+                       <map>
+                           <entry key="id" value="java.lang.Long"/>
+                           <entry key="orgId" value="java.lang.Long"/>
+                           <entry key="firstName" value="java.lang.String"/>
+                           <entry key="lastName" value="java.lang.String"/>
+                           <entry key="resume" value="java.lang.String"/>
+                           <entry key="salary" value="java.lang.Double"/>
+                       </map>
+                   </property>
+   
+                   <property name="indexes">
+                       <list>
+                           <bean class="org.apache.ignite.cache.QueryIndex">
+                               <constructor-arg value="id"/>
+                           </bean>
+                           <bean class="org.apache.ignite.cache.QueryIndex">
+                               <constructor-arg value="orgId"/>
+                           </bean>
+                           <bean class="org.apache.ignite.cache.QueryIndex">
+                               <constructor-arg value="salary"/>
+                           </bean>
+                       </list>
+                   </property>
+               </bean>
+           </list>
+       </property>
+   </bean>
+
++ Java:
+
+  ::
+  
+   CacheConfiguration<Long, Person> cacheCfg = new CacheConfiguration<>();
+   ...
+   cacheCfg.setName("mycache");
+   
+   // Setting up query entity.
+   QueryEntity queryEntity = new QueryEntity();
+   
+   queryEntity.setKeyType(Long.class.getName());
+   queryEntity.setValueType(Person.class.getName());
+   
+   // Listing query fields.
+   LinkedHashMap<String, String> fields = new LinkedHashMap();
+   
+   fields.put("id", Long.class.getName());
+   fields.put("orgId", Long.class.getName());
+   fields.put("firstName", String.class.getName());
+   fields.put("lastName", String.class.getName());
+   fields.put("resume", String.class.getName());
+   fields.put("salary", Double.class.getName());
+   
+   queryEntity.setFields(fields);
+   
+   // Listing indexes.
+   Collection<QueryIndex> indexes = new ArrayList<>(3);
+   
+   indexes.add(new QueryIndex("id"));
+   indexes.add(new QueryIndex("orgId"));
+   indexes.add(new QueryIndex("salary"));
+   
+   queryEntity.setIndexes(indexes);
+   ...
+   cacheCfg.setQueryEntities(Arrays.asList(queryEntity));
+   ...
+
+
+
 Режимы работы кэша
 ^^^^^^^^^^^^^^^^^^
 
