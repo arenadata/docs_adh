@@ -104,7 +104,55 @@ IgniteCache.loadCache()
 
 Ниже приведен пример фрагмента кода, демонстрирующий, как использовать *Affinity* для загрузки только локальных разделов. Пример кода является однопоточным, однако его можно эффективно распараллелить идентификатором раздела.
 
++ Java:
 
+  ::
+  
+   public class CacheJdbcPersonStore extends CacheStoreAdapter<Long, Person> {
+     // Will be automatically injected.
+     @IgniteInstanceResource
+     private Ignite ignite;
+     
+	   ...
+     // This mehtod is called whenever "IgniteCache.loadCache()" or
+     // "IgniteCache.localLoadCache()" methods are called.
+     @Override public void loadCache(IgniteBiInClosure<Long, Person> clo, Object... args) {
+       Affinity aff = ignite.affinity(cacheName);
+       ClusterNode locNode = ignite.cluster().localNode();
+       
+       try (Connection conn = connection()) {
+         for (int part : aff.primaryPartitions(locNode))
+           loadPartition(conn, part, clo);
+         
+         for (int part : aff.backupPartitions(locNode))
+           loadPartition(conn, part, clo);
+       }
+     }
+     
+     private void loadPartition(Connection conn, int part, IgniteBiInClosure<Long, Person> clo) {
+       try (PreparedStatement st = conn.prepareStatement("select * from PERSONS where partId=?")) {
+         st.setInt(1, part);
+         
+         try (ResultSet rs = st.executeQuery()) {
+           while (rs.next()) {
+             Person person = new Person(rs.getLong(1), rs.getString(2), rs.getString(3));
+             
+             clo.apply(person.getId(), person);
+           }
+         }
+       }
+       catch (SQLException e) {
+         throw new CacheLoaderException("Failed to load values from cache store.", e);
+       }
+     }
+     
+     ...
+   }
+
+
+Сопоставление ключей и разделов зависит от количества разделов, настроенных в функции *affinity* (*org.apache.ignite.cache.affinity.AffinityFunction*). При изменении ее конфигурации соответствующим образом должны быть обновлены записи идентификаторов разделов в базе данных.
+
+.. important:: Для соблюдения согласованности и долговечности Grid persistence поддерживает запись в формате Write-Ahead, включенной по умолчанию. Однако, это может повлиять на производительность кластера во время предварительной загрузки данных. Рекомендуется отключать WAL при предварительной загрузке данных и включать после ее завершения 
 
 
 
