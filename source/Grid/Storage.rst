@@ -45,7 +45,93 @@ Data Grid
 
 .. important:: Курсоры закрываются автоматически при вызове метода *QueryCursor.getAll()*. При итерации по курсору в цикле или при прямом получении *Iterator*, необходимо явно закрыть курсор или использовать синтаксис *AutoCloseable*
 
+Запросы сканирования позволяют запрашивать кэш в распределенной форме на основе определенного пользователем предиката:
 
++ scan:
+
+  ::
+  
+   IgniteCache<Long, Person> cache = ignite.cache("mycache");
+   
+   // Find only persons earning more than 1,000.
+   try (QueryCursor cursor = cache.query(new ScanQuery((k, p) -> p.getSalary() > 1000)) {
+     for (Person p : cursor)
+       System.out.println(p.toString());
+   }
+
++ java7 scan:
+
+  ::
+  
+   IgniteCache<Long, Person> cache = ignite.cache("mycache");
+   
+   // Find only persons earning more than 1,000.
+   IgniteBiPredicate<Long, Person> filter = new IgniteBiPredicate<>() {
+     @Override public boolean apply(Long key, Perons p) {
+     	return p.getSalary() > 1000;
+   	}
+   };
+   
+   try (QueryCursor cursor = cache.query(new ScanQuery(filter)) {
+     for (Person p : cursor)
+       System.out.println(p.toString());
+   }
+
+
+Запросы сканирования также поддерживают дополнительное закрытие трансформатора, которое позволяет преобразовать запись на узле сервера перед ее отправкой клиенту. Это полезно, например, когда требуется извлечь только несколько полей из большого объекта и минимизировать сетевой трафик. Пример ниже показывает, как извлекать только ключи и не отправлять объекты.
+
++ scan with transformer:
+
+  ::
+  
+   IgniteCache<Long, Person> cache = ignite.cache("mycache");
+   
+   // Get only keys for persons earning more than 1,000.
+   List<Long> keys = cache.query(new ScanQuery<Long, Person>(
+       (k, p) -> p.getSalary() > 1000), // Remote filter.
+       Cache.Entry::getKey              // Transformer.
+   ).getAll();
+
++ scan with transformer (Java 7):
+
+  ::
+  
+   IgniteCache<Long, Person> cache = ignite.cache("mycache");
+   
+   // Get only keys for persons earning more than 1,000.
+   List<Long> keys = cache.query(new ScanQuery<>(
+       // Remote filter.
+       new IgniteBiPredicate<Long, Person>() {
+           @Override public boolean apply(Long k, Person p) {
+               return p.getSalary() > 1000;
+           }
+       }),
+       // Transformer.
+       new IgniteClosure<Cache.Entry<Long, Person>, Long>() {
+           @Override public Long apply(Cache.Entry<Long, Person> e) {
+               return e.getKey();
+           }
+       }
+   ).getAll();
+
+
+SQL-запросы в **Grid** рассматриваются в разделе документации `SQL <https://apacheignite-sql.readme.io/docs/java-sql-api>`_.
+
+**Grid** также поддерживает текстовые запросы, основанные на **Lucene** индексировании.
+
++ text query:
+
+  ::
+  
+   IgniteCache<Long, Person> cache = ignite.cache("mycache");
+   
+   // Query for all people with "Master Degree" in their resumes.
+   TextQuery txt = new TextQuery(Person.class, "Master Degree");
+   
+   try (QueryCursor<Entry<Long, Person>> masters = cache.query(txt)) {
+     for (Entry<Long, Person> e : cursor)
+       System.out.println(e.getValue().toString());
+   }
 
 
 Режимы работы кэша
