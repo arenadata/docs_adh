@@ -285,11 +285,47 @@ StreamTransformer
 StreamVisitor
 ~~~~~~~~~~~~~~
 
+*StreamVisitor* также является удобной реализацией *StreamReceiver*, которая просматривает каждую запись ключ-значение в потоке. При этом пользователь не обновляет кэш. Если запись необходимо сохранить в кэше, следует вызвать любой из методов *cache.put(...)*.
 
+В приведенном примере имеется 2 кэша: "marketData" и "instruments". При получении меток рыночных данных, они помещаются в стример для кэша "marketData". *StreamVisitor* для "marketData" вызывается для элемента кластера, сопоставленного с конкретным обозначением рынка. В этот момент обновляется кэш "instrument" с последней рыночной ценой. При этом кэш "marketData" не обновляется вообще, оставаясь пустым. Он просто используется для совмещенной обработки рыночных данных в кластере непосредственно на том узле, где будут храниться данные.
 
++ Java:
 
-
-
-
+  ::
+  
+   CacheConfiguration<String, Double> mrktDataCfg = new CacheConfiguration<>("marketData");
+   CacheConfiguration<String, Double> instCfg = new CacheConfiguration<>("instruments");
+   
+   // Cache for market data ticks streamed into the system.
+   IgniteCache<String, Double> mrktData = ignite.getOrCreateCache(mrktDataCfg);
+   
+   // Cache for financial instruments.
+   IgniteCache<String, Double> instCache = ignite.getOrCreateCache(instCfg);
+   
+   try (IgniteDataStreamer<String, Integer> mktStmr = ignite.dataStreamer("marketData")) {
+     // Note that we do not populate 'marketData' cache (it remains empty).
+     // Instead we update the 'instruments' cache based on the latest market price.
+     mktStmr.receiver(StreamVisitor.from((cache, e) -> {
+       String symbol = e.getKey();
+       Double tick = e.getValue();
+   
+       Instrument inst = instCache.get(symbol);
+   
+       if (inst == null)
+         inst = new Instrument(symbol);
+   
+       // Update instrument price based on the latest market tick.
+       inst.setHigh(Math.max(inst.getLatest(), tick);
+       inst.setLow(Math.min(inst.getLatest(), tick);
+       inst.setLatest(tick);
+   
+       // Update instrument cache.
+       instCache.put(symbol, inst);
+     }));
+   
+     // Stream market data into Ignite.
+     for (Map.Entry<String, Double> tick : marketData)
+         mktStmr.addData(tick);
+   }
 
 
