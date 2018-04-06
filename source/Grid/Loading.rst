@@ -220,9 +220,69 @@ StreamReceiver
 StreamTransformer
 ~~~~~~~~~~~~~~~~~~
 
+*StreamTransformer* -- это удобная реализация *StreamReceiver*, которая обновляет данные в потоке кэша на основе его предыдущего значения. Обновление совмещенное, то есть оно происходит точно на узле кластера, где хранятся данные.
+
+В приведенном примере используется *StreamTransformer* для увеличения счетчика для каждого отдельного слова, найденного в текстовом потоке.
+
++ transformer:
+
+  ::
+  
+   CacheConfiguration cfg = new CacheConfiguration("wordCountCache");
+   
+   IgniteCache<String, Long> stmCache = ignite.getOrCreateCache(cfg);
+   
+   try (IgniteDataStreamer<String, Long> stmr = ignite.dataStreamer(stmCache.getName())) {
+     // Allow data updates.
+     stmr.allowOverwrite(true);
+   
+     // Configure data transformation to count instances of the same word.
+     stmr.receiver(StreamTransformer.from((e, arg) -> {
+       // Get current count.
+       Long val = e.getValue();
+   
+       // Increment count by 1.
+       e.setValue(val == null ? 1L : val + 1);
+   
+       return null;
+     }));
+   
+     // Stream words into the streamer cache.
+     for (String word : text)
+       stmr.addData(word, 1L);
+   }
+
++ java7 transformer:
+
+  ::
+  
+   CacheConfiguration cfg = new CacheConfiguration("wordCountCache");
+   
+   IgniteCache<Integer, Long> stmCache = ignite.getOrCreateCache(cfg);
+   
+   try (IgniteDataStreamer<String, Long> stmr = ignite.dataStreamer(stmCache.getName())) {
+     // Allow data updates.
+     stmr.allowOverwrite(true);
+   
+     // Configure data transformation to count instances of the same word.
+     stmr.receiver(new StreamTransformer<String, Long>() {
+       @Override public Object process(MutableEntry<String, Long> e, Object... args) {
+         // Get current count.
+         Long val = e.getValue();
+   
+         // Increment count by 1.
+         e.setValue(val == null ? 1L : val + 1);
+   
+         return null;
+       }
+     });
+   
+     // Stream words into the streamer cache.
+     for (String word : text)
+       stmr.addData(word, 1L);
 
 
-
-
+StreamVisitor
+~~~~~~~~~~~~~~
 
 
