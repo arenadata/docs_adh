@@ -18,3 +18,4 @@
    Architecture
    API
    Config
+   Operations
