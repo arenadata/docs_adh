@@ -71,7 +71,7 @@
    HDFSadmin/index
    ReleaseNotes/index
    Grid/index
-   AMQ/index
+   Streaming/index
    Glossary
 
 .. toctree::
