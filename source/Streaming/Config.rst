@@ -67,7 +67,7 @@
 **broker.id** -- Идентификатор брокера для сервера. Если значение не установлено, создается уникальный идентификатор брокера. Чтобы избежать конфликтов между id брокера, созданными с помощью zookeeper, и id брокера, настроенными пользователем, генерация идентификаторов брокера начинается с *reserved.broker.max.id + 1*
 
 + TYPE -- int
-+ DEFAULT -- -1
++ DEFAULT -- - 1
 + IMPORTANCE -- high
 + DYNAMIC UPDATE MODE -- read-only
 
@@ -168,7 +168,7 @@
 **log.retention.bytes** -- Максимальный размер журнала перед его удалением
 
 + TYPE -- long
-+ DEFAULT -- -1
++ DEFAULT -- - 1
 + IMPORTANCE -- high
 + DYNAMIC UPDATE MODE -- cluster-wide
 
@@ -178,6 +178,84 @@
 + DEFAULT -- 168
 + IMPORTANCE -- high
 + DYNAMIC UPDATE MODE -- read-only
+
+**log.retention.minutes** -- Количество минут для хранения файла журнала перед его удалением, вторично по отношению к свойству *log.retention.hours*. Указывается в минутах
+
++ TYPE -- int
++ DEFAULT -- null
++ IMPORTANCE -- high
++ DYNAMIC UPDATE MODE -- read-only
+
+**log.retention.ms** -- Количество миллисекунд для хранения файла журнала перед его удалением. Если параметр не установлен, используется значение *log.retention.minutes*. Указывается в миллисекундах
+
++ TYPE -- long
++ DEFAULT -- null
++ IMPORTANCE -- high
++ DYNAMIC UPDATE MODE -- cluster-wide
+
+**log.roll.hours** -- 
+
++ TYPE -- int	168	[1,...]	high	read-only
++ DEFAULT -- 168
++ VALID VALUES -- [1,...]
++ IMPORTANCE -- [1,...]
++ DYNAMIC UPDATE MODE -- read-only
+
+**** -- 
+
++ TYPE -- 
++ DEFAULT -- 
++ VALID VALUES -- 
++ IMPORTANCE -- 
++ DYNAMIC UPDATE MODE -- 
+
+**** -- 
+
++ TYPE -- 
++ DEFAULT -- 
++ VALID VALUES -- 
++ IMPORTANCE -- 
++ DYNAMIC UPDATE MODE -- 
+
+**** -- 
+
++ TYPE -- 
++ DEFAULT -- 
++ VALID VALUES -- 
++ IMPORTANCE -- 
++ DYNAMIC UPDATE MODE -- 
+
+**** -- 
+
++ TYPE -- 
++ DEFAULT -- 
++ VALID VALUES -- 
++ IMPORTANCE -- 
++ DYNAMIC UPDATE MODE -- 
+
+**** -- 
+
++ TYPE -- 
++ DEFAULT -- 
++ VALID VALUES -- 
++ IMPORTANCE -- 
++ DYNAMIC UPDATE MODE -- 
+
+**** -- 
+
++ TYPE -- 
++ DEFAULT -- 
++ VALID VALUES -- 
++ IMPORTANCE -- 
++ DYNAMIC UPDATE MODE -- 
+
+**** -- 
+
++ TYPE -- 
++ DEFAULT -- 
++ VALID VALUES -- 
++ IMPORTANCE -- 
++ DYNAMIC UPDATE MODE -- 
 
 **** -- 
 
