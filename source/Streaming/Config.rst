@@ -362,7 +362,7 @@
 + IMPORTANCE -- high
 + DYNAMIC UPDATE MODE -- read-only
 
-**offsets.topic.segment.bytes** -- Байты сегмента топика смещений. Значение должно быть относительно небольшим с целью ускорения сжатия журнала и загрузку кэша
+**offsets.topic.segment.bytes** -- Размер сегмента топика смещений в байтах. Значение должно быть относительно небольшим с целью ускорения сжатия журнала и загрузку кэша
 
 + TYPE -- int
 + DEFAULT -- 104857600
@@ -401,6 +401,169 @@
 + IMPORTANCE -- high
 + DYNAMIC UPDATE MODE -- read-only
 
+**replica.fetch.min.bytes** -- Минимальное количество байт, ожидаемое для каждого ответа на выборку. При недостаточном объеме срабатывает параметр *replicaMaxWaitTimeMs*
+
++ TYPE -- int
++ DEFAULT -- 1
++ IMPORTANCE -- high
++ DYNAMIC UPDATE MODE -- read-only
+
+**replica.fetch.wait.max.ms** -- Максимальное время ожидания для каждого запроса на выборку с последующей публикацией реплик. Значение всегда должно быть меньше параметра *replica.lag.time.max.ms* для предотвращения частого сжатия ISR низкопроизводительных топиков
+
++ TYPE -- int
++ DEFAULT -- 500
++ IMPORTANCE -- high
++ DYNAMIC UPDATE MODE -- read-only
+
+**replica.high.watermark.checkpoint.interval.ms** -- Верхний предел частоты сохранения на диск (Частота сохранения высокого водяного знака на диск)
+
++ TYPE -- long
++ DEFAULT -- 5000
++ IMPORTANCE -- high
++ DYNAMIC UPDATE MODE -- read-only
+
+**replica.lag.time.max.ms** -- Удаление подписчика лидером из isr в случае, если подписчик не отправил ни одного запроса на выборку или не считал конечное смещение журнала лидеров
+
++ TYPE -- long
++ DEFAULT -- 10000
++ IMPORTANCE -- high
++ DYNAMIC UPDATE MODE -- read-only
+
+**replica.socket.receive.buffer.bytes** -- Буфер приема сокетов для сетевых запросов
+
++ TYPE -- int
++ DEFAULT -- 65536
++ IMPORTANCE -- high
++ DYNAMIC UPDATE MODE -- read-only
+
+**replica.socket.timeout.ms** -- Время ожидания сокета для сетевых запросов. Значение должно быть не менее установленного параметра *replica.fetch.wait.max.ms*
+
++ TYPE -- int
++ DEFAULT -- 30000
++ IMPORTANCE -- high
++ DYNAMIC UPDATE MODE -- read-only
+
+**request.timeout.ms** -- Максимальное время ожидания клиентом ответа на запрос. Если ответ не получен до истечения установленного значения, клиент повторно отправляет запрос при необходимости
+
++ TYPE -- int
++ DEFAULT -- 30000
++ IMPORTANCE -- high
++ DYNAMIC UPDATE MODE -- read-only
+
+**socket.receive.buffer.bytes** -- Буфер SO_RCVBUF сокета сервера сокетов. При значении параметра "-1" используется ОС по умолчанию
+
++ TYPE -- int
++ DEFAULT -- 102400
++ IMPORTANCE -- high
++ DYNAMIC UPDATE MODE -- read-only
+
+**socket.request.max.bytes** -- Максимальное количество байт в запросе сокета
+
++ TYPE -- int
++ DEFAULT -- 104857600
++ VALID VALUES -- [1,...]
++ IMPORTANCE -- high
++ DYNAMIC UPDATE MODE -- read-only
+
+**socket.send.buffer.bytes** -- Буфер SO_SNDBUF сокета сервера сокетов. При значении параметра "-1" используется ОС по умолчанию
+
++ TYPE -- int
++ DEFAULT -- 102400
++ IMPORTANCE -- high
++ DYNAMIC UPDATE MODE -- read-only
+
+**transaction.max.timeout.ms** -- Максимально допустимое время ожидания для транзакций. Если запрошенное клиентом время транзакции превышает установленное значение, тогда брокер выдает ошибку в *InitProducerIdRequest*. Это предотвращает чрезмерное превышение времени ожидания для клиента, которое может тормозить чтение данных потребителями из топиков, включенных в транзакцию
+
++ TYPE -- int
++ DEFAULT -- 900000
++ VALID VALUES -- [1,...]
++ IMPORTANCE -- high
++ DYNAMIC UPDATE MODE -- read-only
+
+**transaction.state.log.load.buffer.size** -- Размер пакета для чтения из сегментов журнала транзакций при загрузке в кэш идентификаторов поставщиков и транзакций
+
++ TYPE -- int
++ DEFAULT -- 5242880
++ VALID VALUES -- [1,...]
++ IMPORTANCE -- [1,...]
++ DYNAMIC UPDATE MODE -- read-only
+
+**transaction.state.log.min.isr** -- Переопределение конфигурации *min.insync.replicas* для топика транзакции
+
++ TYPE -- int
++ DEFAULT -- 2
++ VALID VALUES -- [1,...]
++ IMPORTANCE -- high
++ DYNAMIC UPDATE MODE -- read-only
+
+**transaction.state.log.num.partitions** -- Количество партиций для топика транзакции (после развертывания параметр должен остаться неизменным)
+
++ TYPE -- int
++ DEFAULT -- 50
++ VALID VALUES -- [1,...]
++ IMPORTANCE -- high
++ DYNAMIC UPDATE MODE -- read-only
+
+**transaction.state.log.replication.factor** -- Коэффициент репликации для топика транзакции (задается выше для обеспечения доступности). Создание внутреннего топика завершится ошибкой, пока размер кластера не будет соответствовать данному требованию к фактору репликации
+
++ TYPE -- short
++ DEFAULT -- 3
++ VALID VALUES -- [1,...]
++ IMPORTANCE -- high
++ DYNAMIC UPDATE MODE -- read-only
+
+**transaction.state.log.segment.bytes** -- Байты сегмента топика транзакции должны быть относительно небольшими для ускорения сжатия журнала и загрузки кэша
+
++ TYPE -- int
++ DEFAULT -- 104857600
++ VALID VALUES -- [1,...]
++ IMPORTANCE -- high
++ DYNAMIC UPDATE MODE -- read-only
+
+**transactional.id.expiration.ms** -- Максимальное время ожидания для координатора транзакций прежде, чем предварительно истечет срок действия идентификатора транзакции поставщика без получения обновлений состояния транзакции. Указывается в миллисекундах
+
++ TYPE -- int
++ DEFAULT -- 604800000
++ VALID VALUES -- [1,...]
++ IMPORTANCE -- high
++ DYNAMIC UPDATE MODE -- read-only
+
+**unclean.leader.election.enable** -- Указывает, следует ли включить не входящие в набор ISR реплики и установка последнего средства в качестве лидера, даже если это может привести к потере данных
+
++ TYPE -- boolean
++ DEFAULT -- false
++ IMPORTANCE -- high
++ DYNAMIC UPDATE MODE -- cluster-wide
+
+**zookeeper.connection.timeout.ms** -- Максимальное время ожидания клиентом установки соединения с Zookeeper. Если параметр не задан, используется значение для *zookeeper.session.timeout.ms*
+
++ TYPE -- int
++ DEFAULT -- null
++ IMPORTANCE -- high
++ DYNAMIC UPDATE MODE -- read-only
+
+**zookeeper.max.in.flight.requests** -- Максимальное количество неподтвержденных запросов, отправленных клиентом в Zookeeper, перед блокировкой
+
++ TYPE -- int
++ DEFAULT -- 10
++ VALID VALUES -- [1,...]
++ IMPORTANCE -- high
++ DYNAMIC UPDATE MODE -- read-only
+
+**zookeeper.session.timeout.ms** -- Тайм-аут сеанса Zookeeper
+
++ TYPE -- int
++ DEFAULT -- int
++ IMPORTANCE -- high
++ DYNAMIC UPDATE MODE -- read-only
+
+**zookeeper.set.acl** -- Настройка клиента для использования безопасных списков управления доступом ACL
+
++ TYPE -- boolean
++ DEFAULT -- boolean
++ IMPORTANCE -- high
++ DYNAMIC UPDATE MODE -- read-only
+
 **** -- 
 
 + TYPE -- 
@@ -408,6 +571,15 @@
 + VALID VALUES -- 
 + IMPORTANCE -- 
 + DYNAMIC UPDATE MODE -- 
+
+**** -- 
+
++ TYPE -- 
++ DEFAULT -- 
++ VALID VALUES -- 
++ IMPORTANCE -- 
++ DYNAMIC UPDATE MODE -- 
+
 
 
 
