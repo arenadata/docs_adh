@@ -535,7 +535,7 @@
 + IMPORTANCE -- high
 + DYNAMIC UPDATE MODE -- cluster-wide
 
-**zookeeper.connection.timeout.ms** -- Максимальное время ожидания клиентом установки соединения с Zookeeper. Если параметр не задан, используется значение для *zookeeper.session.timeout.ms*
+**zookeeper.connection.timeout.ms** -- Максимальное время ожидания клиентом установки соединения с Zookeeper. Если параметр не задан, используется значение для *zookeeper.session.timeout.ms*. Указывается в миллисекундах
 
 + TYPE -- int
 + DEFAULT -- null
@@ -550,7 +550,7 @@
 + IMPORTANCE -- high
 + DYNAMIC UPDATE MODE -- read-only
 
-**zookeeper.session.timeout.ms** -- Тайм-аут сеанса Zookeeper
+**zookeeper.session.timeout.ms** -- Тайм-аут сеанса Zookeeper. Указывается в миллисекундах
 
 + TYPE -- int
 + DEFAULT -- int
@@ -564,13 +564,290 @@
 + IMPORTANCE -- high
 + DYNAMIC UPDATE MODE -- read-only
 
-**** -- 
+**broker.id.generation.enable** -- Автоматическое создание идентификатора брокера на сервере. При включенном параметре значение, настроенное для *reserved.broker.max.id*, должно быть пересмотрено
 
-+ TYPE -- 
-+ DEFAULT -- 
-+ VALID VALUES -- 
-+ IMPORTANCE -- 
-+ DYNAMIC UPDATE MODE -- 
++ TYPE -- boolean
++ DEFAULT -- true
++ IMPORTANCE -- medium
++ DYNAMIC UPDATE MODE -- read-only
+
+**broker.rack** -- Стойка брокера. Используется при назначении репликации в стойке для отказоустойчивости. Примеры: "RACK1", "us-east-1d"
+
++ TYPE -- string
++ DEFAULT -- string
++ IMPORTANCE -- medium
++ DYNAMIC UPDATE MODE -- read-only
+
+**connections.max.idle.ms** -- Время ожидания бездействующих соединений: потоки процессора сокета сервера закрывают соединения, которые простаивают больше установленного значения. Указывается в миллисекундах
+
++ TYPE -- long
++ DEFAULT -- 600000
++ IMPORTANCE -- medium
++ DYNAMIC UPDATE MODE -- read-only
+
+**controlled.shutdown.enable** -- Включение контролируемого завершения работы сервера
+
++ TYPE -- boolean
++ DEFAULT -- true
++ IMPORTANCE -- medium
++ DYNAMIC UPDATE MODE -- read-only
+
+**controlled.shutdown.max.retries** -- Контролируемое выключение может завершиться ошибкой по нескольким причинам: параметр определяет количество повторных попыток подключения при возникновении таких сбоев
+
++ TYPE -- int
++ DEFAULT -- 3
++ IMPORTANCE -- medium
++ DYNAMIC UPDATE MODE -- read-only
+
+**controlled.shutdown.retry.backoff.ms** -- Перед каждой повторной попыткой подключения системе требуется время для восстановления состояния, вызвавшего предыдущий сбой (сбой контроллера, задержка реплики и т.д.). Параметр определяет время ожидания перед повторной попыткой. Указывается в миллисекундах
+
++ TYPE -- long
++ DEFAULT -- 5000
++ IMPORTANCE -- medium
++ DYNAMIC UPDATE MODE -- read-only
+
+**controller.socket.timeout.ms** -- Время ожидания сокета для каналов контроллер-брокер. Указывается в миллисекундах
+
++ TYPE -- int
++ DEFAULT -- 30000
++ IMPORTANCE -- medium
++ DYNAMIC UPDATE MODE -- read-only
+
+**default.replication.factor** -- Коэффициенты репликации по умолчанию для автоматически создаваемых топиков
+
++ TYPE -- int
++ DEFAULT -- 1
++ IMPORTANCE -- medium
++ DYNAMIC UPDATE MODE -- read-only
+
+**delegation.token.expiry.time.ms** -- Время действия токена перед его обновлением. Значение по умолчанию 1 день. Указывается в миллисекундах
+
++ TYPE -- long
++ DEFAULT -- 86400000
++ VALID VALUES -- [1,...]
++ IMPORTANCE -- medium
++ DYNAMIC UPDATE MODE -- read-only
+
+**delegation.token.master.key** -- Мастер/секретный ключ для создания и проверки делегированных токенов. Один и тот же ключ должен быть настроен для всех брокеров. Если ключ не установлен или задана пустая строка, брокеры отключают поддержку делегированных токенов
+
++ TYPE -- password
++ DEFAULT -- null
++ IMPORTANCE -- medium
++ DYNAMIC UPDATE MODE -- read-only
+
+**delegation.token.max.lifetime.ms** -- Максимальный срок действия токена, по истечении которого он больше не может быть обновлен. Значение по умолчанию 7 дней. Указывается в миллисекундах
+
++ TYPE -- long
++ DEFAULT -- 604800000
++ VALID VALUES -- [1,...]
++ IMPORTANCE -- medium
++ DYNAMIC UPDATE MODE -- read-only
+
+**delete.records.purgatory.purge.interval.requests** -- Интервал очистки (по количеству запросов) записей на удаление
+
++ TYPE -- int
++ DEFAULT -- 1
++ IMPORTANCE -- medium
++ DYNAMIC UPDATE MODE -- read-only
+
+**fetch.purgatory.purge.interval.requests** -- Интервал очистки (по количеству запросов) запросов выборки
+
++ TYPE -- int
++ DEFAULT -- 1000
++ IMPORTANCE -- medium
++ DYNAMIC UPDATE MODE -- read-only
+
+**group.initial.rebalance.delay.ms** -- Время, в течение которого координатор группы ожидает присоединения большего числа потребителей к новой группе перед выполнением первой перебалансировки. Более длительная задержка означает потенциально меньшее количество перебалансировок, но увеличивает время до начала обработки. Указывается в миллисекундах
+
++ TYPE -- int
++ DEFAULT -- 3000
++ IMPORTANCE -- medium
++ DYNAMIC UPDATE MODE -- read-only
+
+**group.max.session.timeout.ms** -- Максимально допустимое время ожидания сессии для зарегистрированных потребителей. Более длительные тайм-ауты дают потребителям больше времени для обработки данных между heartbeat-сообщениями за счет большего времени для выявления сбоев. Указывается в миллисекундах
+
++ TYPE -- int
++ DEFAULT -- 300000
++ IMPORTANCE -- medium
++ DYNAMIC UPDATE MODE -- read-only
+
+**group.min.session.timeout.ms** -- Минимально допустимое время ожидания сессии для зарегистрированных потребителей. Более короткие тайм-ауты приводят к более быстрому обнаружению сбоев за счет более частых heartbeat-сообщений, которые могут перегружать ресурсы брокера. Указывается в миллисекундах
+
++ TYPE -- int
++ DEFAULT -- 6000
++ IMPORTANCE -- medium
++ DYNAMIC UPDATE MODE -- read-only
+
+**inter.broker.listener.name** -- Имя слушателя, используемого для связи между брокерами. Если параметр не задан, имя слушателя определяется свойством *security.inter.broker.protocol*. При одновременной установке имени слушателя в оба параметра выдается ошибка
+
++ TYPE -- string
++ DEFAULT -- null
++ IMPORTANCE -- medium
++ DYNAMIC UPDATE MODE -- read-only
+
+**inter.broker.protocol.version** -- Версия межброкерского протокола. Обычно параметр задается после обновления всех брокеров до новой версии. Пример некоторых допустимых значений: "0.8.0", "0.8.1", "0.8.1.1", "0.8.2", "0.8.2.0", "0.8.2.1", "0.9.0.0", "0.9.0.1". Необходимо проверить ApiVersion для полного списка
+
++ TYPE -- string
++ DEFAULT -- 1.1-IV0
++ IMPORTANCE -- medium
++ DYNAMIC UPDATE MODE -- read-only
+
+**log.cleaner.backoff.ms** -- Время спящего режима при отсутствии журналов для очистки. Указывается в миллисекундах
+
++ TYPE -- long
++ DEFAULT -- 15000
++ VALID VALUES -- [0,...]
++ IMPORTANCE -- medium
++ DYNAMIC UPDATE MODE -- cluster-wide
+
+**log.cleaner.dedupe.buffer.size** -- Общая память, используемая для дедупликации журнала во всех чистых потоках
+
++ TYPE -- long
++ DEFAULT -- 134217728
++ IMPORTANCE -- medium
++ DYNAMIC UPDATE MODE -- cluster-wide
+
+**log.cleaner.delete.retention.ms** -- Длительность хранения удаленных записей. Указывается в миллисекундах
+
++ TYPE -- long
++ DEFAULT -- 86400000
++ IMPORTANCE -- medium
++ DYNAMIC UPDATE MODE -- cluster-wide
+
+**log.cleaner.enable** -- Включение процесса очистки журналов для запуска на сервере. Параметр должен быть включен, если используются какие-либо топики с помощью *cleanup.policy=compact*, включая топик внутренних смещений. Если параметр отключен, данные топики не сжимаются и постоянно растут в объеме
+
++ TYPE -- boolean
++ DEFAULT -- true
++ IMPORTANCE -- medium
++ DYNAMIC UPDATE MODE -- read-only
+
+**log.cleaner.io.buffer.load.factor** -- Коэффициент загрузки буфера дедуплирования журнала очистки -- процент заполнения буфера дедуплирования. Более высокое значение позволит очистить больше журнала, но приведет к большему количеству хэш-конфликтов
+
++ TYPE -- double
++ DEFAULT -- 0.9
++ IMPORTANCE -- medium
++ DYNAMIC UPDATE MODE -- cluster-wide
+
+**log.cleaner.io.buffer.size** -- Общая память, используемая для ввода-вывода буферов журнала очистки через все чистые потоки
+
++ TYPE -- int
++ DEFAULT -- 524288
++ VALID VALUES -- [0,...]
++ IMPORTANCE -- medium
++ DYNAMIC UPDATE MODE -- cluster-wide
+
+**log.cleaner.io.max.bytes.per.second** -- Очистка журнала дросселируется таким образом, чтобы сумма операций чтения и записи была меньше установленного значения
+
++ TYPE -- double
++ DEFAULT -- 1.7976931348623157E308
++ IMPORTANCE -- medium
++ DYNAMIC UPDATE MODE -- cluster-wide
+
+**log.cleaner.min.cleanable.ratio** -- Минимальное отношение грязного журнала к общему журналу для журнала, пригодного для очистки
+
++ TYPE -- double
++ DEFAULT -- 0.5
++ IMPORTANCE -- medium
++ DYNAMIC UPDATE MODE -- cluster-wide
+
+**log.cleaner.min.compaction.lag.ms** -- Минимальное время, в течение которого сообщение остается несжатым в журнале. Применяется только для журналов с функцией сжатия. Указывается в миллисекундах
+
++ TYPE -- long
++ DEFAULT -- 0
++ IMPORTANCE -- medium
++ DYNAMIC UPDATE MODE -- cluster-wide
+
+**log.cleaner.threads** -- Количество фоновых потоков для очистки журнала 
+
++ TYPE -- int
++ DEFAULT -- 1
++ VALID VALUES -- [0,...]
++ IMPORTANCE -- medium
++ DYNAMIC UPDATE MODE -- cluster-wide
+
+**log.cleanup.policy** -- Политика очистки по умолчанию для сегментов, превышающих период хранения. Допустимые политики: "delete" и "compact"
+
++ TYPE -- list
++ DEFAULT -- delete
++ VALID VALUES -- [compact, delete]
++ IMPORTANCE -- medium
++ DYNAMIC UPDATE MODE -- cluster-wide
+
+**log.index.interval.bytes** -- Интервал добавления записи в индекс смещения
+
++ TYPE -- int
++ DEFAULT -- 4096
++ VALID VALUES -- [0,...]
++ IMPORTANCE -- medium
++ DYNAMIC UPDATE MODE -- cluster-wide
+
+**log.index.size.max.bytes** -- Максимальный размер индекса смещения. Указывается в байтах
+
++ TYPE -- int
++ DEFAULT -- 10485760
++ VALID VALUES -- [4,...]
++ IMPORTANCE -- medium
++ DYNAMIC UPDATE MODE -- cluster-wide
+
+**log.message.format.version** -- Версия формата сообщений, которую брокер использует для добавления данных в журналы. Значение должно быть действительным ApiVersion. Некоторые примеры: "0.8.2", "0.9.0.0", "0.10.0". Необходимо проверить ApiVersion для получения более подробной информации. Установив версию формата сообщений, пользователь подтверждает, что все существующие данные на диске меньше или равны указанной версии. Неправильное задание параметра приводит к тому, что потребители с более старыми версиями получают данные в нечитаемом формате
+
++ TYPE -- string
++ DEFAULT -- 1.1-IV0
++ IMPORTANCE -- medium
++ DYNAMIC UPDATE MODE -- read-only
+
+**log.message.timestamp.difference.max.ms** -- Максимальное допустимое различие между отметкой времени, когда брокер получает сообщение, и отметкой времени, указанной в сообщении. При *log.message.timestamp.type=CreateTime* сообщение отклоняется, если разница в отметке времени превышает указанный порог. Конфигурация игнорируется, если *log.message.timestamp.type=LogAppendTime*. Максимально допустимое различие временных отметок должно быть не больше, чем *log.retention.ms*. Указывается в миллисекундах 
+
++ TYPE -- long
++ DEFAULT -- 9223372036854775807
++ IMPORTANCE -- medium
++ DYNAMIC UPDATE MODE -- cluster-wide
+
+**log.message.timestamp.type** -- Определить, является ли отметка времени в сообщении временем создания сообщения или временем добавления журнала. Значение может быть либо "CreateTime", либо "LogAppendTime"
+
++ TYPE -- string
++ DEFAULT -- CreateTime
++ VALID VALUES -- [CreateTime, LogAppendTime]
++ IMPORTANCE -- medium
++ DYNAMIC UPDATE MODE -- cluster-wide
+
+**log.preallocate** -- Предварительное выделение файла при создании нового сегмента. При испольовании платформы ADS в Windows рекомендуется установить значение "true"
+
++ TYPE -- boolean
++ DEFAULT -- false
++ IMPORTANCE -- medium
++ DYNAMIC UPDATE MODE -- cluster-wide
+
+**log.retention.check.interval.ms** -- Частота проверки журналом очистки на наличие какого-либо журнала на удаление. Указывается в миллисекундах
+
++ TYPE -- long
++ DEFAULT -- 300000
++ VALID VALUES -- [1,...]
++ IMPORTANCE -- medium
++ DYNAMIC UPDATE MODE -- read-only
+
+**max.connections.per.ip** -- Максимальное количество подключений с каждого IP-адреса
+
++ TYPE -- int
++ DEFAULT -- 2147483647
++ VALID VALUES -- [1,...]
++ IMPORTANCE -- medium
++ DYNAMIC UPDATE MODE -- read-only
+
+**max.connections.per.ip.overrides** -- Ip или hostname переопределяет максимальное количество подключений по умолчанию
+
++ TYPE -- string
++ DEFAULT -- ""
++ IMPORTANCE -- medium
++ DYNAMIC UPDATE MODE -- read-only
+
+**max.incremental.fetch.session.cache.slots** -- Максимальное количество сессий инкрементной выборки
+
++ TYPE -- int
++ DEFAULT -- 1000
++ VALID VALUES -- [0,...]
++ IMPORTANCE -- medium
++ DYNAMIC UPDATE MODE -- read-only
 
 **** -- 
 
