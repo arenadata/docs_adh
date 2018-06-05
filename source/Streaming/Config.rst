@@ -1149,19 +1149,136 @@
 + IMPORTANCE -- low
 + DYNAMIC UPDATE MODE -- per-broker
 
-**** -- 
+**metric.reporters** -- Список классов для использования в качестве репортеров метрик. Реализация интерфейса *org.apache.kafka.common.metrics.MetricsReporter* позволяет подключать классы, которые будут уведомлены о создании новой метрики. JmxReporter всегда включен в реестр статистических данных JMX
 
-+ TYPE -- 
-+ DEFAULT -- 
-+ VALID VALUES -- 
-+ IMPORTANCE -- 
-+ DYNAMIC UPDATE MODE -- 
++ TYPE -- list
++ DEFAULT -- ""
++ IMPORTANCE -- low
++ DYNAMIC UPDATE MODE -- cluster-wide
 
+**metrics.num.samples** -- Количество выборок, поддерживаемых для вычисления метрик
 
++ TYPE -- int
++ DEFAULT -- 2
++ VALID VALUES -- [1,...]
++ IMPORTANCE -- low
++ DYNAMIC UPDATE MODE -- read-only
 
+**metrics.recording.level** -- Самый высокий уровень записи для метрик
 
++ TYPE -- string
++ DEFAULT -- INFO 
++ IMPORTANCE -- low
++ DYNAMIC UPDATE MODE -- read-only
 
+**metrics.sample.window.ms** -- Время ожидания вычисления метрик выборки. Указывается в миллисекундах
 
++ TYPE -- long
++ DEFAULT -- 30000
++ VALID VALUES -- [1,...]
++ IMPORTANCE -- low
++ DYNAMIC UPDATE MODE -- read-only
+
+**password.encoder.cipher.algorithm** -- Алгоритм шифрования, используемый для кодирования динамически настроенных паролей
+
++ TYPE -- string
++ DEFAULT -- AES/CBC/PKCS5Padding
++ IMPORTANCE -- low
++ DYNAMIC UPDATE MODE -- read-only
+
+**password.encoder.iterations** -- Число итераций для кодирования динамически настроенных паролей
+
++ TYPE -- int
++ DEFAULT -- 4096
++ VALID VALUES -- [1024,...]
++ IMPORTANCE -- low
++ DYNAMIC UPDATE MODE -- read-only
+
+**password.encoder.key.length** -- Длина ключа, используемая для кодирования динамически настроенных паролей
+
++ TYPE -- int
++ DEFAULT -- 128
++ VALID VALUES -- [8,...]
++ IMPORTANCE -- low
++ DYNAMIC UPDATE MODE -- read-only
+
+**password.encoder.keyfactory.algorithm** -- Алгоритм SecretKeyFactory, используемый для кодирования динамически настроенных паролей. По умолчанию используется "PBKDF2WithHmacSHA512", если имеется, и "PBKDF2WithHmacSHA1" в противном случае
+
++ TYPE -- string
++ DEFAULT -- null
++ IMPORTANCE -- low
++ DYNAMIC UPDATE MODE -- read-only
+
+**quota.window.num** -- Количество выборок, сохраняемых в памяти для квот клиента
+
++ TYPE -- int
++ DEFAULT -- 11
++ VALID VALUES -- [1,...]
++ IMPORTANCE -- low
++ DYNAMIC UPDATE MODE -- read-only
+
+**quota.window.size.seconds** -- Временной интервал каждой выборки для квот клиента. Указывается в секундах
+
++ TYPE -- int
++ DEFAULT -- 1
++ VALID VALUES -- [1,...]
++ IMPORTANCE -- low
++ DYNAMIC UPDATE MODE -- read-only
+
+**replication.quota.window.num** -- Количество выборок, сохраняемых в памяти для квот репликации
+
++ TYPE -- int
++ DEFAULT -- 11
++ VALID VALUES -- [1,...]
++ IMPORTANCE -- low
++ DYNAMIC UPDATE MODE -- read-only
+
+**replication.quota.window.size.seconds** -- Временной интервал каждой выборки для квот репликации. Указывается в секундах
+
++ TYPE -- int
++ DEFAULT -- 1
++ VALID VALUES -- [1,...]
++ IMPORTANCE -- low
++ DYNAMIC UPDATE MODE -- read-only
+
+**ssl.endpoint.identification.algorithm** -- Алгоритм идентификации конечных точек для валидации имени хоста сервера с использованием сертификата сервера
+
++ TYPE -- string
++ DEFAULT -- null
++ IMPORTANCE -- low
++ DYNAMIC UPDATE MODE -- per-broker
+
+**ssl.secure.random.implementation** -- Реализация SecureRandom PRNG, используемая для операций шифрования SSL
+
++ TYPE -- string
++ DEFAULT -- null
++ IMPORTANCE -- low
++ DYNAMIC UPDATE MODE -- per-broker
+
+**transaction.abort.timed.out.transaction.cleanup.interval.ms** -- Интервал, в течение которого выполняются отложенные транзакции. Указывается в миллисекундах
+
++ TYPE -- int
++ DEFAULT -- 60000
++ VALID VALUES -- [1,...]
++ IMPORTANCE -- low
++ DYNAMIC UPDATE MODE -- read-only
+
+**transaction.remove.expired.transaction.cleanup.interval.ms** -- Интервал удаления транзакций, срок действия которых истекает по установленному параметру *transactional.id.expiration.ms passing*. Указывается в миллисекундах
+
++ TYPE -- int
++ DEFAULT -- 3600000
++ VALID VALUES -- [1,...]
++ IMPORTANCE -- low
++ DYNAMIC UPDATE MODE -- read-only
+
+**zookeeper.sync.time.ms** -- Удаленность последователя Zookeeper от лидера Zookeeper. Указывается в миллисекундах
+
++ TYPE -- int
++ DEFAULT -- 2000
++ IMPORTANCE -- low
++ DYNAMIC UPDATE MODE -- read-only
+
+Более подробную информацию о конфигурации брокера можно найти в классе scala *kafka.server.KafkaConfig*.
 
 Настройка на уровне топика
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
