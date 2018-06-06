@@ -1304,13 +1304,109 @@
 + SERVER DEFAULT PROPERTY -- compression.type
 + IMPORTANCE -- medium
 
-**delete.retention.ms** -- Время хранения маркированных на удаление данных с целью сжатия топиков журнала. Параметр также дает ограничение на время, в течение которого потребитель должен выполнить чтение, если данные начинаются со смещения *0*, для гарантии валидности снапшота заключительного этапа (в противном случае удаление маркированных данных может произойти до завершения их сканирования)
+**delete.retention.ms** -- Время хранения маркированных на удаление данных с целью сжатия топиков журнала. Параметр также дает ограничение на время, в течение которого потребитель должен выполнить чтение, если данные начинаются со смещения *0*, для гарантии валидности снапшота заключительного этапа (в противном случае удаление маркированных данных может произойти до завершения их сканирования). Указывается в миллисекундах
 
 + TYPE -- long
 + DEFAULT -- 86400000
 + VALID VALUES -- [0,...]
 + SERVER DEFAULT PROPERTY -- log.cleaner.delete.retention.ms
 + IMPORTANCE -- medium
+
+**file.delete.delay.ms** -- Время ожидания перед удалением файла из файловой системы. Указывается в миллисекундах
+
++ TYPE -- long
++ DEFAULT -- 60000
++ VALID VALUES -- [0,...]
++ SERVER DEFAULT PROPERTY -- log.segment.delete.delay.ms
++ IMPORTANCE -- medium
+
+**flush.messages** -- Интервал принудительной синхронизации данных, записанных в журнал. Например, если параметр установлен на *1*, синхронизация выполняется после каждого сообщения; если на значение *5* -- после каждых пяти сообщений. Установка данного параметра не рекомендуется, эффективней использовать репликацию для обеспечения устойчивости и возможности фоновой очистки операционной системы. Параметр можно переопределить в базовых настройках каждого топика
+
++ TYPE -- long
++ DEFAULT -- 9223372036854775807
++ VALID VALUES -- [0,...]
++ SERVER DEFAULT PROPERTY -- log.flush.interval.messages
++ IMPORTANCE -- medium
+
+**flush.ms** -- Временной интервал принудительной синхронизации данных, записанных в журнал. Например, если параметр установлен на *1000*, синхронизация выполняется по истечении 1000 мс. Установка данного параметра не рекомендуется, эффективней использовать репликацию для обеспечения устойчивости и возможности фоновой очистки операционной системы. Указывается в миллисекундах
+
++ TYPE -- long
++ DEFAULT -- 9223372036854775807
++ VALID VALUES -- [0,...]
++ SERVER DEFAULT PROPERTY -- log.flush.interval.ms
++ IMPORTANCE -- medium
+
+**follower.replication.throttled.replicas** -- Список реплик, для которых репликация журнала должна дросселироваться на стороне подписчика. Список должен описывать набор реплик в формате "[PartitionId]:[BrokerId],[PartitionId]:[BrokerId]:..." или можно использовать специальный символ "*" для дросселирования всех реплик в данном топике
+
++ TYPE -- list
++ DEFAULT -- ""
++ VALID VALUES -- [partitionId],[brokerId]:[partitionId],[brokerId]:...
++ SERVER DEFAULT PROPERTY -- follower.replication.throttled.replicas
++ IMPORTANCE -- medium
+
+**index.interval.bytes** -- Частота добавления индексной записи в индекс смещения. Значение по умолчанию гарантирует индексацию сообщения примерно каждые 4096 байт. Большее индексирование позволяет потребителям приближаться к более точному положению в журнале, но увеличивает сам индекс. Рекомендуется значение не менять
+
++ TYPE -- int
++ DEFAULT -- 4096
++ VALID VALUES -- [0,...]
++ SERVER DEFAULT PROPERTY -- log.index.interval.bytes
++ IMPORTANCE -- medium
+
+**leader.replication.throttled.replicas** -- Список реплик, для которых репликация журнала должна дросселироваться на стороне лидера. Список должен описывать набор реплик в формате "[PartitionId]:[BrokerId],[PartitionId]:[BrokerId]:..." или можно использовать специальный символ "*" для дросселирования всех реплик в данном топике
+
++ TYPE -- list
++ DEFAULT -- ""
++ VALID VALUES -- [partitionId],[brokerId]:[partitionId],[brokerId]:...
++ SERVER DEFAULT PROPERTY -- leader.replication.throttled.replicas
++ IMPORTANCE -- medium
+
+**max.message.bytes** -- Наибольший размер пакета данных, разрешенный ADS. При увеличении параметра следует также увеличить размер выборки для потребителей с целью обеспечения возможности получения пакета данных установленного размера
+
++ TYPE -- int
++ DEFAULT -- 1000012
++ VALID VALUES -- [0,...]
++ SERVER DEFAULT PROPERTY -- message.max.bytes
++ IMPORTANCE -- medium
+
+**** -- 
+
++ TYPE -- 
++ DEFAULT -- 
++ VALID VALUES -- 
++ SERVER DEFAULT PROPERTY -- 
++ IMPORTANCE -- 
+
+**** -- 
+
++ TYPE -- 
++ DEFAULT -- 
++ VALID VALUES -- 
++ SERVER DEFAULT PROPERTY -- 
++ IMPORTANCE -- 
+
+**** -- 
+
++ TYPE -- 
++ DEFAULT -- 
++ VALID VALUES -- 
++ SERVER DEFAULT PROPERTY -- 
++ IMPORTANCE -- 
+
+**** -- 
+
++ TYPE -- 
++ DEFAULT -- 
++ VALID VALUES -- 
++ SERVER DEFAULT PROPERTY -- 
++ IMPORTANCE -- 
+
+**** -- 
+
++ TYPE -- 
++ DEFAULT -- 
++ VALID VALUES -- 
++ SERVER DEFAULT PROPERTY -- 
++ IMPORTANCE -- 
 
 **** -- 
 
