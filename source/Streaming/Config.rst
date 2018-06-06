@@ -803,7 +803,7 @@
 + IMPORTANCE -- medium
 + DYNAMIC UPDATE MODE -- cluster-wide
 
-**log.message.timestamp.type** -- Определить, является ли отметка времени в сообщении временем создания сообщения или временем добавления журнала. Значение может быть либо "CreateTime", либо "LogAppendTime"
+**log.message.timestamp.type** -- Определить, является ли отметка времени в сообщении временем создания сообщения или временем добавления журнала. Параметр может принимать значение "CreateTime" либо "LogAppendTime"
 
 + TYPE -- string
 + DEFAULT -- CreateTime
@@ -1368,45 +1368,88 @@
 + SERVER DEFAULT PROPERTY -- message.max.bytes
 + IMPORTANCE -- medium
 
-**** -- 
+**message.format.version** -- Версия формата сообщений, которую брокер использует для добавления данных в журналы. Значение должно быть действительным ApiVersion. Некоторые примеры: “0.8.2”, “0.9.0.0”, “0.10.0”. Необходимо проверить ApiVersion для получения более подробной информации. Установив версию формата сообщений, пользователь подтверждает, что все существующие данные на диске меньше или равны указанной версии. Неправильное задание параметра приводит к тому, что потребители с более старыми версиями получают данные в нечитаемом формате
 
-+ TYPE -- 
-+ DEFAULT -- 
-+ VALID VALUES -- 
-+ SERVER DEFAULT PROPERTY -- 
-+ IMPORTANCE -- 
++ TYPE -- string
++ DEFAULT -- 1.1-IV0
++ SERVER DEFAULT PROPERTY -- log.message.format.version
++ IMPORTANCE -- medium
 
-**** -- 
+**message.timestamp.difference.max.ms** -- Максимальное допустимое различие между отметкой времени, когда брокер получает сообщение, и отметкой времени, указанной в сообщении. При *message.timestamp.type=CreateTime* сообщение отклоняется, если разница в отметке времени превышает указанный порог. Конфигурация игнорируется, если *message.timestamp.type=LogAppendTime*. Указывается в миллисекундах
 
-+ TYPE -- 
-+ DEFAULT -- 
-+ VALID VALUES -- 
-+ SERVER DEFAULT PROPERTY -- 
-+ IMPORTANCE -- 
++ TYPE -- long
++ DEFAULT -- 9223372036854775807
++ VALID VALUES -- [0,...]
++ SERVER DEFAULT PROPERTY -- log.message.timestamp.difference.max.ms
++ IMPORTANCE -- medium
 
-**** -- 
+**message.timestamp.type** -- Определить, является ли отметка времени в сообщении временем создания сообщения или временем добавления журнала. Параметр может принимать значение "CreateTime" либо "LogAppendTime"
 
-+ TYPE -- 
-+ DEFAULT -- 
-+ VALID VALUES -- 
-+ SERVER DEFAULT PROPERTY -- 
-+ IMPORTANCE -- 
++ TYPE -- string
++ DEFAULT -- CreateTime
++ SERVER DEFAULT PROPERTY -- log.message.timestamp.type
++ IMPORTANCE -- medium
 
-**** -- 
+**min.cleanable.dirty.ratio** -- Частота очистки журнала (при условии включенного сжатия). По умолчанию избегается очистка, где сжато более 50% журнала. Это ограничивает максимальное пространство, выделенное в журнале на дубликаты (не более 50% журнала могут занимать дубликаты). Более высокое отношение означает меньшее количество дубликатов и более эффективную очистку, но при этом большее количество потерянного пространства в журнале
 
-+ TYPE -- 
-+ DEFAULT -- 
-+ VALID VALUES -- 
-+ SERVER DEFAULT PROPERTY -- 
-+ IMPORTANCE -- 
++ TYPE -- double
++ DEFAULT -- 0.5
++ VALID VALUES -- [0,...,1]
++ SERVER DEFAULT PROPERTY -- log.cleaner.min.cleanable.ratio
++ IMPORTANCE -- medium
 
-**** -- 
+**min.compaction.lag.ms** -- Минимальное время, в течение которого сообщение остается несжатым в журнале. Применяется только для журналов с функцией сжатия. Указывается в миллисекундах
 
-+ TYPE -- 
-+ DEFAULT -- 
-+ VALID VALUES -- 
-+ SERVER DEFAULT PROPERTY -- 
-+ IMPORTANCE -- 
++ TYPE -- long
++ DEFAULT -- 0
++ VALID VALUES -- [0,...]
++ SERVER DEFAULT PROPERTY -- log.cleaner.min.compaction.lag.ms
++ IMPORTANCE -- medium
+
+**min.insync.replicas** -- При установленном поставщиком подтверждении acks на "all" или "-1", *min.insync.replicas* задается на минимальное количество реплик для подтверждения записи. Если этот минимум не может быть удовлетворен, то поставщик задает исключение (*NotEnoughReplicas* или *NotEnoughReplicasAfterAppend*). Совместное использование *min.insync.replicas* и acks обеспечивает более высокую гарантию к устойчивости. Типичным сценарием является создание топика с коэффициентом репликации *3*, параметром *min.insync.replicas* равным *2* и acks установленным на "all". Это гарантирует, что поставщик задает исключение, если большинство реплик не принимает запись
+
++ TYPE -- int
++ DEFAULT -- 1
++ VALID VALUES -- [1,...]
++ SERVER DEFAULT PROPERTY -- min.insync.replicas
++ IMPORTANCE -- medium
+
+**preallocate** -- Предварительное выделение файла на диске при создании нового сегмента журнала
+
++ TYPE -- boolean
++ DEFAULT -- false
++ SERVER DEFAULT PROPERTY -- log.preallocate
++ IMPORTANCE -- medium
+
+**retention.bytes** -- Контроль максимального размера партиции (состоящей из сегментов журнала), который может увеличиваться до момента отказа от старых сегментов журнала с целью освобождения места при использовании политики хранения "delete". По умолчанию ограничения по размеру нет, есть только ограничение по времени. Поскольку данный предел применяется на уровне партиции, необходимо умножить значение лимита по времени на количество партиций, чтобы вычислить объем хранения топика в байтах
+
++ TYPE -- long
++ DEFAULT -- - 1
++ SERVER DEFAULT PROPERTY -- log.retention.bytes
++ IMPORTANCE -- medium
+
+**retention.ms** -- Контроль максимального времени, в течение которого хранится журнал, прежде чем отбрасываются старые сегменты журнала с целью освобождения места при использовании политики хранения "delete". Параметр представляет собой SLA о том, как скоро потребители должны читать свои данные. Указывается в миллисекундах
+
++ TYPE -- long
++ DEFAULT -- 604800000
++ SERVER DEFAULT PROPERTY -- log.retention.ms
++ IMPORTANCE -- medium
+
+**segment.bytes** -- Контроль размера файла сегмента для журнала. Сохранение и очистка файла всегда выполняются единовременно, поэтому больший размер сегмента означает меньшее количество файлов, но при этом менее гранулированный контроль над хранением
+
++ TYPE -- int
++ DEFAULT -- 1073741824
++ VALID VALUES -- [14,...]
++ SERVER DEFAULT PROPERTY -- log.segment.bytes
++ IMPORTANCE -- medium
+
+**segment.index.bytes** -- Контроль размера индекса, который отображает смещения в позициях файла. Предварительно индексный файл выделяется и сокращается только после сжатия журнала. Обычно параметр не требует изменений
+
++ TYPE -- int
++ DEFAULT -- 10485760
++ VALID VALUES -- [0,...]
++ SERVER DEFAULT PROPERTY -- log.index.size.max.bytes
++ IMPORTANCE -- medium
 
 **** -- 
 
