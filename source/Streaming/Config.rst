@@ -966,7 +966,7 @@
 + IMPORTANCE -- medium
 + DYNAMIC UPDATE MODE -- per-broker
 
-**sasl.kerberos.ticket.renew.jitter** -- Процент случайного джиттера по отношении к времени возобновления 
+**sasl.kerberos.ticket.renew.jitter** -- Процент случайного джиттера по отношению к времени возобновления 
 
 + TYPE -- double
 + DEFAULT -- 0.05
@@ -1639,6 +1639,198 @@
 + DEFAULT -- GSSAPI
 + IMPORTANCE -- medium
 
+**security.protocol** -- Протокол безопасности для связи между брокерами. Допустимые значения: "PLAINTEXT", "SSL", "SASL_PLAINTEXT", "SASL_SSL"
+
++ TYPE -- string
++ DEFAULT -- PLAINTEXT
++ IMPORTANCE -- medium
+
+**send.buffer.bytes** -- Размер буфера отправки TCP (SO_SNDBUF) при отправке данных. Если значение равно "-1", используется ОС по умолчанию
+
++ TYPE -- int
++ DEFAULT -- 131072
++ VALID VALUES -- [-1,...]
++ IMPORTANCE -- medium
+
+**ssl.enabled.protocols** -- Список протоколов, включенных для соединений SSL
+
++ TYPE -- list
++ DEFAULT -- TLSv1.2,TLSv1.1,TLSv1
++ IMPORTANCE -- medium
+
+**ssl.keystore.type** -- Формат файла хранилища ключей. Необязательный параметр для клиента
+
++ TYPE -- string
++ DEFAULT -- JKS
++ IMPORTANCE -- medium
+
+**ssl.protocol** -- Протокол SSL для генерации SSLContext. Значение по умолчанию – "TLS", что подходит для большинства случаев. Допустимыми значениями в последних JVM являются "TLS", "TLSv1.1" и "TLSv1.2". Протоколы "SSL", "SSLv2" и "SSLv3" могут поддерживаться в более старых JVM, но их использование не рекомендуется из-за известных уязвимостей безопасности
+
++ TYPE -- string
++ DEFAULT -- TLS
++ IMPORTANCE -- medium
+
+**ssl.provider** -- Имя поставщика безопасности для соединений SSL. Значением по умолчанию является поставщик безопасности по умолчанию для JVM
+
++ TYPE -- string
++ DEFAULT -- null
++ IMPORTANCE -- medium
+
+**ssl.truststore.type** -- Формат файла хранилища trust store
+
++ TYPE -- string
++ DEFAULT -- JKS
++ IMPORTANCE -- medium
+
+**enable.idempotence** -- При установленном значении "true" поставщик гарантирует, что ровно одна копия каждого сообщения записывается в поток. При значении "false" в поток могут быть записаны дубликаты сообщений при повторных попытках отправки данных поставщиком из-за сбоев брокера или по другим причинам. Данный параметр требует, чтобы свойство *max.in.flight.requests.per.connection* было меньше или равно "5", повторные попытки более "0", и acks установлены на "all". Если перечисленные настройки явно не заданы пользователем, выбираются подходящие значения. При установке несовместимых значений, выдается ConfigException
+
++ TYPE -- boolean
++ DEFAULT -- false
++ IMPORTANCE -- low
+
+**interceptor.classes** -- Список классов для использования в качестве интерсепторов. Реализация интерфейса *org.apache.kafka.clients.producer.ProducerInterceptor* позволяет перехватывать (и, возможно, видоизменять) записи, полученные поставщиком до их публикации в кластере ADS. По умолчанию интерсепторы не установлены
+
++ TYPE -- list
++ DEFAULT -- ""
++ VALID VALUES -- org.apache.kafka.common.config.ConfigDef$NonNullValidator@6a41eaa2
++ IMPORTANCE -- low
+
+**max.in.flight.requests.per.connection** -- Максимальное количество неподтвержденных запросов, отправляемых клиентом по одному соединению перед блокировкой. Если параметр имеет значение больше *1*, то в случае сбоев существует риск переупорядочения данных из-за повторных попыток (если они включены)
+
++ TYPE -- int
++ DEFAULT -- 5
++ VALID VALUES -- [1,...]
++ IMPORTANCE -- low
+
+**metadata.max.age.ms** -- Период времени, после которого принудительно обновляются метаданные даже при отсутствии видимых изменений в лидере партиции с целью предварительного обнаружения новых брокеров или партиций. Указывается в миллисекундах
+
++ TYPE -- long
++ DEFAULT -- 300000
++ VALID VALUES -- [0,...]
++ IMPORTANCE -- low
+
+**metric.reporters** -- Список классов для использования в качестве репортеров метрик. Реализация интерфейса *org.apache.kafka.common.metrics.MetricsReporter* позволяет подключать классы, которые будут уведомлены о создании новой метрики. JmxReporter всегда включен в реестр статистических данных JMX
+
++ TYPE -- list
++ DEFAULT -- ""
++ VALID VALUES -- org.apache.kafka.common.config.ConfigDef$NonNullValidator@7cd62f43
++ IMPORTANCE -- low
+
+**metrics.num.samples** -- Количество выборок, поддерживаемых ля вычисления метрик
+
++ TYPE -- int
++ DEFAULT -- 2
++ VALID VALUES -- [1,...]
++ IMPORTANCE -- low
+
+**metrics.recording.level** -- Самый высокий уровень записи для метрик
+
++ TYPE -- string
++ DEFAULT -- INFO
++ VALID VALUES -- [INFO, DEBUG]
++ IMPORTANCE -- low
+
+**metrics.sample.window.ms** -- Время ожидания вычисления метрик выборки. Указывается в миллисекундах
+
++ TYPE -- long
++ DEFAULT -- 30000
++ VALID VALUES -- [0,...]
++ IMPORTANCE -- low
+
+**reconnect.backoff.max.ms** -- Максимальный период времени ожидания повторного подключения к брокеру при неоднократных сбоях соединения. Отсрочка на хост увеличивается экспоненциально для каждого последующего сбоя соединения, вплоть до установленного максимума. После расчета увеличения отсрочки к значению добавляется *20%* случайного джиттера во избежание помех связи. Указывается в миллисекундах
+
++ TYPE -- long
++ DEFAULT -- 1000
++ VALID VALUES -- [0,...]
++ IMPORTANCE -- low
+
+**reconnect.backoff.ms** -- Базовый период времени ожидания повторного подключения к хосту. Позволяет избегать многократного подключения к узлу в узком цикле. Данная отсрочка применяется ко всем попыткам подключения клиента к брокеру. Указывается в миллисекундах
+
++ TYPE -- long
++ DEFAULT -- 50
++ VALID VALUES -- [0,...]
++ IMPORTANCE -- low
+
+**retry.backoff.ms** -- Время ожидания перед повторной попыткой отправки неудавшегося запроса в партицию топика. Указывается в миллисекундах
+
++ TYPE -- long	
++ DEFAULT -- 100
++ VALID VALUES -- [0,...]
++ IMPORTANCE -- low
+
+**sasl.kerberos.kinit.cmd** -- Путь команд Kerberos kinit
+
++ TYPE -- string
++ DEFAULT -- /usr/bin/kinit
++ IMPORTANCE -- low
+
+**sasl.kerberos.min.time.before.relogin** -- Время ожидания авторизации потока между попытками обновления
+
++ TYPE -- long
++ DEFAULT -- 60000
++ IMPORTANCE -- low
+
+**sasl.kerberos.ticket.renew.jitter** -- Процент случайного джиттера по отношению к времени возобновления
+
++ TYPE -- double
++ DEFAULT -- 0.05
++ IMPORTANCE -- low
+
+**sasl.kerberos.ticket.renew.window.factor** -- Время ожидания авторизации потока до тех пор, пока не будет достигнут указанный коэффициент времени от последнего обновления до истечения срока действия тикета, и попытка возобновления тикета за этот период времени
+
++ TYPE -- double
++ DEFAULT -- 0.8
++ IMPORTANCE -- low
+
+**ssl.cipher.suites** -- Список наборов шифров. Именованная комбинация аутентификации, шифрования, MAC и ключей обмена алгоритма для согласования параметров безопасности для сетевого подключения с использованием протокола TLS или SSL. По умолчанию поддерживаются все доступные варианты шифрования
+
++ TYPE -- list
++ DEFAULT -- null
++ IMPORTANCE -- low
+
+**ssl.endpoint.identification.algorithm** -- Алгоритм идентификации конечных точек для валидации имени хоста сервера с использованием сертификата сервера
+
++ TYPE -- string
++ DEFAULT -- null
++ IMPORTANCE -- low
+
+**ssl.keymanager.algorithm** -- Алгоритм службы управления ключами для SSL-соединений. Значением по умолчанию является алгоритм, настроенный для Java Virtual Machine
+
++ TYPE -- string
++ DEFAULT -- SunX509
++ IMPORTANCE -- low
+
+**ssl.secure.random.implementation** -- Реализация SecureRandom PRNG, используемая для операций шифрования SSL
+
++ TYPE -- string
++ DEFAULT -- null
++ IMPORTANCE -- low
+
+**ssl.trustmanager.algorithm** -- Алгоритм доверенной службы управления ключами для SSL-соединений. Значением по умолчанию является алгоритм, настроенный для Java Virtual Machine
+
++ TYPE -- string	
++ DEFAULT -- PKIX
++ IMPORTANCE -- low
+
+**transaction.timeout.ms** -- Максимальный интервал времени, который координатор транзакции ожидает для обновления статуса транзакции от поставщика перед тем, как будет прервана текущая транзакция. Если установленное значение больше, чем значение *transaction.max.timeout.ms* в настройках брокера, запрос завершается ошибкой *InvalidTransactionTimeout*
+
++ TYPE -- int
++ DEFAULT -- 60000
++ IMPORTANCE -- low
+
+**transactional.id** -- Идентификатор транзакции. Параметр позволяет использовать семантику достоверности, которая охватывает несколько сессий поставщика, и позволяет гарантировать клиенту, что транзакции, использующие тот же TransactionalId, завершены до начала любых новых транзакций. Если TransactionalId не указан, то поставщик ограничивается идемпотентной доставкой. Важно, что параметр *enable.idempotence* должен быть включен при сконфигурированном *TransactionalId*. Значение по умолчанию "null", что означает невозможность использования транзакций. Для транзакций требуется по меньшей мере три брокера по умолчанию, что является рекомендуемым параметром для продуктивной системы; для разработки можно изменить настройки в параметре брокера *transaction.state.log.replication.factor*
+
++ TYPE -- string
++ DEFAULT -- null
++ VALID VALUES -- non-empty string
++ IMPORTANCE -- low
+
+
+Конфигурирование Consumer
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Далее приведены конфигурации для нового потребителя.
+
 **** -- 
 
 + TYPE -- 
@@ -1649,10 +1841,6 @@
 
 
 
-
-
-Конфигурирование Consumer
-^^^^^^^^^^^^^^^^^^^^^^^^^
 
 
 Конфигурирование Connect
