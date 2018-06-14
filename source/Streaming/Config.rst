@@ -2104,16 +2104,94 @@
 + VALID VALUES -- [1,...]
 + IMPORTANCE -- low
 
-**** -- 
+**metrics.recording.level** -- Самый высокий уровень записи для метрик
 
-+ TYPE -- 
-+ DEFAULT -- 
-+ VALID VALUES -- 
-+ IMPORTANCE -- 
++ TYPE -- string
++ DEFAULT -- INFO
++ VALID VALUES -- [INFO, DEBUG]
++ IMPORTANCE -- low
 
+**metrics.sample.window.ms** -- Время ожидания вычисления метрик выборки. Указывается в миллисекундах
 
++ TYPE -- long
++ DEFAULT -- 30000
++ VALID VALUES -- [0,...]
++ IMPORTANCE -- low
 
+**reconnect.backoff.max.ms** -- Максимальный период времени ожидания повторного подключения к брокеру при неоднократных сбоях соединения. Отсрочка на хост увеличивается экспоненциально для каждого последующего сбоя соединения, вплоть до установленного максимума. После расчета увеличения отсрочки к значению добавляется *20%* случайного джиттера во избежание помех связи. Указывается в миллисекундах
 
++ TYPE -- long
++ DEFAULT -- 1000
++ VALID VALUES -- [0,...]
++ IMPORTANCE -- low
+
+**reconnect.backoff.ms** -- Базовый период времени ожидания повторного подключения к хосту. Позволяет избегать многократного подключения к узлу в узком цикле. Данная отсрочка применяется ко всем попыткам подключения клиента к брокеру. Указывается в миллисекундах
+
++ TYPE -- long
++ DEFAULT -- 50
++ VALID VALUES -- [0,...]
++ IMPORTANCE -- low
+
+**retry.backoff.ms** -- Время ожидания перед повторной попыткой отправки неудавшегося запроса в партицию топика. Указывается в миллисекундах
+
++ TYPE -- long
++ DEFAULT -- 100
++ VALID VALUES -- [0,...]
++ IMPORTANCE -- low
+
+**sasl.kerberos.kinit.cmd** -- Путь команд Kerberos kinit
+
++ TYPE -- string
++ DEFAULT -- /usr/bin/kinit
++ IMPORTANCE -- low
+
+**sasl.kerberos.min.time.before.relogin** -- Время ожидания авторизации потока между попытками обновления
+
++ TYPE -- long
++ DEFAULT -- 60000
++ IMPORTANCE -- low
+
+**sasl.kerberos.ticket.renew.jitter** -- Процент случайного джиттера по отношению к времени возобновления
+
++ TYPE -- double
++ DEFAULT -- 0.05
++ IMPORTANCE -- low
+
+**sasl.kerberos.ticket.renew.window.factor** -- Время ожидания авторизации потока до тех пор, пока не будет достигнут указанный коэффициент времени от последнего обновления до истечения срока действия тикета, и попытка возобновления тикета за этот период времени
+
++ TYPE -- double
++ DEFAULT -- 0.8
++ IMPORTANCE -- low
+
+**ssl.cipher.suites** -- Список наборов шифров. Именованная комбинация аутентификации, шифрования, MAC и ключей обмена алгоритма для согласования параметров безопасности для сетевого подключения с использованием протокола TLS или SSL. По умолчанию поддерживаются все доступные варианты шифрования
+
++ TYPE -- list
++ DEFAULT -- null
++ IMPORTANCE -- low
+
+**ssl.endpoint.identification.algorithm** -- Алгоритм идентификации конечных точек для валидации имени хоста сервера с использованием сертификата сервера
+
++ TYPE -- string
++ DEFAULT -- null
++ IMPORTANCE -- low
+
+**ssl.keymanager.algorithm** -- Алгоритм службы управления ключами для SSL-соединений. Значением по умолчанию является алгоритм, настроенный для Java Virtual Machine
+
++ TYPE -- string
++ DEFAULT -- SunX509
++ IMPORTANCE -- low
+
+**ssl.secure.random.implementation** -- Реализация SecureRandom PRNG, используемая для операций шифрования SSL
+
++ TYPE -- string
++ DEFAULT -- null
++ IMPORTANCE -- low
+
+**ssl.trustmanager.algorithm** -- Алгоритм доверенной службы управления ключами для SSL-соединений. Значением по умолчанию является алгоритм, настроенный для Java Virtual Machine
+
++ TYPE -- string
++ DEFAULT -- PKIX
++ IMPORTANCE -- low
 
 
 
