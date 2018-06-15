@@ -70,7 +70,6 @@
    SecurityAmbari/index
    HDFSadmin/index
    ReleaseNotes/index
-   Grid/index
    Streaming/index
    Glossary
 
