@@ -1,4 +1,4 @@
-Установка сервера Arenadata Streaming c помощью Ambari 2.7.0
+Установка Arenadata Streaming c помощью Ambari 2.7.0
 ==============================
 
 .. |br| raw:: html
@@ -94,7 +94,7 @@
 
 .. _install_installation_welcom-to-ambari-before-config:
 
-.. figure:: ../imgs/install_installation_welcom-to-ambari-before-config.*
+.. figure:: ../imgs/install_installation_welcom-to-ambari27-before-config.*
    :align: center
 
    Веб-интерфейс Ambari до настройки кластера
