@@ -16,7 +16,7 @@
    :caption: Оглавление:
 
    Intro
-   Installation
+   Install
    Architecture
    Config
    Release
