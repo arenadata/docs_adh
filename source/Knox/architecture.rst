@@ -11,4 +11,4 @@
 .. figure:: ../imgs/ADH_Knox_architecture_deployment.*
    :align: center
 
-   Архитектура разворачивания Knox в Hadoop
+   Архитектура развертывания Knox в Hadoop
