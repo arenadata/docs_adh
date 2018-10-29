@@ -26,7 +26,7 @@
    websockets
    DefiningTopologies
    urls
-   definitions
+   example
    connectivity
    gateway
    SSO
