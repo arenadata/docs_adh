@@ -1,10 +1,10 @@
-Проверка подключения к сервису
+Проверка подключения к сервисам
 =================================
 
 
-Приведенные далее команды используются для проверки подключения между узлом шлюза и сервисом **Hadoop**, после чего так же необходима проверка подключения внешнего клиента к сервису **Hadoop** через шлюз.
+Приведенные далее команды используются для проверки подключения между узлом шлюза и сервисами **Hadoop**, а так же для проверки подключения внешнего клиента к сервисам **Hadoop** через шлюз.
 
-.. important:: При сбое связи между узлом шлюза и внутреннем сервисом Hadoop telnet подключается к порту службы, чтобы убедиться, что шлюз имеет доступ к узлу кластера. При этом необходимо использовать имя хоста и порты, указанные в определении сервиса
+.. important:: При сбое связи между узлом шлюза и внутреннем сервисом Hadoop telnet подключается к порту сервиса, чтобы убедиться, что шлюз имеет доступ к узлу кластера. При этом необходимо использовать имя хоста и порты, указанные в определении сервиса
 
 Тестирование WebHDFS
 ----------------------
@@ -13,7 +13,9 @@
 
 + На хосте шлюза ввести команду:
 
-  :command:`curl http://$webhdfs-host:50070/webhdfs/v1?op=GETHOMEDIRECTORY`
+  ::
+   
+   curl http://$webhdfs-host:50070/webhdfs/v1?op=GETHOMEDIRECTORY
 
 При этом хост отображает информацию:
 
@@ -23,7 +25,9 @@
 
 + На внешнем клиенте ввести команду:
 
-  :command:`curl https://$gateway-host:$gateway_port/$gateway/$cluster_name/$webhdfs_service_name/v1?op=GETHOMEDIRECTORY`
+  ::
+   
+   curl https://$gateway-host:$gateway_port/$gateway/$cluster_name/$webhdfs_service_name/v1?op=GETHOMEDIRECTORY
 
 При этом внешний клиент отображает информацию:
 
@@ -40,7 +44,9 @@
 
 + На хосте шлюза ввести команду:
 
-  :command:`curl http://$webhdfs-host:50111/templeton/v1/version`
+  ::
+  
+   curl http://$webhdfs-host:50111/templeton/v1/version
 
 При этом хост шлюза отображает информацию:
 
@@ -50,7 +56,9 @@
 
 + На внешнем клиенте ввести команду:
 
-  :command:`curl https://$gateway-host:$gateway_port/$gateway/$cluster_name/$webhcat_service_name/v1/version`
+  ::
+  
+   curl https://$gateway-host:$gateway_port/$gateway/$cluster_name/$webhcat_service_name/v1/version
 
 При этом внешний клиент отображает информацию:
 
@@ -66,7 +74,9 @@
 
 + На хосте шлюза ввести команду:
 
-  :command:`curl http://$oozie-host:11000/oozie/v1/admin/build-version`
+  ::
+  
+   curl http://$oozie-host:11000/oozie/v1/admin/build-version
 
 При этом хост шлюза отображает информацию:
 
@@ -76,7 +86,9 @@
 
 + На внешнем клиенте ввести команду:
 
-  :command:`curl https://$gateway-host:$gateway_port/$gateway/$cluster_name/$oozie_service_name/v1/admin/build-version`
+  ::
+  
+   curl https://$gateway-host:$gateway_port/$gateway/$cluster_name/$oozie_service_name/v1/admin/build-version
 
 При этом внешний клиент отображает информацию:
 
@@ -92,7 +104,9 @@
 
 + На хосте шлюза ввести команду:
 
-  :command:`curl http://$hbase-host:17000/version`
+  ::
+  
+   curl http://$hbase-host:17000/version
 
 При этом хост шлюза отображает информацию:
 
@@ -102,7 +116,9 @@
 
 + На внешнем клиенте ввести команду:
 
-  :command:`curl http://$hbase-host:17000/version`
+  ::
+  
+   curl http://$hbase-host:17000/version
 
 При этом внешний клиент отображает информацию:
 
