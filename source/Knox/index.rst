@@ -28,5 +28,5 @@
    urls
    example
    connectivity
-   gateway
+   NewService
    SSO
