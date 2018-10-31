@@ -1,10 +1,10 @@
-Настройка URL-адресов сервисов Hadoop
+Доступ к внутренним сервисам Hadoop
 =======================================
 
 
 Настройка доступа к внутреннему сервису **Hadoop** через **Knox Gateway** осуществляется в два шага:
 
-1. Необходимо изменить файл *$gateway/conf/topologies$cluster-name.xml*, добавив запись, аналогичную следующей, для каждого сервиса **Hadoop**:
+1. Необходимо изменить файл шлюза *$gateway/conf/topologies$cluster-name.xml*, добавив для каждого сервиса **Hadoop** запись, аналогичную следующей:
 
   ::
   
@@ -20,8 +20,8 @@
 
 Где:
 
-+ *$service_name* -- это *AMBARI*, *AMBARIUI*, *ATLAS*, *HIVE*, *JOBTRACKER*, *NAMENODE*, *OOZIE*, *RANGER*, *RANGERUI*, *RESOURCEMANAGER*, *WEBHBASE*, *WEBHCAT*, *WEBHDFS*, *ZEPPELINUI* или *ZEPPELINWS*;
-+ *<url>* -- это полный URL-адрес внутреннего кластера для доступа к сервису, включая:
++ *$service_name* -- название сервиса -- *AMBARI*, *AMBARIUI*, *ATLAS*, *HIVE*, *JOBTRACKER*, *NAMENODE*, *OOZIE*, *RANGER*, *RANGERUI*, *RESOURCEMANAGER*, *WEBHBASE*, *WEBHCAT*, *WEBHDFS*, *ZEPPELINUI* или *ZEPPELINWS*;
++ *<url>* -- полный внутренний URL-адрес кластера для доступа к сервису, включая:
 
   + *$schema* -- протокол сервиса;
   + *$hostname* -- разрешенное имя внутреннего узла;
