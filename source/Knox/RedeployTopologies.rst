@@ -20,15 +20,14 @@
 
   ::
   
-   Directory of C:/hdp/knox-0.4.0.2.1.1.0-1557/data/deployments
+   Directory of /usr/lib/knox/data/deployments
    
-   04/17/2014 05:30 PM <DIR> .
-   04/17/2014 05:30 PM <DIR> ..
-   04/17/2014 05:30 PM <DIR> cluster.war.145514f4dc8
-   04/17/2014 05:30 PM <DIR> myCluster.war.145514f4dc8
-   04/11/2014 08:35 AM <DIR> sandbox.war.145514f4dc8
-    0 File(s) 0 bytes
-    5 Dir(s) 9,730,977,792 bytes free
+   .
+   ..
+   cluster.war.145514f4dc8
+   myCluster.war.145514f4dc8
+   sandbox.war.145514f4dc8
+   
 
 2. Для повторного развертывания всех кластеров необходимо ввести команду:
 
@@ -38,20 +37,17 @@
 
   ::
 
-   Directory of C:/hdp/knox-0.4.0.2.1.1.0-1557/data/deployments
+   Directory of /usr/lib/knox/data/deployments
    
-   04/17/2014 05:34 PM <DIR> .
-   04/17/2014 05:34 PM <DIR> ..
-   04/17/2014 05:30 PM <DIR> cluster.war.145514f4dc8
-   04/17/2014 05:34 PM <DIR> cluster.war.1457241b5dc
-   04/17/2014 05:30 PM <DIR> myCluster.war.145514f4dc8
-   04/17/2014 05:34 PM <DIR> myCluster.war.1457241b5dc
-   04/11/2014 08:35 AM <DIR> sandbox.war.145514f4dc8
-   04/17/2014 05:34 PM <DIR> sandbox.war.1457241b5dc
-    0 File(s) 0 bytes
-    8 Dir(s) 9,730,850,816 bytes free
-
-
+   .
+   ..
+   cluster.war.145514f4dc8
+   cluster.war.1457241b5dc
+   myCluster.war.145514f4dc8
+   myCluster.war.1457241b5dc
+   sandbox.war.145514f4dc8
+   sandbox.war.1457241b5dc
+   
 
 Перераспределение конкретного кластера
 -----------------------------------------
@@ -62,15 +58,13 @@
 
   ::
    
-   Directory of C:/hdp/knox-0.4.0.2.1.1.0-1557/data/deployments
+   Directory of /usr/lib/knox/data/deployments
    
-   04/17/2014 05:30 PM <DIR> .
-   04/17/2014 05:30 PM <DIR> ..
-   04/17/2014 05:30 PM <DIR> cluster.war.145514f4dc8
-   04/17/2014 05:30 PM <DIR> myCluster.war.145514f4dc8
-   04/11/2014 08:35 AM <DIR> sandbox.war.145514f4dc8
-    0 File(s) 0 bytes
-    5 Dir(s) 9,730,977,792 bytes free
+   .
+   ..
+   cluster.war.145514f4dc8
+   myCluster.war.145514f4dc8
+   sandbox.war.145514f4dc8
 
 2. Для повторного развертывания определенного кластера необходимо ввести команду:
 
@@ -82,16 +76,15 @@
 
   ::
 
-   Directory of C:/hdp/knox-0.4.0.2.1.1.0-1557/data/deployments
-   
-   04/17/2014 05:30 PM <DIR> .
-   04/17/2014 05:30 PM <DIR> ..
-   04/17/2014 05:30 PM <DIR> cluster.war.145514f4dc8
-   04/17/2014 05:30 PM <DIR> myCluster.war.145514f4dc8
-   04/17/2014 05:34 PM <DIR> myCluster.war.1457241b5dc
-   04/11/2014 08:35 AM <DIR> sandbox.war.145514f4dc8
-    0 File(s) 0 bytes
-    5 Dir(s) 9,730,977,792 bytes free
+   Directory of /usr/lib/knox/data/deployments
+  
+   .
+   ..
+   cluster.war.145514f4dc8
+   myCluster.war.145514f4dc8
+   myCluster.war.1457241b5dc
+   sandbox.war.145514f4dc8
+  
 
 Должно прослеживаться, что war-файлы кластера не изменились, за исключением обновленного файла для *myCluster* (имеет текущую временную метку).
 
