@@ -519,3 +519,38 @@
    "$principal_instance", "c6401.ambari.apache.org"
    "$realm", "EXAMPLE.COM"
    "$password", "[[password]]"
+
+
+Перечень компонентов поддерживающих работу в Kerberos окружении
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. csv-table:: Поддеживаемые компоненты
+   :header: "Сервис", "Поддержка"
+   :widths: 25, 25
+
+   "Apache HDFS", "Поддерживается"
+   "Apache YARN", "Поддерживается"
+   "Apache MapReduce", "Поддерживается"
+   "Apache Zookeeper", "Поддерживается"
+   "Apache Tez", "Поддерживается"
+   "Apache Hive", "Поддерживается"
+   "Apache HBase", "Поддерживается"
+   "Apache Phoenix", "Поддерживается"
+   "Apache Pig", "Поддерживается"
+   "Apache Sqoop", "Поддерживается"
+   "Apache Flume", "Поддерживается"
+   "Apache Oozie", "Поддерживается"
+   "Apache Atlas", "Поддерживается"
+   "Apache NiFi", "Поддерживается"
+   "Apache Apex", "Не поддерживается"
+   "Apache Flink", "Поддерживается не во всехах типах окружения"
+   "Apache Kafka", "Не поддерживается"
+   "Apache Knox", "Поддерживается"
+   "Apache Mahout", "Поддерживается"
+   "Apache Ranger", "Поддерживается не во всехах типах окружения"
+   "Apache Ranger KMS", "Поддерживается не во всехах типах окружения"
+   "Apache Solr", "Поддерживается не во всехах типах окружения"
+   "Apache Spark", "Поддерживается"
+   "Apache Zeppelin", "Поддерживается не во всехах типах окружения"
+   "Apache Giraph", "Не поддерживается"
+   "Logsearch", "Поддерживается"
