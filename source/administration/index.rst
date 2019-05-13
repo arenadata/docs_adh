@@ -23,4 +23,4 @@
    cluster
    users&groups
    ports
-   
+   viewlist
