@@ -17,9 +17,6 @@
 `Скачать руководство администратора по HDFS`_
  .. _Скачать руководство администратора по HDFS: https://storage.googleapis.com/arenadata-repo/docs/adh/pdf/v1.5.2/Руководство%20администратора%20по%20HDFS.pdf
 
-`Скачать использование Ambari View`_
- .. _Скачать использование Ambari View: https://storage.googleapis.com/arenadata-repo/docs/adh/pdf/v1.5.2/Использование%20Ambari%20View.pdf
-
 `Скачать руководство по работе с Knox Gateway`_
  .. _Скачать руководство по работе с Knox Gateway: https://storage.googleapis.com/arenadata-repo/docs/adh/pdf/v1.5.2/Руководство%20по%20работе%20с%20Knox%20Gateway.pdf
 
