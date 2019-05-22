@@ -51,7 +51,7 @@
 
 .. _logo-arenadata-black:
 
-.. figure:: ../imgs/logo-arenadata-black.png
+.. figure:: imgs/logo-arenadata-black.png
    :scale: 60 %
    :align: center
 
