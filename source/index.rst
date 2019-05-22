@@ -63,7 +63,7 @@
    views/index
    Knox/index
    ReleaseNotes/index
-   esp/index
+   esp
    Glossary
 
 .. toctree::
