@@ -16,6 +16,30 @@ Gracias a la avanzada de REST API, otros sistemas pueden usar ADCM para automati
 
 ADCM viene en forma de docker-image, por lo que su implementación y uso es muy simple.
 
+Funcionalidad de la aplicación:
+
+* Despliegue;
+* Actualización;
+* Gestión;
+* Vigilancia;
+* Integración de componentes.
+
+Aplicaciones soportadas:
+
+Proveedores de nube soportados:
+
+Funcionalidad de infraestructura:
+
+Creacion / eliminacion BM;
+Trabajo con anfitriones físicos;
+Preparación de BM / anfitriones;
+Vigilancia;
+Gestión de usuarios;
+Gestión de acceso.
+
+Demostración:
+
+
 
 Слайд 7
 ^^^^^^^^^
