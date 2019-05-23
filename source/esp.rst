@@ -24,7 +24,7 @@ Funcionalidad de la aplicación:
 * Vigilancia (Monitoring);
 * Integración de componentes.
 
-Aplicaciones soportadas (:numref:`Рис.%s.<ADCM_aplicaciones>`).
+Aplicaciones soportadas: (:numref:`Рис.%s.<ADCM_aplicaciones>`).
 
 .. _ADCM_aplicaciones:
 
