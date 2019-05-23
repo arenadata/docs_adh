@@ -28,7 +28,7 @@ Aplicaciones soportadas (:numref:`Рис.%s.<ADCM_aplicaciones>`).
 
 .. _ADCM_aplicaciones:
 
-.. figure:: ../imgs/ADCM_aplicaciones.png
+.. figure:: imgs/ADCM_aplicaciones.png
    :align: center
 
    Aplicaciones soportadas
@@ -38,7 +38,7 @@ Proveedores de nube soportados: (:numref:`Рис.%s.<ADCM_proveedores>`).
 
 .. _ADCM_proveedores:
 
-.. figure:: ../imgs/ADCM_proveedores.png
+.. figure:: imgs/ADCM_proveedores.png
    :align: center
 
    Proveedores de nube soportados
