@@ -30,12 +30,12 @@ Proveedores de nube soportados:
 
 Funcionalidad de infraestructura:
 
-Creacion / eliminacion BM;
-Trabajo con anfitriones físicos;
-Preparación de BM / anfitriones;
-Vigilancia;
-Gestión de usuarios;
-Gestión de acceso.
+* Creacion / eliminacion BM;
+* Trabajo con anfitriones físicos;
+* Preparación de BM / anfitriones;
+* Vigilancia;
+* Gestión de usuarios;
+* Gestión de acceso.
 
 Demostración:
 
