@@ -8,6 +8,11 @@ ADCM
 
 1) Страница сайта `ссылка <https://arenadata.tech/products/adcm/>`_
 
+**Arenadata Cluster Manager** (**ADCM**) предоставляет эффективный способ развертывания и управления всеми data-сервисами компании независимо от используемой инфраструктуры -- в облаке, on-premise или в качестве PaaS-сервисов. За счет разделения data-платформы на два логически развязанных слоя -- слой инфраструктуры и слой приложений – эксплуатация всей платформы становится предсказуемой, гибкой и повторяемой. 
+
+Arenadata Cluster Manager (ADCM) proporciona una manera eficiente de implementar y administrar todos los servicios de datos de una empresa, independientemente de la infraestructura utilizada, en la nube, en las instalaciones o como servicios de PaaS. Al dividir la plataforma de datos en dos capas lógicamente no vinculadas: la capa de infraestructura y la capa de aplicación, el funcionamiento de toda la plataforma se vuelve predecible, flexible y repetitivo.
+
+Arena data Cluster Manager (DCM) proporciona una forma eficaz de implementar y administrar todos los servicios de datos de la empresa, independientemente de la infraestructura utilizada, en la nube, en premise o como servicios PaaS. Al dividir la plataforma de datos en dos capas lógicas, una capa de infraestructura y una capa de aplicación, la operación de toda la plataforma se vuelve predecible, flexible y repetible – 
 
 
 Слайд 7
