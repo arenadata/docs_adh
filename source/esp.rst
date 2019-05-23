@@ -24,7 +24,7 @@ Funcionalidad de la aplicación:
 * Vigilancia (Monitoring);
 * Integración de componentes.
 
-Aplicaciones soportadas: (:numref:`Рис.%s.<ADCM_aplicaciones>`).
+Aplicaciones soportadas (:numref:`Рис.%s.<ADCM_aplicaciones>`).
 
 .. _ADCM_aplicaciones:
 
@@ -34,7 +34,7 @@ Aplicaciones soportadas: (:numref:`Рис.%s.<ADCM_aplicaciones>`).
    Aplicaciones soportadas
 
 
-Proveedores de nube soportados: (:numref:`Рис.%s.<ADCM_proveedores>`).
+Proveedores de nube soportados (:numref:`Рис.%s.<ADCM_proveedores>`).
 
 .. _ADCM_proveedores:
 
@@ -57,17 +57,27 @@ Demostración: `URL <https://arenadata.tech/products/adcm/>`_.
 
 
 
-Слайд 7
-^^^^^^^^^
+Diapositiva 7
+^^^^^^^^^^^^^^^
 
-2) Слайд 7 Обзорной презентации
+.. _slide7:
+
+.. figure:: imgs/slide7.png
+   :align: center
+
+   Moderna plataforma de datos
 
 
 
-Слайд 15
-^^^^^^^^^^^
+Diapositiva 15
+^^^^^^^^^^^^^^^^
 
-3) Слайд 15 Обзорной презентации
+.. _slide15:
+
+.. figure:: imgs/slide15.png
+   :align: center
+
+   Separación de componentes e infraestructura
 
 
 
