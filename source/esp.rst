@@ -122,15 +122,19 @@ ADS se utiliza normalmente para dos amplias clases de aplicaciones:
 Ventajas principales:
 
 Punto de acceso único:
+
 * Utilice como bus corporativo intercambio de datos para todas sus aplicaciones.
 
 Una forma fácil, segura y confiable de controlar el flujo de datos:
+
 * Recopile grandes flujos de datos de forma segura y gestionarlos efectivamente en tiempo real.
 
 Políticas de seguridad:
+
 * Crea flujos de datos con soporte para derechos de acceso.
 
 Desarrollo rápido y continuo:
+
 * Desarrolle aplicaciones analíticas de flujo en cuestión de minutos en tiempo real sin una sola línea de código.
 
 ADS contiene todos los componentes necesarios para recopilar, analizar y procesar datos en tiempo real, proporciona almacenamiento y transferencia en la semántica "exactly-once delivery" de una manera segura y tolerante a fallos, proporcionando una interfaz conveniente para la administración y el desarrollo.
