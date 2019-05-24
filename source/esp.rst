@@ -119,7 +119,7 @@ ADS se utiliza normalmente para dos amplias clases de aplicaciones:
 * Creación de un canal para la transmisión de datos en tiempo real para garantizar un intercambio de datos confiable entre sistemas y aplicaciones;
 * Creación de aplicaciones para la transmisión de datos en tiempo real para convertirlas e interactuar con otros flujos.
 
-Ventajas principales:
+Ventajas principales
 
 Punto de acceso único:
 
@@ -141,7 +141,37 @@ ADS contiene todos los componentes necesarios para recopilar, analizar y procesa
 
 Características técnicas
 
+Tolerancia a fallos:
 
+* La arquitectura de la solución permite garantizar la consistencia en la transmisión de datos en tiempo real.
+
+Escalabilidad:
+
+* Agregar nuevos servidores al clúster según sea necesario.
+
+Distribución:
+
+* Posibilidad de construir una infraestructura geo-distribuida.
+
+Equipo disponible:
+
+* Funciona en cualquier hardware compatible con x86. Obtenga los requisitos del sistema recomendados por nuestros especialistas.
+
+Tiempo real:
+
+* Control de flujos, adición y configuración de fuentes de datos en tiempo real.
+
+Seguridad:
+
+* Mecanismos flexibles de control de acceso a datos.
+
+Integración:
+
+* Conectores a varios sistemas: Elasticsearch, SAP HANA, Vertica, Couchbase, Cassandra, CouchDB, IBM MQ, etc. Un amplio conjunto de API para la integración con otros sistemas externos.
+
+Simplicidad y flexibilidad:
+
+* Le permite crear el workflow con la ayuda del interfaz gráfico o desarrollar sus propias aplicaciones utilizando el SDK para mejorar la eficiencia del trabajo.
 
 
 docs.arenadata
