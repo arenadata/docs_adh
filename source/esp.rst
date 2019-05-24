@@ -256,10 +256,6 @@ Para construir un Data Warehouse se necesitan herramientas para ayudar a la migr
 
 + **CPU**, del inglés: central processing unit -- La unidad central de procesamiento o unidad de procesamiento central (conocida por las siglas CPU, del inglés: central processing unit), es el hardware dentro de un ordenador u otros dispositivos programables, que interpreta las instrucciones de un programa informático mediante la realización de las operaciones básicas aritméticas, lógicas y de entrada/salida del sistema.
 
-
-
-
-
-
++ La memoria de acceso aleatorio (Random Access Memory, RAM) se utiliza como memoria de trabajo de computadoras y otros dispositivos para el sistema operativo, los programas y la mayor parte del software. En la RAM se cargan todas las instrucciones que ejecuta la unidad central de procesamiento (procesador) y otras unidades del computador, además de contener los datos que manipulan los distintos programas. -- Оперативная память (Random Access Memory, RAM) используется в качестве рабочей памяти компьютеров и других устройств для операционной системы (ОС) и большинства программ. В RAM загружаются все инструкции, выполняемые центральным процессором (ЦП, CPU) и другими дисками компьютера, а также данные, обрабатываемые различными программами.
 
 
