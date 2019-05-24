@@ -225,22 +225,35 @@ Términos comúnmente utilizados
 + **Clúster** -- кластер -- se aplica a los conjuntos o conglomerados de ordenadores unidos entre sí normalmente por una red de alta velocidad y que se comportan como si fuesen una única computadora.
 
 + **Servidor** -- сервер
+
 + **Máquina virtual** (MV) -- виртуальная машина (ВМ)
+
 + **Sistema operativo** (SO) -- операционная система (ОС)
+
 + **Memoria RAM** -- оперативная память
+
 + **Plataforma de datos** -- платформа данных
+
 + **Almacenamiento** -- хранение
+
 + **Gestión (Administración)** -- управление
+
 + **Vigilancia (Monitoring)** -- мониторинг
+
 + **Para administrar componentes** -- для управления компонентами (`ссылка на использование <https://docs.vmware.com/es/VMware-vSphere/6.5/com.vmware.vsphere.troubleshooting.doc/GUID-AD3FB0FB-7D88-4595-B0BC-D3C3291D8C18.html>`_)
 
 + **Consola** -- консоль
+
 + **Host** (hosts) -- хост
+
 + **Nodo** -- узел -- un nodo es un punto de intersección o unión de varios elementos que confluyen en el mismo lugar.
 
 + **Un almacén de datos** -- хранилище данных
+
 + **Los data warehouse** -- хранилище данных
+
 + **Indicadores de gestión** -- индикаторы управления (`ссылка на использование <https://es.wikipedia.org/wiki/Almac%C3%A9n_de_datos>`_)
+
 + **Los metadatos** -- метаданные
 
 + **Extracción**. Acción de obtener la información deseada a partir de los datos almacenados en fuentes externas. -- Извлечение. Действие получения нужной информации из данных, хранящихся во внешних источниках.
@@ -260,7 +273,9 @@ Para construir un Data Warehouse se necesitan herramientas para ayudar a la migr
 + **Distribuir, repartir** -- распределять
 
 + **Data marts** -- витрины данных
+
 + **Las bases de datos** -- базы данных
+
 + **Bus de datos** -- шина данных -- El bus de datos permite el intercambio de datos entre la CPU y el resto de unidades. Ademas, controla el uso y acceso a el bus de datos y el bus de direcciones. -- Шина данных позволяет обмениваться данными между процессором и остальными устройствами. Кроме того, контролирует использование и доступ к шине данных и адресной шине.
 
 + **Una red de computadoras** (también llamada red de ordenadores, red de comunicaciones de datos o red informática) es un conjunto de equipos nodos y software conectados entre sí por medio de dispositivos físicos o inalámbricos que envían y reciben impulsos eléctricos, ondas electromagnéticas o cualquier otro medio para el transporte de datos, con la finalidad de compartir información, recursos y ofrecer servicios.
