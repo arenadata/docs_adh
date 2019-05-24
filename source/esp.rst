@@ -179,6 +179,17 @@ docs.arenadata
 
 7) https://docs.arenadata.io/ads/
 
+Una solución efectiva para el procesamiento de datos en tiempo real
+
+**Arenadata Streaming** (**ADS**) -- 
+
+платформа потоковых операций, построенная на базе Apache Kafka и Apache Nifi, проектов с открытым исходным кодом, адаптированное для корпоративного использования. ADS содержит в себе все необходимые компоненты для сбора, анализа и обработки данных в режиме реального времени, обеспечивает хранение и передачу в семантике «exactly-once delivery» безопасным и отказоустойчивым способом, предоставляя удобный интерфейс для администрирования и разработки. Также платформа может выступать в качестве корпоративной шины данных и ETL-инструмента
+una plataforma de flujo de trabajo basada en Apache Kafka y Apache Nifi, proyectos de código abierto, adaptados para uso corporativo. ADS contiene todos los componentes necesarios para recopilar, analizar y procesar datos en tiempo real, proporciona almacenamiento y transferencia en la semántica "exactly-once delivery" de una manera segura tolerante a fallas
+
+proporcionando una interfaz conveniente para la administración y el desarrollo. La plataforma también puede actuar como un bus de datos corporativo y una herramienta ETL.
+
+ADS contiene todos los componentes necesarios para recopilar, analizar y procesar datos en tiempo real, proporciona almacenamiento y transferencia en la semántica "exactly-once delivery" de una manera segura y tolerante a errores, proporcionando una interfaz fácil de usar para la administración y el desarrollo. Además, la plataforma puede actuar como un bus de datos corporativo y una herramienta ETL
+
 
 
 
