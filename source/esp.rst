@@ -181,16 +181,40 @@ docs.arenadata
 
 Una solución efectiva para el procesamiento de datos en tiempo real
 
-**Arenadata Streaming** (**ADS**) -- 
+**Arenadata Streaming** (**ADS**) -- una plataforma de flujo de trabajo basada en Apache Kafka y Apache Nifi, proyectos de código abierto, adaptados para uso corporativo. ADS contiene todos los componentes necesarios para recopilar, analizar y procesar datos en tiempo real, proporciona almacenamiento y transferencia en la semántica "exactly-once delivery" de una manera segura tolerante a fallas proporcionando una interfaz conveniente para la administración y el desarrollo. Además, la plataforma puede actuar como un bus de datos corporativo y una herramienta ETL. 
 
-платформа потоковых операций, построенная на базе Apache Kafka и Apache Nifi, проектов с открытым исходным кодом, адаптированное для корпоративного использования. ADS содержит в себе все необходимые компоненты для сбора, анализа и обработки данных в режиме реального времени, обеспечивает хранение и передачу в семантике «exactly-once delivery» безопасным и отказоустойчивым способом, предоставляя удобный интерфейс для администрирования и разработки. Также платформа может выступать в качестве корпоративной шины данных и ETL-инструмента
-una plataforma de flujo de trabajo basada en Apache Kafka y Apache Nifi, proyectos de código abierto, adaptados para uso corporativo. ADS contiene todos los componentes necesarios para recopilar, analizar y procesar datos en tiempo real, proporciona almacenamiento y transferencia en la semántica "exactly-once delivery" de una manera segura tolerante a fallas
+La idea de la plataforma de transmisión distribuida es proporcionar:
 
-proporcionando una interfaz conveniente para la administración y el desarrollo. La plataforma también puede actuar como un bus de datos corporativo y una herramienta ETL.
+* Punto de acceso único;
+* Una forma fácil, segura y confiable de controlar el flujo de datos;
+* Políticas de seguridad;
+* Desarrollo rápido y continuo.
 
-ADS contiene todos los componentes necesarios para recopilar, analizar y procesar datos en tiempo real, proporciona almacenamiento y transferencia en la semántica "exactly-once delivery" de una manera segura y tolerante a errores, proporcionando una interfaz fácil de usar para la administración y el desarrollo. Además, la plataforma puede actuar como un bus de datos corporativo y una herramienta ETL
+Una de las características de la implementación de la plataforma es la aplicación de una técnica similar a los registros de transacciones utilizados en los sistemas de administración de bases de datos. **ADS** tiene las siguientes cualidades técnicas distintivas:
 
+* Tolerancia a fallos -- provisión de la consistencia en la transmisión de datos en tiempo real;
+* Escalabilidad -- agregar nuevos servidores al clúster según sea necesario.
+* Distribución -- posibilidad de construir una infraestructura geo-distribuida.
+* Equipo disponible -- funciona en cualquier hardware compatible con x86. Obtenga los requisitos del sistema recomendados por nuestros especialistas.
+* Tiempo real -- control de flujos, adición y configuración de fuentes de datos en tiempo real.
+* Seguridad -- mecanismos flexibles de control de acceso a datos.
+* Integración -- conectores a varios sistemas: Elasticsearch, SAP HANA, Vertica, Couchbase, Cassandra, CouchDB, IBM MQ, etc. Un amplio conjunto de API para la integración con otros sistemas externos.
+* Simplicidad y flexibilidad -- le permite crear el workflow con la ayuda del interfaz gráfico o desarrollar sus propias aplicaciones utilizando el SDK para mejorar la eficiencia del trabajo. 
 
+**Apache Kafka** – distribuido agente de software de mensajes, un proyecto de código abierto desarrollado dentro de la **Apache Software Foundation**.
+
+La versión actual de **ADS** versión **1.0.0** se lanzó en el segundo trimestre de 2018. La versión incluye los siguientes componentes: **Ambari**, **Zookeeper**, **NiFi**, **Kafka**. La integración con **ZooKeeper** permite que el sistema funcione no solo de forma rápida y sin problemas, sino también de forma segura, lo que es especialmente importante en el caso de Big Data.
+
+Con **Arenadata Streaming**, obtiene una solución eficiente para el procesamiento de datos:
+
+* Úselo como un bus de datos corporativo para todas sus aplicaciones;
+* Recopile grandes flujos de datos de forma segura y eficiente adminístrelos en tiempo real;
+* Cree flujos de datos con la distinción de derechos de acceso;
+* Desarrolle aplicaciones analíticas de transmisión en minutos en tiempo real sin una sola línea de código.
+
+La documentación original en ruso permite facilitar el proceso de planificación y despliegue de la plataforma. La instrucción puede ser útil para los administradores, programadores, desarrolladores y empleados dde los departamentos de tecnología de la información que implementan y mantienen los clústeres de **Arenadata**.
+
+La siguiente documentación describe la plataforma **Arenadata Streaming**: conceptos de almacenamiento, instalación, características arquitectónicas, APIs y configuración de la plataforma.
 
 
 
