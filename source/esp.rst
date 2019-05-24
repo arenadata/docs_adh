@@ -104,22 +104,31 @@ Arenadata Streaming
 
 6) https://arenadata.tech/products/ads/
 
-**Arenadata Streaming** (**ADS**) -- es una solución eficiente escalable y tolerante a fallos para el procesamiento de datos en tiempo real, adaptada para uso corporativo y construida sobre la base de Apache Kafka y Apache Nifi -- proyectos con código abierto.
+**Arenadata Streaming** (**ADS**) -- es una solución eficiente escalable y tolerante a fallos para el procesamiento de datos ``en cadena`` en tiempo real, adaptada para uso corporativo y construida sobre la base de **Apache Kafka** y **Apache Nifi** -- proyectos con código abierto.
 
 Una de las características de la implementación de la plataforma es el uso de tecnología similar a los registros de transacciones utilizados en los sistemas de administración de bases de datos.
 
-La plataforma de transmisión tiene tres capacidades clave:
+La plataforma de transmisión tiene tres capacidades principales:
 
-* Publicación y suscripción a una transmisión de datos similar a una cola de mensajes o un sistema de mensajería corporativa;
-* Almacenar registros de forma tolerante a fallos.
-* Procesamiento de subprocesos de registros a medida que ocurren.
+* Publicación y suscripción a una transmisión de datos ``en cadena`` similar a una cola de mensajes o un sistema de mensajería corporativa;
+* Almacenamiento registros de forma tolerante a fallos;
+* Procesamiento de registros a medida que ocurren.
 
-ADS se utiliza normalmente para dos amplias clases de aplicaciones:
+**ADS** se utiliza ``generalmente`` para dos amplias clases de aplicaciones:
 
-* Creación de un canal para la transmisión de datos en tiempo real para garantizar un intercambio de datos confiable entre sistemas y aplicaciones;
-* Creación de aplicaciones para la transmisión de datos en tiempo real para convertirlas e interactuar con otros flujos.
+* Creación de un canal para la transmisión de datos ``en cadena`` en tiempo real para garantizar un intercambio de datos confiable entre sistemas y aplicaciones;
+* Creación de aplicaciones para la transmisión de datos ``en cadena`` en tiempo real para convertirlas e interactuar con ``otras cadenas`` (otros flujos).
+
+.. _ADS-esquema:
+
+.. figure:: imgs/ADS-esquema.png
+   :align: center
+
+   Esquema ADS
+
 
 Ventajas principales
+~~~~~~~~~~~~~~~~~~~~~
 
 Punto de acceso único:
 
@@ -127,19 +136,20 @@ Punto de acceso único:
 
 Una forma fácil, segura y confiable de controlar el flujo de datos:
 
-* Recopile grandes flujos de datos de forma segura y gestionarlos efectivamente en tiempo real.
+* Recopile grandes flujos de datos de forma segura y ``administrarlos`` (gestionarlos) efectivamente en tiempo real.
 
 Políticas de seguridad:
 
-* Crea flujos de datos con soporte para derechos de acceso.
+* Crea flujos de datos con soporte para ``la diferenciación de los`` derechos de acceso.
 
 Desarrollo rápido y continuo:
 
 * Desarrolle aplicaciones analíticas de flujo en cuestión de minutos en tiempo real sin una sola línea de código.
 
-ADS contiene todos los componentes necesarios para recopilar, analizar y procesar datos en tiempo real, proporciona almacenamiento y transferencia en la semántica "exactly-once delivery" de una manera segura y tolerante a fallos, proporcionando una interfaz conveniente para la administración y el desarrollo.
+**ADS** contiene todos los componentes necesarios para recopilar, analizar y procesar datos en tiempo real, proporciona almacenamiento y transferencia en la semántica "exactly-once delivery" de una manera segura y tolerante a fallos, proporcionando una interfaz conveniente para la administración y el desarrollo.
 
 Características técnicas
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Tolerancia a fallos:
 
@@ -308,4 +318,9 @@ Para construir un Data Warehouse se necesitan herramientas para ayudar a la migr
 
 + La memoria de acceso aleatorio (Random Access Memory, RAM) se utiliza como memoria de trabajo de computadoras y otros dispositivos para el sistema operativo, los programas y la mayor parte del software. En la RAM se cargan todas las instrucciones que ejecuta la unidad central de procesamiento (procesador) y otras unidades del computador, además de contener los datos que manipulan los distintos programas. -- Оперативная память (Random Access Memory, RAM) используется в качестве рабочей памяти компьютеров и других устройств для операционной системы (ОС) и большинства программ. В RAM загружаются все инструкции, выполняемые центральным процессором (ЦП, CPU) и другими дисками компьютера, а также данные, обрабатываемые различными программами.
 
++ El procesamiento de datos -- обработка данных
+
++ el procesamiento de datos *en cadena* en tiempo real -- *потоковая* обработка данных в реальном времени
+
++ flujo de datos -- поток данных
 
