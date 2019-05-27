@@ -252,6 +252,13 @@ docs.arenadata
 
 8) https://arenadata.tech/products/db/ (аналогично тут https://docs.arenadata.io/adb/)
 
+**Arenadata** **DB** (**ADB**) -- SGBD distribuido utilizando el concepto de MPP (massively parallel processing, procesamiento masivamente paralelo) y basado en la base de datos de código abierto -- Greenplum.
+
+Los SGBD masivos paralelos analíticos están diseñados para almacenar y procesar grandes cantidades de datos, desde unidades hasta cientos de terabytes de datos.Estas SGBD se utilizan con mayor frecuencia para el análisis predictivo, la elaboración de informes periódicos, el análisis de la rotación de clientes y la creación de almacenes de datos corporativos.
+
+Hasta hace poco, el mercado de bases de datos analíticas SGBD dividieron cuatro jugadores (Vertica, Teradata, Netezza y Greenplum) que existían fuera de la comunidad Open Source, pero la situación cambió en 2017, cuando el proyecto Greenplum pasó a la categoría de proyectos abiertos.
+
+El descubrimiento del código fuente permitió al equipo de Arenadata iniciar el proyecto - **Arenadata** **DB** (**ADB**) - un SGBD relacional que tiene una arquitectura paralela masiva sin compartir recursos (Shared Nothing) y está diseñado para almacenar, procesar y analizar grandes cantidades de datos estructurados y poco estructurados. Con la capacidad de procesamiento de cientos de servidores, un optimizador de consultas avanzado y un sistema de redundancia de datos flexible, **ADB** mejora significativamente el rendimiento y la fiabilidad al mantener el acceso a los datos heredado de las aplicaciones **ANSI** **SQL** (totalmente compatible con PostgreSQL).
 
 
 
@@ -332,3 +339,4 @@ Para construir un Data Warehouse se necesitan herramientas para ayudar a la migr
 
 + flujo de datos -- поток данных
 
++ SGBD -- Sistemas de Gestión de Bases de Datos (Систе́ма управле́ния ба́зами да́нных)
