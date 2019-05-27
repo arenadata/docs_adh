@@ -252,13 +252,13 @@ docs.arenadata
 
 8) https://arenadata.tech/products/db/ (аналогично тут https://docs.arenadata.io/adb/)
 
-**Arenadata** **DB** (**ADB**) -- SGBD distribuido utilizando el concepto de MPP (massively parallel processing, procesamiento masivamente paralelo) y basado en la base de datos de código abierto -- Greenplum.
+**Arenadata** **DB** (**ADB**) -- SGBD distribuido, utilizando el concepto de MPP (massively parallel processing, procesamiento masivamente paralelo) y basado en la base de datos de código abierto -- Greenplum.
 
 Los SGBD masivos paralelos analíticos están diseñados para almacenar y procesar grandes cantidades de datos, desde unidades hasta cientos de terabytes de datos.Estas SGBD se utilizan con mayor frecuencia para el análisis predictivo, la elaboración de informes periódicos, el análisis de la rotación de clientes y la creación de almacenes de datos corporativos.
 
 Hasta hace poco, el mercado de bases de datos analíticas SGBD dividieron cuatro jugadores (Vertica, Teradata, Netezza y Greenplum) que existían fuera de la comunidad Open Source, pero la situación cambió en 2017, cuando el proyecto Greenplum pasó a la categoría de proyectos abiertos.
 
-El descubrimiento del código fuente permitió al equipo de Arenadata iniciar el proyecto - **Arenadata** **DB** (**ADB**) - un SGBD relacional que tiene una arquitectura paralela masiva sin compartir recursos (Shared Nothing) y está diseñado para almacenar, procesar y analizar grandes cantidades de datos estructurados y poco estructurados. Con la capacidad de procesamiento de cientos de servidores, un optimizador de consultas avanzado y un sistema de redundancia de datos flexible, **ADB** mejora significativamente el rendimiento y la fiabilidad al mantener el acceso a los datos heredado de las aplicaciones **ANSI** **SQL** (totalmente compatible con PostgreSQL).
+El descubrimiento del código fuente permitió al equipo de Arenadata iniciar el proyecto -- **Arenadata** **DB** (**ADB**) -- un SGBD relacional que tiene una arquitectura paralela masiva sin compartir recursos (Shared Nothing) y está diseñado para almacenar, procesar y analizar grandes cantidades de datos estructurados y poco estructurados. Con la capacidad de procesamiento de cientos de servidores, un optimizador de consultas avanzado y un sistema de redundancia de datos flexible, **ADB** mejora significativamente el rendimiento y la fiabilidad al mantener el acceso a los datos heredado de las aplicaciones **ANSI** **SQL** (totalmente compatible con PostgreSQL).
 
 La arquitectura ADB es un clúster clásico: varios segmentos de servidor, un servidor maestro y un servidor de respaldo, interconectados por redes rápidas (10G Ethernet o Infiniband). Cada segmento de servidor tiene varios segmentos (instancias) de PostgreSQL que contienen datos. En caso de que falle uno o varios segmentos, se marcan como fallidos y en lugar de ellos se inician sus segmentos duplicados, los datos se replican utilizando la tecnología de grabación avanzada utilizada en el DBMS de PostgreSQL (Wright Ahead Log, WAL -- todos los cambios en las tablas e índices se escriben en el archivo solo después su registro).
 
@@ -267,6 +267,8 @@ El uso de varias interconexiones permite aumentar la capacidad del canal de inte
 El ADB implementa un esquema clásico de separación (sharding) de datos -- cada tabla consta de N tablas alojadas en N segmentos de clúster. La lógica de división de la tabla en segmentos se establece mediante la clave (campo) de distribución. Para cada columna individual de la tabla, puede especificar su tipo y nivel de compresión. Además de los tipos de compresión inicialmente disponibles en Greenplum - zlib (una de las bibliotecas de compresión más utilizadas, en particular, se usa en distribuciones de Linux) y RLE delta compression (almacenamiento de cambios entre los valores de los campos en la columna), el algoritmo zstandard desarrollado por Facebook e implementado por el equipo de Arenadata, que ofrece casi cuatro veces más rendimiento que zlib.
 
 ADB utiliza el almacenamiento polimórfico de datos, por ejemplo, una tabla se puede dividir en secciones verticales (particiones), algunas de las cuales se almacenarán como filas y otras como objetos de columna. Al mismo tiempo, para el usuario esta tabla se verá como un solo objeto.
+
+
 
 
 +	Возможно это https://docs.arenadata.io/adb/best_practices/intro.html
