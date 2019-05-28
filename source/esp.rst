@@ -290,7 +290,9 @@ Las capacidades de integración de ADB con otros sistemas permiten usar este SGB
 
 La plataforma **Arenadata EDP** consta de tres componentes estrechamente relacionados usando el marco de acceso paralelo: el clúster Arenadata Hadoop, el clúster ADB y el clúster Arenadata In-memory Grid. En el SGBD ADB, se crean tablas, los orígenes de datos para los cuales se encuentran tanto los datos del propio SGBD como los datos del HDFS--clúster Hadoop y los datos de la memoria RAM del clúster In-memory Grid. Para administrar los procesos internos y los procesos de carga de datos, se utiliza el Nifi -- procesador abierto ETL/ELT, y para acceder a los datos de usuario y su procesamiento analítico – **Apache Zeppelin**.
 
+Para utilizar el SGBD de manera efectiva, necesita herramientas de administración y monitoreo -- el ADB tiene un paquete de herramientas administrativas: software de monitoreo, administración de DBMS y envío de notificaciones.
 
+La alta velocidad de procesamiento de consultas complejas, el escalamiento lineal, la ausencia de requisitos de software específicos, el código de fuente abierta, la flexibilidad de integración -- nos permiten utilizar Arenadata DB como un almacén de datos analíticos de sistemas de información corporativos, que fue apreciado tanto por empresas cercanas al negocio de TI (telecom, e-commerence, fintech), como por industrias más tradicionales (industrias de petróleo y gas y metalúrgicas).
 
 
 +	Возможно это https://docs.arenadata.io/adb/best_practices/intro.html
