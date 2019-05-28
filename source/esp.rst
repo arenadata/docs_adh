@@ -286,6 +286,9 @@ El sistema de respaldo flexible le permite implementar un clúster con un nivel 
 * Hay la posibilidad de la elaboración y la personalización del producto bajo las necesidades concretas del cliente.
 * La implementación está disponible tanto en el "hierro desnudo" como en la nube.
 
+Las capacidades de integración de ADB con otros sistemas permiten usar este SGBD para construir plataformas de almacenamiento y procesamiento de datos universales, como Arenadata Enterprise Data Platform (EDP) -- una solución abierta y horizontalmente escalable para almacenar y procesar grandes cantidades de datos de cualquier tipo. La plataforma funciona con cargas de OLTP a OLAP, admite el acceso a datos tanto en SQL como en bibliotecas de Python.
+
+La plataforma **Arenadata EDP** consta de tres componentes estrechamente relacionados usando el marco de acceso paralelo: el clúster Arenadata Hadoop, el clúster ADB y el clúster Arenadata In-memory Grid. En el SGBD ADB, se crean tablas, los orígenes de datos para los cuales se encuentran tanto los datos del propio SGBD como los datos del HDFS--clúster Hadoop y los datos de la memoria RAM del clúster In-memory Grid. Para administrar los procesos internos y los procesos de carga de datos, se utiliza el Nifi -- procesador abierto ETL/ELT, y para acceder a los datos de usuario y su procesamiento analítico – **Apache Zeppelin**.
 
 
 
