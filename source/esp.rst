@@ -268,6 +268,25 @@ El ADB implementa un esquema clásico de separación (sharding) de datos -- cada
 
 ADB utiliza el almacenamiento polimórfico de datos, por ejemplo, una tabla se puede dividir en secciones verticales (particiones), algunas de las cuales se almacenarán como filas y otras como objetos de columna. Al mismo tiempo, para el usuario esta tabla se verá como un solo objeto.
 
+La seguridad en ADB se logra cifrando los datos y las conexiones de cliente de servidor a través de SSL en todas las etapas de su ciclo de vida. Además, todas las interacciones internas de los componentes SGBD ADB (segmentos, espejos y asistentes) también se pueden cifrar con SSL, y los datos almacenados en los discos del clúster se pueden cifrar utilizando claves PGP (a nivel de tabla o columna en las tablas). Todo esto permite excluir situaciones de búsqueda de datos en forma no encriptada.
+
+La delimitación de las zonas de visibilidad de datos y los derechos de acceso se proporciona a través del modelo de acceso (Role Based Access Control, RBAC), que permite la implementación de reglas de control de acceso flexibles que son flexibles y cambian dinámicamente durante la operación de la plataforma de procesamiento y almacenamiento de datos. Así, por ejemplo, puede crear esquemas para restringir el acceso a tablas y otros objetos SGBD, así como a filas y columnas de tablas individuales.
+
+Una de las cualidades más importantes de un SGBD analítico es la flexibilidad y la productividad en el intercambio de datos con sistemas externos. En particular, ADB implementa un protocolo de intercambio paralelo de datos con sistemas de terceros, PDF (Platform eXtension Framework), que permite la interacción con el sistema externo simultáneamente en todos los segmentos del clúster. Si el sistema de origen también es un clúster, puede utilizar la interacción en clúster en ambos lados para mejorar el rendimiento y aumentar la velocidad de la interacción a medida que se amplían los clústeres.
+
+El sistema de respaldo flexible le permite implementar un clúster con un nivel predeterminado de tolerancia a fallas, lo que permite que el SGBD funcione incluso si la mitad de los servidores del clúster falla. Y una mayor selección de estrategias de almacenamiento de datos en ADB proporciona el rendimiento necesario en todas las etapas del ciclo de vida de los datos -- desde la recepción de nuevos datos en línea, el almacenamiento de datos básicos con diferentes niveles de compresión hasta la exportación de datos archivados al clúster de Hadoop.
+
+**Ventajas clave de ADB:**
+
+* Todo el apoyo y la experiencia en la implementación está disponible en Rusia y en ruso.
+* Desarrollado un paquete de utilidades para la instalación sin conexión (sin acceso a Internet).
+* La distribución se basa en Open-source el núcleo del SGBD de Greenplum. 
+* Software completamente ruso.
+* El soporte está disponible de forma remota y en el sitio (on-site). Hay un conjunto de servicios de paquetes disponibles para planificar, instalar y auditar el sistema.
+* Hay la posibilidad de la elaboración y la personalización del producto bajo las necesidades concretas del cliente.
+* La implementación está disponible tanto en el "hierro desnudo" como en la nube.
+
+
 
 
 
