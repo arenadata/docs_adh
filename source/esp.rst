@@ -299,6 +299,15 @@ La alta velocidad de procesamiento de consultas complejas, el escalamiento linea
 +	Слайд 19 Обзорной презентации
 
 
+ADH
+----
+
+docs.arenadata
+^^^^^^^^^^^^^^^^^
+
+8) https://docs.arenadata.io/adh/
+
+
 
 
 Términos comúnmente utilizados
