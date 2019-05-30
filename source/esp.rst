@@ -226,8 +226,11 @@ La versión actual de **ADS** versión **1.0.0** se lanzó en el segundo trimest
 Con **Arenadata Streaming**, obtiene una solución eficiente para el procesamiento de datos:
 
 * Úselo como un bus de datos corporativo para todas sus aplicaciones;
+
 * Recopile grandes flujos de datos de forma segura y eficiente adminístrelos en tiempo real;
+
 * ``Crea flujos de datos con soporte para la diferenciación de los derechos de acceso`` (Crea flujos de datos con la distinción de derechos de acceso);
+
 * Desarrolla aplicaciones analíticas de transmisión en minutos en tiempo real sin una sola línea de código.
 
 La documentación original en ruso permite facilitar el proceso de planificación y despliegue de la plataforma. La instrucción puede ser útil para los administradores, programadores, desarrolladores y empleados de los departamentos de tecnología de la información que implementan y mantienen los clústeres de **Arenadata**.
@@ -245,7 +248,7 @@ La siguiente documentación describe la plataforma **Arenadata Streaming**: conc
 
 
 ADB
-----
+------
 
 docs.arenadata
 ^^^^^^^^^^^^^^^^^
@@ -279,11 +282,17 @@ El sistema de respaldo flexible le permite implementar un clúster con un nivel 
 **Ventajas clave de ADB:**
 
 * Todo el apoyo y la experiencia en la implementación está disponible en Rusia y en ruso.
+
 * Desarrollado un paquete de utilidades para la instalación sin conexión (sin acceso a Internet).
+
 * La distribución se basa en Open-source el núcleo del SGBD de Greenplum. 
+
 * Software completamente ruso.
+
 * El soporte está disponible de forma remota y en el sitio (on-site). Hay un conjunto de servicios de paquetes disponibles para planificar, instalar y auditar el sistema.
+
 * Hay la posibilidad de la elaboración y la personalización del producto bajo las necesidades concretas del cliente.
+
 * La implementación está disponible tanto en el "hierro desnudo" como en la nube.
 
 Las capacidades de integración de ADB con otros sistemas permiten usar este SGBD para construir plataformas de almacenamiento y procesamiento de datos universales, como Arenadata Enterprise Data Platform (EDP) -- una solución abierta y horizontalmente escalable para almacenar y procesar grandes cantidades de datos de cualquier tipo. La plataforma funciona con cargas de OLTP a OLAP, admite el acceso a datos tanto en SQL como en bibliotecas de Python.
@@ -300,7 +309,7 @@ La alta velocidad de procesamiento de consultas complejas, el escalamiento linea
 
 
 ADH
-----
+------
 
 docs.arenadata
 ^^^^^^^^^^^^^^^^^
@@ -320,10 +329,15 @@ El lanzamiento actual de la versión 1.6.1 salió en el segundo trimestre de 201
 A diferencia de otras distribuciones corporativas presentadas en el mercado, **Arenadata Hadoop** tiene una serie de características:
 
 * Todo el apoyo y la experiencia en la implementación está disponible en Rusia y en ruso;
+
 * Desarrollado un paquete de utilidades para la off-line instalación (sin acceso a Internet);
+
 * Todo el ensamblaje está basado en proyectos abiertos de Apache, no hay componentes propietarios;
+
 * Software completamente ruso;
+
 * El soporte está disponible de forma remota y en el sitio (on-site);
+
 * Hay un conjunto de servicios de paquetes disponibles para planificar, instalar y auditar el sistema.
 
 **Arenadata Hadoop** proporciona un conjunto completo de funciones y herramientas para la implementación automática de componentes tanto en "hierro desnudo", como en máquinas virtuales (en "la nube"). Las herramientas de administración y supervisión de la configuración del clúster permiten optimizar el rendimiento de todos los componentes del sistema. **Apache Ambari** proporciona interfaces para la integración con sistemas de administración existentes, como **Microsoft System Center** y **Teradata ViewPoint**.
@@ -335,7 +349,7 @@ A continuación, la documentación proporciona un manual de planificación e ins
 
 
 Перевод сайта на англ.
------------------------
+-------------------------
 
 Arenadata Cluster Manager
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
