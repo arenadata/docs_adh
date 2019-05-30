@@ -333,6 +333,44 @@ La documentación original en ruso facilita la planificación y el despliegue de
 A continuación, la documentación proporciona un manual de planificación e instalación de ADHguía de administración para trabajo con cluster, con **HDFS**, con **Apache Ranger** y con **Knox Gateway**, configuración de autorización y seguridad, una descripción del uso de **Ambari View** y **Release Notes**.
 
 
+Перевод сайта на англ.
+-----------------------
+
+Arenadata Cluster Manager
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Ссылка https://arenadata.tech/products/adcm/
+
+
+
+Arenadata Hadoop 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Ссылка https://arenadata.tech/products/hadoop/
+
+
+
+Arenadata DB
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Ссылка https://arenadata.tech/products/db/
+
+
+
+Arenadata Grid 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Ссылка https://arenadata.tech/products/adg/
+
+
+
+Arenadata Streaming
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Ссылка https://arenadata.tech/products/ads/
+
+
+
 
 Términos comúnmente utilizados
 --------------------------------
