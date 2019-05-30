@@ -307,7 +307,7 @@ docs.arenadata
 
 9) https://docs.arenadata.io/adh/
 
-Arenadata Enterprise Data Platform (EDP) -- la plataforma de datos universal, es un conjunto integrado de componentes de nivel empresarial basados en soluciones de código abierto. La plataforma incluye todos los componentes necesarios para trabajar con datos: administración, acceso, análisis, integración, seguridad y administración.
+Arenadata Enterprise Data Platform (EDP) -- la plataforma de datos universal -- es un conjunto integrado de componentes de nivel corporativo basados en soluciones de código abierto. La plataforma incluye todos los componentes necesarios para trabajar con datos: administración, acceso, análisis, integración, seguridad y administración.
 
 La idea principal de la plataforma universal es proporcionar oportunidades de trabajar con cualquier tipo y formato de datos mediante el uso combinado de varias soluciones tecnológicas y arquitecturas de procesamiento de datos.
 
@@ -330,45 +330,7 @@ Arenadata Hadoop proporciona un conjunto completo de funciones y herramientas pa
 
 La documentación original en ruso facilita la planificación y el despliegue de un clúster de **Hadoop**. El manual puede ser útil para los administradores, programadores, desarrolladores y empleados de los departamentos de tecnología de la información que implementan y mantienen los clústeres de **Arenadata**.
 
-A continuación, la documentación proporciona un manual de planificación e instalación de ADHguía de administración para trabajo con cluster, con **HDFS**, con **Apache Ranger** y con **Knox Gateway**, configuración de autorización y seguridad, una descripción del uso de **Ambari View** y **Release Notes**.
-
-
-Перевод сайта на англ.
------------------------
-
-Arenadata Cluster Manager
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Ссылка https://arenadata.tech/products/adcm/
-
-
-
-Arenadata Hadoop 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Ссылка https://arenadata.tech/products/hadoop/
-
-
-
-Arenadata DB
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Ссылка https://arenadata.tech/products/db/
-
-
-
-Arenadata Grid 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Ссылка https://arenadata.tech/products/adg/
-
-
-
-Arenadata Streaming
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Ссылка https://arenadata.tech/products/ads/
-
+A continuación, la documentación proporciona un manual de planificación e instalación de ADH, guía de administración para trabajo con cluster, con **HDFS**, con **Apache Ranger** y con **Knox Gateway**, configuración de autorización y seguridad, una descripción del uso de **Ambari View** y **Release Notes**.
 
 
 
