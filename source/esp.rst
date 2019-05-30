@@ -307,17 +307,17 @@ docs.arenadata
 
 9) https://docs.arenadata.io/adh/
 
-Arenadata Enterprise Data Platform (EDP) -- la plataforma de datos universal -- es un conjunto integrado de componentes de nivel corporativo basados en soluciones de código abierto. La plataforma incluye todos los componentes necesarios para trabajar con datos: administración, acceso, análisis, integración, seguridad y administración.
+**Arenadata Enterprise Data Platform** (**EDP**) -- la plataforma de datos universal -- es un conjunto integrado de componentes de nivel corporativo basados en soluciones de código abierto. La plataforma incluye todos los componentes necesarios para trabajar con datos: administración, acceso, análisis, integración, seguridad y administración.
 
 La idea principal de la plataforma universal es proporcionar oportunidades de trabajar con cualquier tipo y formato de datos mediante el uso combinado de varias soluciones tecnológicas y arquitecturas de procesamiento de datos.
 
-En este momento, se implementa completamente el nivel de almacenamiento y procesamiento de datos semiestructurados y no estructurados -- Arenadata Hadoop (ADH). Es una distribución completa de una plataforma de almacenamiento distribuida basada en Apache Hadoop, adaptada para uso corporativo.
+En este momento, se implementa completamente el nivel de almacenamiento y procesamiento de datos semiestructurados y no estructurados -- **Arenadata Hadoop** (**ADH**). Es una distribución completa de una plataforma de almacenamiento distribuida basada en **Apache Hadoop**, adaptada para uso corporativo.
 
-En 2016, la distribución de Arenadata Hadoop 1.3.2 fue certificada y recibió la confirmación del cumplimiento total de los estándares de la Open Data Platform Initiative (ODPi). ODPi -- es la mayor comunidad mundial de desarrolladores de proyectos de almacenamiento de big data con código abierto bajo los auspicios de la Fundación Linux: 
+En 2016, la distribución de **Arenadata Hadoop 1.3.2** fue certificada y recibió la confirmación del cumplimiento total de los estándares de la **Open Data Platform Initiative** (**ODPi**). **ODPi** -- es la mayor comunidad mundial de desarrolladores de proyectos de almacenamiento de big data con código abierto bajo los auspicios de la **Linux Foundation**: 
 
 El lanzamiento actual de la versión 1.6.1 salió en el segundo trimestre de 2018. La versión incluye los siguientes componentes: **Ambari, HDFS, YARN, Zookeeper, Tez, Hive, HBase, Phoenix, Pig, Sqoop, Flume, Oozie, Atlas, NiFi, Apex, Flink, Kafka, LogSearch, Knox, Mahout, Ranger, Ranger KMS, Solr, Spark, Zeppelin, Giraph.**
 
-A diferencia de otras distribuciones corporativas presentadas en el mercado, Arena data Hadoop tiene una serie de características:
+A diferencia de otras distribuciones corporativas presentadas en el mercado, **Arenadata Hadoop** tiene una serie de características:
 
 * Todo el apoyo y la experiencia en la implementación está disponible en Rusia y en ruso;
 * Desarrollado un paquete de utilidades para la off-line instalación (sin acceso a Internet);
@@ -326,11 +326,11 @@ A diferencia de otras distribuciones corporativas presentadas en el mercado, Are
 * El soporte está disponible de forma remota y en el sitio (on-site);
 * Hay un conjunto de servicios de paquetes disponibles para planificar, instalar y auditar el sistema.
 
-Arenadata Hadoop proporciona un conjunto completo de funciones y herramientas para la implementación automática de componentes tanto en "hierro desnudo", como en máquinas virtuales (en "la nube"). Las herramientas de administración y supervisión de la configuración del clúster permiten optimizar el rendimiento de todos los componentes del sistema. **Apache Ambari** proporciona interfaces para la integración con sistemas de administración existentes, como **Microsoft System Center** y **Teradata ViewPoint**.
+**Arenadata Hadoop** proporciona un conjunto completo de funciones y herramientas para la implementación automática de componentes tanto en "hierro desnudo", como en máquinas virtuales (en "la nube"). Las herramientas de administración y supervisión de la configuración del clúster permiten optimizar el rendimiento de todos los componentes del sistema. **Apache Ambari** proporciona interfaces para la integración con sistemas de administración existentes, como **Microsoft System Center** y **Teradata ViewPoint**.
 
 La documentación original en ruso facilita la planificación y el despliegue de un clúster de **Hadoop**. El manual puede ser útil para los administradores, programadores, desarrolladores y empleados de los departamentos de tecnología de la información que implementan y mantienen los clústeres de **Arenadata**.
 
-A continuación, la documentación proporciona un manual de planificación e instalación de ADH, guía de administración para trabajo con cluster, con **HDFS**, con **Apache Ranger** y con **Knox Gateway**, configuración de autorización y seguridad, una descripción del uso de **Ambari View** y **Release Notes**.
+A continuación, la documentación proporciona un manual de planificación e instalación de **ADH**, guía de administración para trabajo con cluster, con **HDFS**, con **Apache Ranger** y con **Knox Gateway**, configuración de autorización y seguridad, una descripción del uso de **Ambari View** y **Release Notes**.
 
 
 
