@@ -330,7 +330,7 @@ A diferencia de otras distribuciones corporativas presentadas en el mercado, **A
 
 La documentación original en ruso facilita la planificación y el despliegue de un clúster de **Hadoop**. El manual puede ser útil para los administradores, programadores, desarrolladores y empleados de los departamentos de tecnología de la información que implementan y mantienen los clústeres de **Arenadata**.
 
-A continuación, la documentación proporciona un manual de planificación e instalación de **ADH**, guía de administración para trabajo con cluster, con **HDFS**, con **Apache Ranger** y con **Knox Gateway**, configuración de autorización y seguridad, una descripción del uso de **Ambari View** y **Release Notes**.
+A continuación, la documentación proporciona un manual de planificación e instalación de **ADH**, guía de administración para trabajo con cluster, con **HDFS**, con **Apache Ranger** y con **Knox Gateway**, configuración de autorización y seguridad, una descripción del uso de **Ambari View** y Release Notes.
 
 
 
