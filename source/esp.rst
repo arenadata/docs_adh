@@ -334,6 +334,45 @@ A continuación, la documentación proporciona un manual de planificación e ins
 
 
 
+Перевод сайта на англ.
+-----------------------
+
+Arenadata Cluster Manager
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Ссылка https://arenadata.tech/products/adcm/
+
+
+
+Arenadata Hadoop 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Ссылка https://arenadata.tech/products/hadoop/
+
+
+
+Arenadata DB
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Ссылка https://arenadata.tech/products/db/
+
+
+
+Arenadata Grid 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Ссылка https://arenadata.tech/products/adg/
+
+
+
+Arenadata Streaming
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Ссылка https://arenadata.tech/products/ads/
+
+
+
+
 Términos comúnmente utilizados
 --------------------------------
 
