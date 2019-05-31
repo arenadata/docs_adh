@@ -391,6 +391,26 @@ Arenadata Hadoop
 
 Ссылка https://arenadata.tech/products/hadoop/
 
+**Arenadata Hadoop** (**ADH**) -- is a complete distribution of a distributed storage platform based on Apache Hadoop, adapted for corporate use.
+
+In 2016, the distribution kit Arenadata Hadoop 1.3.2 was certified and received confirmation of full compliance with the standards of the **Open Data Platform Initiative (ODPi)**. **ODPi** -- is the world's largest community of developers of open source big data storage projects under the auspices of the Linux Foundation:
+
+The current release of version 1.6.1 was released in the fourth quarter of 2018. And includes the following components:
+
+Unlike other corporate distributions on the market, **Arenadata Hadoop** has several features:
+
+* all support and expertise is available in Russia and in Russian;
+* there is a package of utilities for full off-line installation (without access to the Internet);
+* the entire assembly is based on open source Apache projects, there are no proprietary components;
+* Russian software;
+* support is available both remotely and on-site;
+* there is a set of available standard package services for planning, installing and auditing the system.
+
+Arenadata Hadoop обеспечивает полный набор возможностей и инструментов для автоматического развертывания компонентов как на «голом железе», так и на виртуальных машинах (в «облаке»). Средства мониторинга и управления конфигурацией кластера позволяют оптимизировать производительность для всех компонентов системы. Apache Ambari обеспечивает интерфейсы для интеграции с существующими системами управления, например, Microsoft System Center и Teradata ViewPoint.
+
+Arena data Hadoop provides a complete set of capabilities and tools for the automatic deployment of components on both "bare metal" and virtual machines (in the cloud). Cluster configuration monitoring and management tools allow to optimize performance for all system components. Apache Ambari provides interfaces for integration with existing management systems, such as Microsoft System Center and Teradata ViewPoint.
+
+The original documentation in Russian makes it easy to plan and deploy a Hadoop cluster.
 
 
 Arenadata DB
