@@ -432,10 +432,22 @@ Arenadata Streaming
 
 Ссылка https://arenadata.tech/products/ads/
 
+**Arenadata Streaming (ADS)** -- is an efficient scalable fault-tolerant solution for streaming data processing in real time, adapted for corporate use and built on the basis of Apache Kafka and Apache Nifi -- open source projects.
+
+One of the features of the implementation of the platform is the use of technology, similar to the transaction logs used in database management systems.
+
+The streaming platform has three key capabilities:
+
+* Publishing and subscribtion to stream data, similar to a message queue or corporate messaging system;
+* Storing record streams in a fault-tolerant manner;
+* Processing streams of records as they occur.
+
+ADS is typically used for two broad classes of applications:
+
+* Creating a channel for streaming data in real time to ensure reliable data exchange between systems and applications;
+* Creating applications for streaming data in real time in order to transform and interact  with other streams of data.
 
 
-
-Términos comúnmente utilizados
 --------------------------------
 
 + **Clúster** -- кластер -- se aplica a los conjuntos o conglomerados de ordenadores unidos entre sí normalmente por una red de alta velocidad y que se comportan como si fuesen una única computadora.
