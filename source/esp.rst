@@ -425,7 +425,40 @@ Arenadata Grid
 
 The in-memory computing platform allows to significantly speed up your applications without the need to replace existing DBMS. **Arenadata Grid (ADG)** -- provides the ability to flexibly scale the resulting solution into dozens and hundreds of compute nodes. Using RAM as the main drive, the Arenadata Grid platform is able to execute and process requests from 1,000 to 1,000,000 times faster than traditional disk DBMS. The computing capacities of the Arenadata Grid are easily scaled by adding new nodes to the cluster without the need to stop work, thereby allowing to process hundreds of terabytes of data from multiple databases.
 
+You can easily modernize the architecture of existing applications, using ADG as an intermediate caching level of storage. The Arenadata Grid platform is able to transparenty and seamlessly integrate with existing RDBMS, NoSQL DBMS and Hadoop. ADG implements a single API that supports SQL, MapReduce, as well as programming languages such as Java, C ++, .NET, and PHP. Arenadata Grid, along with applications that use it, can be easily launched both in the cloud and in your data center.
 
+ADG can also be used as a distributed transactional DBMS with support for SQL queries, capable of storing data both in memory and on disk. This is achieved through the use of persistent storage technology in combination with the capabilities provided by a built-in SQL engine.
+
+1,000x Better Performance Versus Disk-Based Databases
+
+The in-memory computing platform Arenadata Grid allows you to increase the performance of used traditional DBMS by more than 1000 times, by reducing the cost of reading and writing from disk drives. Acting as an intermediate caching storage level, the ADG downloads data from your RDBMS or NoSQL DBMS to main memory. In addition to high-performance caching levels, the Arenadata Grid implements a number of features, such as streaming data processing, distributed computing, Spark and Hadoop acceleration.
+
+The Arenadata Grid platform is able to scale almost linearly by adding new nodes to an existing cluster. The data in the cluster is optimally located in order to minimize data migration when the cluster topology changes. At the same time, data migration is performed fully automatically.
+
+One of the features of the Arenadata Grid is the lack of a master-node. The desired node that stores the target entry is determined by calculating the value of the special function.
+
+ADG implements a distributed “key-value” cache, located between your applications and the DBMS, thus allowing seamless integration into the existing architecture by performing read-through and write-through.
+
+Benefits of Arenadata Grid
+
+* Distributed cache in memory.
+* Lightning fast computing speed.
+* Flexible scalability.
+* Distributed transactions.
+* Distributed SQL-queries.
+* Multi-level data storage (RAM/Disk) off-heap.
+
+Store and Process Data In-Memory with ACID Transactions and ANSI-99 SQL Support
+
+The Arenadata Grid platform supports ANSI-SQL 99. You can easily perform queries on an array of data distributed among hundreds of nodes that store data both in memory and on disk, pumping them from third-party sources if necessary. You also have the ability to connect to the Arenadata Grid from your application using familiar interfaces such as ODBC and JDBC. ADG implements ACID transactions at the cache level and supports full ANSI-SQL 99, including DDL and DML. Using the Arenadata Grid, you can easily speed up transactional and analytical queries.
+
+As part of the universal data platform, the Arenadata EDP ADG can be integrated with the massively parallel DBMS Arenadata DB (based on the open-source Greenplum project), which allows multi-level data processing, benefiting from high-speed transaction processing in memory and massively parallel processing of very large volume of historical data. Integration is performed using the PXF protocol.
+
+Among the main usage scenarios for ADG are the following:
+
+* accelerating the processing of analytical requests over operational data in a massively parallel DBMS;
+* caching operational data in HDFS;
+* implementation of transactional data cache for streaming systems and data buses.
 
 
 Arenadata Streaming
@@ -447,7 +480,6 @@ ADS is typically used for two broad classes of applications:
 
 * Creating a channel for streaming data in real time to ensure reliable data exchange between systems and applications;
 * Creating applications for streaming data in real time in order to transform and interact  with other streams of data.
-
 
 Main advantages
 
@@ -486,10 +518,6 @@ Distribution:
 Available equipment:
 
 * Works on any x86-compatible hardware. Get recommended system requirements from our experts.
-
-Коннекторы к различным системам: Elasticsearch, SAP HANA, Vertica, Couchbase, Cassandra, CouchDB, IBM MQ и т.д. Широкий набор API для интеграции с другими внешними системами.
-Простота и гибкость:
-Позволяет создавать workflow с помощью графического интерфейса или разрабатывать свои собственные приложения с помощью SDK для повышения эффективности работы.
 
 Real time:
 * Flow control, adding and configuring data sources in real time mode.
