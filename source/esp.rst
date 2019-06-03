@@ -406,8 +406,6 @@ Unlike other corporate distributions on the market, **Arenadata Hadoop** has sev
 * support is available both remotely and on-site;
 * there is a set of available standard package services for planning, installing and auditing the system.
 
-Arenadata Hadoop обеспечивает полный набор возможностей и инструментов для автоматического развертывания компонентов как на «голом железе», так и на виртуальных машинах (в «облаке»). Средства мониторинга и управления конфигурацией кластера позволяют оптимизировать производительность для всех компонентов системы. Apache Ambari обеспечивает интерфейсы для интеграции с существующими системами управления, например, Microsoft System Center и Teradata ViewPoint.
-
 Arena data Hadoop provides a complete set of capabilities and tools for the automatic deployment of components on both "bare metal" and virtual machines (in the cloud). Cluster configuration monitoring and management tools allow to optimize performance for all system components. Apache Ambari provides interfaces for integration with existing management systems, such as Microsoft System Center and Teradata ViewPoint.
 
 The original documentation in Russian makes it easy to plan and deploy a Hadoop cluster.
@@ -424,6 +422,9 @@ Arenadata Grid
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Ссылка https://arenadata.tech/products/adg/
+
+The in-memory computing platform allows to significantly speed up your applications without the need to replace existing DBMS. **Arenadata Grid (ADG)** -- provides the ability to flexibly scale the resulting solution into dozens and hundreds of compute nodes. Using RAM as the main drive, the Arenadata Grid platform is able to execute and process requests from 1,000 to 1,000,000 times faster than traditional disk DBMS. The computing capacities of the Arenadata Grid are easily scaled by adding new nodes to the cluster without the need to stop work, thereby allowing to process hundreds of terabytes of data from multiple databases.
+
 
 
 
@@ -446,6 +447,64 @@ ADS is typically used for two broad classes of applications:
 
 * Creating a channel for streaming data in real time to ensure reliable data exchange between systems and applications;
 * Creating applications for streaming data in real time in order to transform and interact  with other streams of data.
+
+
+Main advantages
+
+Single access point:
+
+* Use as a corporate data bus for all your applications.
+
+Easy, safe and reliable way to control data flow:
+
+* Collect large streams of data safely and efficiently manage them in real time.
+
+Security policies:
+
+* Create streams if data with support for differentiation of access rights to them.
+
+Fast and continuous development:
+
+* Develop streaming analytic applications within minutes in real time without a single line of code.
+
+**ADS** contains all the necessary components for collecting, analyzing and processing data in the real time mode, provides storage and transmission in the semantics of “exactly-once delivery” in a safe and fault-tolerant way, providing a convenient interface for administration and development.
+
+Technical features
+
+Fault tolerance:
+
+* The solution architecture allows for consistency in real time streaming.
+
+Scalability:
+
+* Adding new servers to the cluster as needed.
+
+Distribution:
+
+* Ability to build geo-distributed infrastructure.
+
+Available equipment:
+
+* Works on any x86-compatible hardware. Get recommended system requirements from our experts.
+
+Коннекторы к различным системам: Elasticsearch, SAP HANA, Vertica, Couchbase, Cassandra, CouchDB, IBM MQ и т.д. Широкий набор API для интеграции с другими внешними системами.
+Простота и гибкость:
+Позволяет создавать workflow с помощью графического интерфейса или разрабатывать свои собственные приложения с помощью SDK для повышения эффективности работы.
+
+Real time:
+* Flow control, adding and configuring data sources in real time mode.
+
+Security:
+
+* Flexible data access control mechanisms.
+
+Integration:
+
+* Connectors to different systems: Elasticsearch, SAP HANA, Vertica, Couchbase, Cassandra, CouchDB, IBM MQ, etc. A wide range of API for integration with other external systems.
+
+Simplicity and flexibility:
+
+* Allows the user to create workflow using a graphical interface or develop your own applications using the SDK in order to improve work efficiency.
 
 
 --------------------------------
