@@ -432,6 +432,10 @@ The ADB implements the classical scheme of data sharing (sharding) -- each table
 
 ADB uses polymorphic data storage, for example, one table can be divided into vertical sections (partitions), some of which will be stored as rows, and some as column objects. At the same time for the user such a table will look like one object.
 
+Security in ADB is achieved by encrypting data and server-to-client SSL connections at all stages of their life cycle. In addition, all internal interactions of the DBMS ADB components (segments, mirrors and wizards) can also be encrypted using the SSL protocol, and the data stored on the cluster disks can be encrypted using PGP keys (at the table or column level in the tables). All this allows to exclude situations of finding data in unencrypted form.
+
+The delimitation of data visibility zones and access rights is provided through the Role Based Access Control (RBAC) model, which allows for the implementation of flexible and dynamically changing during the operation data storage platforms and data processing rules access control. For example, you can create schemes for restricting access to tables and other DBMS objects, as well as rows and columns of individual tables.
+
 
 
 
