@@ -416,6 +416,23 @@ Arenadata DB
 
 Ссылка https://arenadata.tech/products/db/
 
+**Arenadata DB (ADB)** is a distributed DBMS that uses the concept of MPP (massively parallel processing) and based on the DBMS with the open source -- Greenplum.
+
+Analytical massively parallel DBMS are designed for storing and processing large amounts of data -- from single units to hundreds of terabytes of data. Such DBMS are most often used for predictive analytics, regular reporting, analysis of customer churn, and building of corporate data warehouses.
+
+Until recently, the market for analytical massively parallel DBMS was divided between four players (Vertica, Teradata, Netezza and Greenplum) that existed outside the Open Source community, but the situation has changed in 2017 when the Greenplum moved to the category of open projects.
+
+The launch of the source code allowed the Arenadata team to start the project -- Arenadata DB (ADB) -- a relational DBMS that has a mass-parallel architecture without resource sharing (Shared Nothing) and is designed to store, process and analyze large amounts of structured and semi-structured data. Using the computing power of hundreds of servers, an advanced query optimizer and a flexible data backup system, ADB can significantly improve performance and reliability while maintaining an access to data for ANSI SQL applications (fully compatible with PostgreSQL).
+
+The ADB architecture is a classic cluster -- several servers-segments, one master server and one standby server, interconnected by fast networks (10G Ethernet or Infiniband). Each server-segment has several PostgreSQL segments (instances) containing data. In case of failure of one or several segments, they are marked as failed and instead of them their mirror segments are started, the data for which is replicated using the advanced recording technology used in PostgreSQL DBMS (Wright Ahead Log, WAL - all changes to tables and indexes are written to the file only after their logging).
+
+The use of several interconnects allows to increase the capacity of the channel of interaction between the segments and to ensure the fault tolerance of the cluster with the help of the redistribution of traffic. The distribution of segments over network interfaces is chosen individually and can be adjusted to the cluster tasks -- for example, all main segments can be forced to use one network interface, the backup segments will use the second one.
+
+The ADB implements the classical scheme of data sharing (sharding) -- each table consists of N tables placed on N cluster segments. The logic of partitioning the table into segments is specified by the distribution key (field). For each column in the table, you can specify your own type and level of compression. In addition to the types of compression initially available in Greenplum - zlib (one of the most widely used compression libraries, in particular, is used in Linux distributions) and RLE delta compression (storing changes between field values in a column), the zstandard algorithm developed by Facebook and implemented by the Arenadata team, which provides almost four times higher performance than zlib.
+
+ADB uses polymorphic data storage, for example, one table can be divided into vertical sections (partitions), some of which will be stored as rows, and some as column objects. At the same time for the user such a table will look like one object.
+
+
 
 
 Arenadata Grid 
