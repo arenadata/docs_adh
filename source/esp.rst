@@ -436,7 +436,27 @@ Security in ADB is achieved by encrypting data and server-to-client SSL connecti
 
 The delimitation of data visibility zones and access rights is provided through the Role Based Access Control (RBAC) model, which allows for the implementation of flexible and dynamically changing during the operation data storage platforms and data processing rules access control. For example, you can create schemes for restricting access to tables and other DBMS objects, as well as rows and columns of individual tables.
 
+One of the most important qualities of an analytical DBMS -- is flexibility and performance when exchanging data with external systems. In particular, ADB implements a parallel data exchange protocol with third-party systems -- PXF (Platform eXtension Framework), which provides interaction with the external system of all cluster segments at the same time. If the source system is also a cluster, then cluster interaction can be used on both sides, which improves performance, and the speed of interaction will increase as the clusters expand.
 
+A flexible backup system allows you to deploy a cluster with a predetermined level of fault tolerance, allowing the database management system to work even if half of the servers in the cluster fail. And a greater choice of data storage strategies in ADB provides the necessary performance at all stages of the data life cycle -- from receiving new online data, storing basic data with different levels of compression to exporting historical data to the Hadoop cluster.
+
+Key benefits of ADB:
+
+* All support and expertise of implementation is available in Russia and in Russian.
+* A package of utilities for offline installations has been developed (without access to the Internet).
+* The distribution is based on the Open-source core of the DBMS Greenplum.
+* Fully Russian software.
+* Support is available both remotely and on-site. There is a set of available package services for planning, installing, and auditing the system.
+* There is the possibility of improvements and customization of the product for the specific needs of the customer.
+* The implementation is available both on the “bare iron” and in the cloud.
+
+The integration capabilities of ADB with other systems allow using this DBMS for building universal data storage and processing platforms, such as the Arenadata Enterprise Data Platform (EDP) -- an open, horizontally scalable solution for storing and processing large amounts of data of any type. The platform works with loads from OLTP to OLAP, supports data access in the SQL language, as well as working with libraries in Python.
+
+The Arenadata EDP platform consists of three closely related components using a parallel access framework: the Arenadata Hadoop cluster, the ADB cluster and the Arenadata In-memory Grid cluster. In the DBMS ADB, tables are created, the data sources for which are both data from the DBMS itself, and data from the Hadoop HDFS cluster and data from the in-memory Grid cluster's RAM. Nifi, an open source ETL/ELT processor, is used to manage internal processes and data loading processes, and Apache Zeppelin is used to access user data and its analytical processing.
+
+To effectively use the DBMS, management and monitoring tools are needed -- the ADB has a package of administrative tools: monitoring software, DBMS management, and sending notifications.
+
+The high processing speed of complex requests, linear scaling, the absence of specific hardware requirements, open source code, the flexibility of integration allow us to use Arenadata DB as an analytical data warehouse of corporate information systems, which was appreciated by companies close to the IT business ( telecom, e-commerence, fintech), as well as more traditional industries (oil and gas and metallurgical industries).
 
 
 Arenadata Grid 
