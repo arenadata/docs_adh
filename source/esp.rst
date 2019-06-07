@@ -378,12 +378,12 @@ Supported Cloud Providers:
 
 Functionality of Infrastructure:
 
-Creating / deleting VM;
-Work with physical hosts;
-Preparing VMs / Hosts;
-Monitoring;
-User management;
-Access management.
+* Creating / deleting VM;
+* Work with physical hosts;
+* Preparing VMs / Hosts;
+* Monitoring;
+* User management;
+* Access management.
 
 Demonstration:
 
