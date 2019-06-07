@@ -365,11 +365,12 @@ Thanks to well developed REST API, ADCM can be used by other systems to automate
 ADCM comes in the form of docker-image, which makes its deploy and use very simple.
 
 Functionality of Applications:
-Deployment;
-Updating;
-Management;
-Monitoring;
-Integration of components.
+
+* Deployment;
+* Updating;
+* Management;
+* Monitoring;
+* Integration of components.
 
 Supported Applications:
 
