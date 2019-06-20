@@ -6,7 +6,7 @@
 ADCM
 ---------
 
-1) Страница сайта `ссылка <https://arenadata.tech/products/adcm/>`_ 
+https://arenadata.tech/products/adcm/
 
 **Arenadata Clúster Manager** (**ADCM**) proporciona una manera eficiente de implementar y administrar todos los servicios de datos de la empresa, independientemente de la infraestructura utilizada, en la nube, on-premise o como servicios de PaaS. Al dividir la plataforma de datos en dos capas lógicamente no vinculadas -- la capa de infraestructura y la capa de aplicaciones -- el explotación de toda la plataforma se vuelve predecible, flexible y repetible.
 
@@ -112,7 +112,7 @@ ADS
 Arenadata Streaming
 ^^^^^^^^^^^^^^^^^^^^^^
 
-6) https://arenadata.tech/products/ads/
+https://arenadata.tech/products/ads/
 
 **Arenadata Streaming** (**ADS**) -- es una solución eficiente escalable y tolerante a fallos para el procesamiento de datos en cadena en tiempo real, adaptada para uso corporativo y construida sobre la base de **Apache Kafka** y **Apache Nifi** -- proyectos con código abierto.
 
@@ -197,9 +197,9 @@ Simplicidad y flexibilidad:
 docs.arenadata
 ^^^^^^^^^^^^^^^^
 
-7) https://docs.arenadata.io/ads/
+https://docs.arenadata.io/ads/
 
-Una solución efectiva para el procesamiento de datos ``en cadena`` en tiempo real
+Una solución efectiva para el procesamiento de datos en cadena en tiempo real.
 
 **Arenadata Streaming** (**ADS**) -- una plataforma de flujo de trabajo basada en **Apache Kafka** y **Apache Nifi**, proyectos de código abierto, adaptados para uso corporativo. **ADS** contiene todos los componentes necesarios para recopilar, analizar y procesar datos en tiempo real, proporciona almacenamiento y transferencia en la semántica "exactly-once delivery" de una manera segura tolerante a fallas proporcionando una interfaz conveniente para la administración y el desarrollo. Además, la plataforma puede actuar como un bus de datos corporativo y una herramienta ETL. 
 
