@@ -84,14 +84,24 @@ Diapositiva 15
 Слайд 22
 ^^^^^^^^^^^^
 
-4) Слайд 22 Обзорной презентации
+.. _slide22:
+
+.. figure:: imgs/slide22.png
+   :align: center
+
+   ADCM
 
 
 
 Слайд 23
 ^^^^^^^^^^
 
-5) Слайд 23 Обзорной презентации
+.. _slide23:
+
+.. figure:: imgs/slide23.png
+   :align: center
+
+   Principales diferencias
 
 
 
@@ -104,20 +114,20 @@ Arenadata Streaming
 
 6) https://arenadata.tech/products/ads/
 
-**Arenadata Streaming** (**ADS**) -- es una solución eficiente escalable y tolerante a fallos para el procesamiento de datos ``en cadena`` en tiempo real, adaptada para uso corporativo y construida sobre la base de **Apache Kafka** y **Apache Nifi** -- proyectos con código abierto.
+**Arenadata Streaming** (**ADS**) -- es una solución eficiente escalable y tolerante a fallos para el procesamiento de datos en cadena en tiempo real, adaptada para uso corporativo y construida sobre la base de **Apache Kafka** y **Apache Nifi** -- proyectos con código abierto.
 
 Una de las características de la implementación de la plataforma es el uso de tecnología similar a los registros de transacciones utilizados en los sistemas de administración de bases de datos.
 
 La plataforma de transmisión tiene tres capacidades principales:
 
-* Publicación y suscripción a una transmisión de datos ``en cadena`` similar a una cola de mensajes o un sistema de mensajería corporativa;
+* Publicación y suscripción a una transmisión de datos en cadena similar a una cola de mensajes o un sistema de mensajería corporativa;
 * Almacenamiento registros de forma tolerante a fallos;
 * Procesamiento de registros a medida que ocurren.
 
-**ADS** se utiliza ``generalmente`` para dos amplias clases de aplicaciones:
+**ADS** se utiliza generalmente para dos amplias clases de aplicaciones:
 
-* Creación de un canal para la transmisión de datos ``en cadena`` en tiempo real para garantizar un intercambio de datos confiable entre sistemas y aplicaciones;
-* Creación de aplicaciones para la transmisión de datos ``en cadena`` en tiempo real para convertirlas e interactuar con ``otras cadenas`` (otros flujos).
+* Creación de un canal para la transmisión de datos en cadena en tiempo real para garantizar un intercambio de datos confiable entre sistemas y aplicaciones;
+* Creación de aplicaciones para la transmisión de datos en cadena en tiempo real para convertirlas e interactuar con otras cadenas (otros flujos).
 
 .. _ADS-esquema:
 
@@ -136,11 +146,11 @@ Punto de acceso único:
 
 Una forma fácil, segura y confiable de controlar el flujo de datos:
 
-* Recopile grandes flujos de datos de forma segura y ``administrarlos`` (gestionarlos) efectivamente en tiempo real.
+* Recopile grandes flujos de datos de forma segura y gestionarlos efectivamente en tiempo real.
 
 Políticas de seguridad:
 
-* Crea flujos de datos con soporte para ``la diferenciación de los`` derechos de acceso.
+* Crea flujos de datos con soporte para la diferenciación de los derechos de acceso.
 
 Desarrollo rápido y continuo:
 
@@ -229,7 +239,7 @@ Con **Arenadata Streaming**, obtiene una solución eficiente para el procesamien
 
 * Recopile grandes flujos de datos de forma segura y eficiente adminístrelos en tiempo real;
 
-* ``Crea flujos de datos con soporte para la diferenciación de los derechos de acceso`` (Crea flujos de datos con la distinción de derechos de acceso);
+* Crea flujos de datos con soporte para la diferenciación de los derechos de acceso;
 
 * Desarrolla aplicaciones analíticas de transmisión en minutos en tiempo real sin una sola línea de código.
 
@@ -239,47 +249,37 @@ La siguiente documentación describe la plataforma **Arenadata Streaming**: conc
 
 
 
-+	Можно добавить отсюда https://docs.arenadata.io/ads/Intro/index.html
-+	Слайд 21 Обзорной презентации
-+	Дополнение https://docs.arenadata.io/ads/Architecture/intro.html
-
-
-
-
-
 ADB
 ------
 
 docs.arenadata
 ^^^^^^^^^^^^^^^^^
 
-8) https://arenadata.tech/products/db/ (аналогично тут https://docs.arenadata.io/adb/)
+**Arenadata DB** (**ADB**) -- SGBD distribuido, utilizando el concepto de MPP (massively parallel processing, procesamiento masivamente paralelo) y basado en SGBD con código abierto -- Greenplum.
 
-**Arenadata** **DB** (**ADB**) -- SGBD distribuido, utilizando el concepto de MPP (massively parallel processing, procesamiento masivamente paralelo) y basado en SGBD con código abierto -- Greenplum.
+Los SGBD masivos paralelos analíticos están diseñados para almacenar y procesar grandes cantidades de datos -- desde unidades hasta cientos de terabytes de datos. Estas SGBD se utilizan con mayor frecuencia para el análisis predictivo, la elaboración de informes periódicos, el análisis de la rotación de clientes y la creación de almacenes de datos corporativos.
 
-Los SGBD masivos paralelos analíticos están diseñados para almacenar y procesar grandes cantidades de datos -- desde unidades hasta cientos de terabytes de datos.Estas SGBD se utilizan con mayor frecuencia para el análisis predictivo, la elaboración de informes periódicos, el análisis de la rotación de clientes y la creación de almacenes de datos corporativos.
+Hasta hace poco, el mercado de bases de datos analíticas SGBD dividieron cuatro jugadores (**Vertica**, **Teradata**, **Netezza** y **Greenplum**) que existían fuera de la comunidad Open Source, pero la situación cambió en 2017, cuando el proyecto **Greenplum** pasó a la categoría de proyectos abiertos.
 
-Hasta hace poco, el mercado de bases de datos analíticas SGBD dividieron cuatro jugadores (Vertica, Teradata, Netezza y Greenplum) que existían fuera de la comunidad Open Source, pero la situación cambió en 2017, cuando el proyecto Greenplum pasó a la categoría de proyectos abiertos.
+El descubrimiento del código fuente permitió al equipo de **Arenadata** iniciar el proyecto -- **Arenadata DB** (**ADB**) -- un SGBD relacional que tiene una arquitectura paralela masiva sin compartir recursos (Shared Nothing) y está diseñado para almacenar, procesar y analizar grandes cantidades de datos estructurados y poco estructurados. Con la capacidad de procesamiento de cientos de servidores, un optimizador de consultas avanzado y un sistema de redundancia de datos flexible, **ADB** mejora significativamente el rendimiento y la fiabilidad al mantener el acceso a los datos heredado de las aplicaciones **ANSI SQL** (totalmente compatible con **PostgreSQL**).
 
-El descubrimiento del código fuente permitió al equipo de Arenadata iniciar el proyecto -- **Arenadata** **DB** (**ADB**) -- un SGBD relacional que tiene una arquitectura paralela masiva sin compartir recursos (Shared Nothing) y está diseñado para almacenar, procesar y analizar grandes cantidades de datos estructurados y poco estructurados. Con la capacidad de procesamiento de cientos de servidores, un optimizador de consultas avanzado y un sistema de redundancia de datos flexible, **ADB** mejora significativamente el rendimiento y la fiabilidad al mantener el acceso a los datos heredado de las aplicaciones **ANSI** **SQL** (totalmente compatible con PostgreSQL).
-
-La arquitectura ADB es un clúster clásico: varios segmentos de servidor, un servidor maestro y un servidor de respaldo, interconectados por redes rápidas (10G Ethernet o Infiniband). Cada segmento de servidor tiene varios segmentos (instancias) de PostgreSQL que contienen datos. En caso de que falle uno o varios segmentos, se marcan como fallidos y en lugar de ellos se inician sus segmentos duplicados, los datos se replican utilizando la tecnología de grabación avanzada utilizada en el DBMS de PostgreSQL (Wright Ahead Log, WAL -- todos los cambios en las tablas e índices se escriben en el archivo solo después su registro).
+La arquitectura de **ADB** es un clúster clásico: varios segmentos de servidor, un servidor maestro y un servidor de respaldo, interconectados por redes rápidas (*10G* Ethernet o Infiniband). Cada segmento de servidor tiene varios segmentos (instancias) de **PostgreSQL** que contienen datos. En caso de que falle uno o varios segmentos, se marcan como fallidos y en lugar de ellos se inician sus segmentos duplicados, los datos se replican utilizando la tecnología de grabación avanzada (Wright Ahead Log, WAL -- todos los cambios en las tablas e índices se escriben en el archivo solo después su registro) utilizada en el SGBD de **PostgreSQL**.
 
 El uso de varias interconexiones permite aumentar la capacidad del canal de interacción entre los segmentos entre sí y garantizar la tolerancia a fallos del clúster debido a la redistribución del tráfico. La distribución de segmentos a través de las interfaces de red se elige individualmente y se puede ajustar a las tareas del clúster -- por ejemplo, todos los segmentos principales pueden utilizarse para usar un interfaz de red, los segmentos de respaldo usarán el segundo.
 
-El ADB implementa un esquema clásico de separación (sharding) de datos -- cada tabla consta de N tablas alojadas en N segmentos de clúster. La lógica de división de la tabla en segmentos se establece mediante la clave (campo) de distribución. Para cada columna individual de la tabla, puede especificar su tipo y nivel de compresión. Además de los tipos de compresión inicialmente disponibles en Greenplum -- zlib (una de las bibliotecas de compresión más utilizadas, en particular, se usa en distribuciones de Linux) y RLE delta compression (almacenamiento de cambios entre los valores de los campos en la columna), el algoritmo zstandard desarrollado por Facebook e implementado por el equipo de Arenadata, que ofrece casi cuatro veces más rendimiento que zlib.
+El **ADB** implementa un esquema clásico de separación (sharding) de datos -- cada tabla consta de *N* tablas alojadas en *N* segmentos de clúster. La lógica de división de la tabla en segmentos se establece mediante la clave (campo) de distribución. Para cada columna individual de la tabla, puede especificar su tipo y nivel de compresión. Además de los tipos de compresión inicialmente disponibles en **Greenplum** -- *zlib* (una de las bibliotecas de compresión más utilizadas, en particular, se usa en distribuciones de **Linux**) y *RLE* delta compression (almacenamiento de cambios entre los valores de los campos en la columna), el algoritmo zstandard desarrollado por **Facebook** e implementado por el equipo de **Arenadata**, que ofrece casi cuatro veces más rendimiento que *zlib*.
 
-ADB utiliza el almacenamiento polimórfico de datos, por ejemplo, una tabla se puede dividir en secciones verticales (particiones), algunas de las cuales se almacenarán como filas y otras como objetos de columna. Al mismo tiempo, para el usuario esta tabla se verá como un solo objeto.
+El **ADB** utiliza el almacenamiento polimórfico de datos, por ejemplo, una tabla se puede dividir en secciones verticales (particiones), algunas de las cuales se almacenarán como filas y otras como objetos de columna. Al mismo tiempo, para el usuario esta tabla se verá como un solo objeto.
 
-La seguridad en ADB se logra cifrando los datos y las conexiones de cliente de servidor a través de SSL en todas las etapas de su ciclo de vida. Además, todas las interacciones internas de los componentes SGBD ADB (segmentos, espejos y asistentes) también se pueden cifrar con SSL, y los datos almacenados en los discos del clúster se pueden cifrar utilizando claves PGP (a nivel de tabla o columna en las tablas). Todo esto permite excluir situaciones de búsqueda de datos en forma no encriptada.
+La seguridad en **ADB** se logra cifrando los datos y las conexiones de cliente de servidor a través de **SSL** en todas las etapas de su ciclo de vida. Además, todas las interacciones internas de los componentes SGBD **ADB** (segmentos, espejos y asistentes) también se pueden cifrar con **SSL**, y los datos almacenados en los discos del clúster se pueden cifrar utilizando claves PGP (a nivel de tabla o columna en las tablas). Todo esto permite excluir situaciones de búsqueda de datos en forma no encriptada.
 
 La delimitación de las zonas de visibilidad de datos y los derechos de acceso se proporciona a través del modelo de acceso (Role Based Access Control, RBAC), que permite la implementación de reglas de control de acceso flexibles que son flexibles y cambian dinámicamente durante la operación de la plataforma de procesamiento y almacenamiento de datos. Así, por ejemplo, puede crear esquemas para restringir el acceso a tablas y otros objetos SGBD, así como a filas y columnas de tablas individuales.
 
-Una de las cualidades más importantes de un SGBD analítico es la flexibilidad y la productividad en el intercambio de datos con sistemas externos. En particular, ADB implementa un protocolo de intercambio paralelo de datos con sistemas de terceros, PDF (Platform eXtension Framework), que permite la interacción con el sistema externo simultáneamente en todos los segmentos del clúster. Si el sistema de origen también es un clúster, puede utilizar la interacción en clúster en ambos lados para mejorar el rendimiento y aumentar la velocidad de la interacción a medida que se amplían los clústeres.
+Una de las cualidades más importantes de un SGBD analítico es la flexibilidad y la productividad en el intercambio de datos con sistemas externos. En particular, **ADB** implementa un protocolo de intercambio paralelo de datos con sistemas de terceros, PXF (Platform eXtension Framework), que permite la interacción con el sistema externo simultáneamente en todos los segmentos del clúster. Si el sistema de origen también es un clúster, puede utilizar la interacción en clúster en ambos lados para mejorar el rendimiento y aumentar la velocidad de la interacción a medida que se amplían los clústeres.
 
-El sistema de respaldo flexible le permite implementar un clúster con un nivel predeterminado de tolerancia a fallas, lo que permite que el SGBD funcione incluso si la mitad de los servidores del clúster falla. Y una mayor selección de estrategias de almacenamiento de datos en ADB proporciona el rendimiento necesario en todas las etapas del ciclo de vida de los datos -- desde la recepción de nuevos datos en línea, el almacenamiento de datos básicos con diferentes niveles de compresión hasta la exportación de datos archivados al clúster de Hadoop.
+El sistema de respaldo flexible le permite implementar un clúster con un nivel predeterminado de tolerancia a fallas, lo que permite que el SGBD funcione incluso si la mitad de los servidores del clúster falla. Y una mayor selección de estrategias de almacenamiento de datos en **ADB** proporciona el rendimiento necesario en todas las etapas del ciclo de vida de los datos -- desde la recepción de nuevos datos en línea, el almacenamiento de datos básicos con diferentes niveles de compresión hasta la exportación de datos archivados al clúster de **Hadoop**.
 
-**Ventajas clave de ADB:**
+**Ventajas clave de ADB**:
 
 * Todo el apoyo y la experiencia en la implementación está disponible en Rusia y en ruso.
 
@@ -295,17 +295,14 @@ El sistema de respaldo flexible le permite implementar un clúster con un nivel 
 
 * La implementación está disponible tanto en el "hierro desnudo" como en la nube.
 
-Las capacidades de integración de ADB con otros sistemas permiten usar este SGBD para construir plataformas de almacenamiento y procesamiento de datos universales, como Arenadata Enterprise Data Platform (EDP) -- una solución abierta y horizontalmente escalable para almacenar y procesar grandes cantidades de datos de cualquier tipo. La plataforma funciona con cargas de OLTP a OLAP, admite el acceso a datos tanto en SQL como en bibliotecas de Python.
+Las capacidades de integración de **ADB** con otros sistemas permiten usar este SGBD para construir plataformas de almacenamiento y procesamiento de datos universales, como **Arenadata Enterprise Data Platform** (**EDP**) -- una solución abierta y horizontalmente escalable para almacenar y procesar grandes cantidades de datos de cualquier tipo. La plataforma funciona con cargas de OLTP a OLAP, admite el acceso a datos tanto en SQL como en bibliotecas de **Python**.
 
-La plataforma **Arenadata EDP** consta de tres componentes estrechamente relacionados usando el marco de acceso paralelo: el clúster Arenadata Hadoop, el clúster ADB y el clúster Arenadata In-memory Grid. En el SGBD ADB, se crean tablas, los orígenes de datos para los cuales se encuentran tanto los datos del propio SGBD como los datos del HDFS--clúster Hadoop y los datos de la memoria RAM del clúster In-memory Grid. Para administrar los procesos internos y los procesos de carga de datos, se utiliza el Nifi -- procesador abierto ETL/ELT, y para acceder a los datos de usuario y su procesamiento analítico – **Apache Zeppelin**.
+La plataforma **Arenadata EDP** consta de tres componentes estrechamente relacionados usando el marco de acceso paralelo: el clúster **Arenadata Hadoop**, el clúster **Arenadata DB** y el clúster **Arenadata In-memory Grid**. En el SGBD **ADB**, se crean tablas, los orígenes de datos para los cuales se encuentran tanto los datos del propio SGBD como los datos del **HDFS** -- clúster **Hadoop** y los datos de la memoria RAM del clúster In-memory **Grid**. Para administrar los procesos internos y los procesos de carga de datos, se utiliza el **Nifi** -- procesador abierto ETL/ELT, y para acceder a los datos de usuario y su procesamiento analítico – **Apache Zeppelin**.
 
-Para utilizar el SGBD de manera efectiva, necesita herramientas de administración y monitoreo -- el ADB tiene un paquete de herramientas administrativas: software de monitoreo, administración de DBMS y envío de notificaciones.
+Para utilizar el SGBD de manera efectiva, necesita herramientas de administración y monitoreo -- el **ADB** tiene un paquete de herramientas administrativas: software de monitoreo, administración de SGBD y envío de notificaciones.
 
-La alta velocidad de procesamiento de consultas complejas, el escalamiento lineal, la ausencia de requisitos de software específicos, el código de fuente abierta, la flexibilidad de integración -- nos permiten utilizar Arenadata DB como un almacén de datos analíticos de sistemas de información corporativos, que fue apreciado tanto por empresas cercanas al negocio de TI (telecom, e-commerence, fintech), como por industrias más tradicionales (industrias de petróleo y gas y metalúrgicas).
+La alta velocidad de procesamiento de consultas complejas, el escalamiento lineal, la ausencia de requisitos de software específicos, el código de fuente abierta, la flexibilidad de integración -- nos permiten utilizar **Arenadata DB** como un almacén de datos analíticos de sistemas de información corporativos, que fue apreciado tanto por empresas cercanas al negocio de TI (telecom, e-commerence, fintech), como por industrias más tradicionales (industrias de petróleo y gas y metalúrgicas).
 
-
-+	Возможно это https://docs.arenadata.io/adb/best_practices/intro.html
-+	Слайд 19 Обзорной презентации
 
 
 ADH
@@ -314,17 +311,15 @@ ADH
 docs.arenadata
 ^^^^^^^^^^^^^^^^^
 
-9) https://docs.arenadata.io/adh/
-
 **Arenadata Enterprise Data Platform** (**EDP**) -- la plataforma de datos universal -- es un conjunto integrado de componentes de nivel corporativo basados en soluciones de código abierto. La plataforma incluye todos los componentes necesarios para trabajar con datos: administración, acceso, análisis, integración, seguridad y administración.
 
 La idea principal de la plataforma universal es proporcionar oportunidades de trabajar con cualquier tipo y formato de datos mediante el uso combinado de varias soluciones tecnológicas y arquitecturas de procesamiento de datos.
 
 En este momento, se implementa completamente el nivel de almacenamiento y procesamiento de datos semiestructurados y no estructurados -- **Arenadata Hadoop** (**ADH**). Es una distribución completa de una plataforma de almacenamiento distribuida basada en **Apache Hadoop**, adaptada para uso corporativo.
 
-En 2016, la distribución de **Arenadata Hadoop 1.3.2** fue certificada y recibió la confirmación del cumplimiento total de los estándares de la **Open Data Platform Initiative** (**ODPi**). **ODPi** -- es la mayor comunidad mundial de desarrolladores de proyectos de almacenamiento de big data con código abierto bajo los auspicios de la **Linux Foundation**: 
+En 2016, la distribución de **Arenadata Hadoop 1.3.2** fue certificada y recibió la confirmación del cumplimiento total de los estándares de la **Open Data Platform Initiative** (**ODPi**). **ODPi** -- es la mayor comunidad mundial de desarrolladores de proyectos de almacenamiento de big data con código abierto bajo los auspicios de la **Linux Foundation**: `detallado  <https://www.odpi.org/blog/2016/07/13/hadoop-summit-san-jose-2016-wrap-up>`_.
 
-El lanzamiento actual de la versión 1.6.1 salió en el segundo trimestre de 2018. La versión incluye los siguientes componentes: **Ambari, HDFS, YARN, Zookeeper, Tez, Hive, HBase, Phoenix, Pig, Sqoop, Flume, Oozie, Atlas, NiFi, Apex, Flink, Kafka, LogSearch, Knox, Mahout, Ranger, Ranger KMS, Solr, Spark, Zeppelin, Giraph.**
+El lanzamiento actual de la versión 1.6.1 salió en el segundo trimestre de 2018. La versión incluye los siguientes componentes: **Ambari**, **HDFS**, **YARN**, **Zookeeper**, **Tez**, **Hive**, **HBase**, **Phoenix**, **Pig**, **Sqoop**, **Flume**, **Oozie**, **Atlas**, **NiFi**, **Apex**, **Flink**, **Kafka**, **LogSearch**, **Knox**, **Mahout**, **Ranger**, **Ranger KMS**, **Solr**, **Spark**, **Zeppelin**, **Giraph**.
 
 A diferencia de otras distribuciones corporativas presentadas en el mercado, **Arenadata Hadoop** tiene una serie de características:
 
@@ -354,15 +349,13 @@ A continuación, la documentación proporciona un manual de planificación e ins
 Arenadata Cluster Manager
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Ссылка https://arenadata.tech/products/adcm/
+**Arenadata Cluster Manager** (**ADCM**) -- provides an efficient way to deploy and manage all data services of a company, regardless of the infrastructure used -- in the cloud, on-premise or as PaaS-services. By dividing the data platform into two logically untied layers — the infrastructure layer and the applications layer -- the operation of the entire platform becomes predictable, flexible, and repeatable.
 
-**Arenadata Cluster Manager** (**ADCM**) -- provides an efficient way to deploy and manage all data services of a company, regardless of the infrastructure used -- in the cloud, on-premise or as PaaS-services. By dividing the data platform into two logically untied layers — the infrastructure layer and the applications layer — the operation of the entire platform becomes predictable, flexible, and repeatable.
+**ADCM** has a modular structure -- add the functionality you need to work with applications and equipment as needed. The modules have an open format that allows you to create your own modules for highly specialized and proprietary applications.
 
-ADCM has a modular structure -- add the functionality you need to work with applications and equipment as needed. The modules have an open format that allows you to create your own modules for highly specialized and proprietary applications.
+Thanks to well developed REST API, **ADCM** can be used by other systems to automate the work with your data-platform.
 
-Thanks to well developed REST API, ADCM can be used by other systems to automate the work with your data-platform.
-
-ADCM comes in the form of docker-image, which makes its deploy and use very simple.
+**ADCM** comes in the form of docker-image, which makes its deploy and use very simple.
 
 Functionality of Applications:
 
@@ -371,10 +364,6 @@ Functionality of Applications:
 * Management;
 * Monitoring;
 * Integration of components.
-
-Supported Applications:
-
-Supported Cloud Providers:
 
 Functionality of Infrastructure:
 
@@ -385,18 +374,17 @@ Functionality of Infrastructure:
 * User management;
 * Access management.
 
-Demonstration:
+
 
 Arenadata Hadoop 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^
 
-Ссылка https://arenadata.tech/products/hadoop/
 
 **Arenadata Hadoop** (**ADH**) -- is a complete distribution of a distributed storage platform based on Apache Hadoop, adapted for corporate use.
 
-In 2016, the distribution kit Arenadata Hadoop 1.3.2 was certified and received confirmation of full compliance with the standards of the **Open Data Platform Initiative (ODPi)**. **ODPi** -- is the world's largest community of developers of open source big data storage projects under the auspices of the Linux Foundation:
+In 2016, the distribution kit **Arenadata Hadoop 1.3.2** was certified and received confirmation of full compliance with the standards of the **Open Data Platform Initiative (ODPi)**. **ODPi** -- is the world's largest community of developers of open source big data storage projects under the auspices of the Linux Foundation.
 
-The current release of version 1.6.1 was released in the fourth quarter of 2018. And includes the following components:
+The current release of version *1.6.1* was released in the fourth quarter of 2018. 
 
 Unlike other corporate distributions on the market, **Arenadata Hadoop** has several features:
 
@@ -407,41 +395,39 @@ Unlike other corporate distributions on the market, **Arenadata Hadoop** has sev
 * support is available both remotely and on-site;
 * there is a set of available standard package services for planning, installing and auditing the system.
 
-Arena data Hadoop provides a complete set of capabilities and tools for the automatic deployment of components on both "bare metal" and virtual machines (in the cloud). Cluster configuration monitoring and management tools allow to optimize performance for all system components. Apache Ambari provides interfaces for integration with existing management systems, such as Microsoft System Center and Teradata ViewPoint.
+**Arenadata Hadoop** provides a complete set of capabilities and tools for the automatic deployment of components on both "bare metal" and virtual machines (in the cloud). Cluster configuration monitoring and management tools allow to optimize performance for all system components. 
 
-The original documentation in Russian makes it easy to plan and deploy a Hadoop cluster.
+The original documentation in Russian makes it easy to plan and deploy a **Hadoop** cluster.
 
 
 Arenadata DB
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^
 
-Ссылка https://arenadata.tech/products/db/
-
-**Arenadata DB (ADB)** is a distributed DBMS that uses the concept of MPP (massively parallel processing) and based on the DBMS with the open source -- Greenplum.
+**Arenadata DB** (**ADB**) is a distributed DBMS that uses the concept of MPP (massively parallel processing) and based on the DBMS with the open source -- **Greenplum**.
 
 Analytical massively parallel DBMS are designed for storing and processing large amounts of data -- from single units to hundreds of terabytes of data. Such DBMS are most often used for predictive analytics, regular reporting, analysis of customer churn, and building of corporate data warehouses.
 
-Until recently, the market for analytical massively parallel DBMS was divided between four players (Vertica, Teradata, Netezza and Greenplum) that existed outside the Open Source community, but the situation has changed in 2017 when the Greenplum moved to the category of open projects.
+Until recently, the market for analytical massively parallel DBMS was divided between four players (**Vertica**, **Teradata**, **Netezza** and **Greenplum**) that existed outside the Open Source community, but the situation has changed in 2017 when the **Greenplum** moved to the category of open projects.
 
-The launch of the source code allowed the Arenadata team to start the project -- Arenadata DB (ADB) -- a relational DBMS that has a mass-parallel architecture without resource sharing (Shared Nothing) and is designed to store, process and analyze large amounts of structured and semi-structured data. Using the computing power of hundreds of servers, an advanced query optimizer and a flexible data backup system, ADB can significantly improve performance and reliability while maintaining an access to data for ANSI SQL applications (fully compatible with PostgreSQL).
+The launch of the source code allowed the **Arenadata** team to start the project -- **Arenadata DB** (**ADB**) -- a relational DBMS that has a mass-parallel architecture without resource sharing (Shared Nothing) and is designed to store, process and analyze large amounts of structured and semi-structured data. Using the computing power of hundreds of servers, an advanced query optimizer and a flexible data backup system, **ADB** can significantly improve performance and reliability while maintaining an access to data for ANSI SQL applications (fully compatible with **PostgreSQL**).
 
-The ADB architecture is a classic cluster -- several servers-segments, one master server and one standby server, interconnected by fast networks (10G Ethernet or Infiniband). Each server-segment has several PostgreSQL segments (instances) containing data. In case of failure of one or several segments, they are marked as failed and instead of them their mirror segments are started, the data for which is replicated using the advanced recording technology used in PostgreSQL DBMS (Wright Ahead Log, WAL - all changes to tables and indexes are written to the file only after their logging).
+The **ADB** architecture is a classic cluster -- several servers-segments, one master server and one standby server, interconnected by fast networks (10G Ethernet or Infiniband). Each server-segment has several **PostgreSQL** segments (instances) containing data. In case of failure of one or several segments, they are marked as failed and instead of them their mirror segments are started, the data for which is replicated using the advanced recording technology used in **PostgreSQL** DBMS (Wright Ahead Log, WAL -- all changes to tables and indexes are written to the file only after their logging).
 
 The use of several interconnects allows to increase the capacity of the channel of interaction between the segments and to ensure the fault tolerance of the cluster with the help of the redistribution of traffic. The distribution of segments over network interfaces is chosen individually and can be adjusted to the cluster tasks -- for example, all main segments can be forced to use one network interface, the backup segments will use the second one.
 
-The ADB implements the classical scheme of data sharing (sharding) -- each table consists of N tables placed on N cluster segments. The logic of partitioning the table into segments is specified by the distribution key (field). For each column in the table, you can specify your own type and level of compression. In addition to the types of compression initially available in Greenplum - zlib (one of the most widely used compression libraries, in particular, is used in Linux distributions) and RLE delta compression (storing changes between field values in a column), the zstandard algorithm developed by Facebook and implemented by the Arenadata team, which provides almost four times higher performance than zlib.
+The **ADB** implements the classical scheme of data sharing (sharding) -- each table consists of N tables placed on N cluster segments. The logic of partitioning the table into segments is specified by the distribution key (field). For each column in the table, you can specify your own type and level of compression. In addition to the types of compression initially available in Greenplum -- **zlib** (one of the most widely used compression libraries, in particular, is used in Linux distributions) and RLE delta compression (storing changes between field values in a column), the zstandard algorithm developed by Facebook and implemented by the **Arenadata** team, which provides almost four times higher performance than **zlib**.
 
-ADB uses polymorphic data storage, for example, one table can be divided into vertical sections (partitions), some of which will be stored as rows, and some as column objects. At the same time for the user such a table will look like one object.
+**ADB** uses polymorphic data storage, for example, one table can be divided into vertical sections (partitions), some of which will be stored as rows, and some as column objects. At the same time for the user such a table will look like one object.
 
-Security in ADB is achieved by encrypting data and server-to-client SSL connections at all stages of their life cycle. In addition, all internal interactions of the DBMS ADB components (segments, mirrors and wizards) can also be encrypted using the SSL protocol, and the data stored on the cluster disks can be encrypted using PGP keys (at the table or column level in the tables). All this allows to exclude situations of finding data in unencrypted form.
+Security in **ADB** is achieved by encrypting data and server-to-client **SSL** connections at all stages of their life cycle. In addition, all internal interactions of the DBMS **ADB** components (segments, mirrors and wizards) can also be encrypted using the **SSL** protocol, and the data stored on the cluster disks can be encrypted using PGP keys (at the table or column level in the tables). All this allows to exclude situations of finding data in unencrypted form.
 
 The delimitation of data visibility zones and access rights is provided through the Role Based Access Control (RBAC) model, which allows for the implementation of flexible and dynamically changing during the operation data storage platforms and data processing rules access control. For example, you can create schemes for restricting access to tables and other DBMS objects, as well as rows and columns of individual tables.
 
-One of the most important qualities of an analytical DBMS -- is flexibility and performance when exchanging data with external systems. In particular, ADB implements a parallel data exchange protocol with third-party systems -- PXF (Platform eXtension Framework), which provides interaction with the external system of all cluster segments at the same time. If the source system is also a cluster, then cluster interaction can be used on both sides, which improves performance, and the speed of interaction will increase as the clusters expand.
+One of the most important qualities of an analytical DBMS -- is flexibility and performance when exchanging data with external systems. In particular, **ADB** implements a parallel data exchange protocol with third-party systems -- **PXF** (Platform eXtension Framework), which provides interaction with the external system of all cluster segments at the same time. If the source system is also a cluster, then cluster interaction can be used on both sides, which improves performance, and the speed of interaction will increase as the clusters expand.
 
-A flexible backup system allows you to deploy a cluster with a predetermined level of fault tolerance, allowing the database management system to work even if half of the servers in the cluster fail. And a greater choice of data storage strategies in ADB provides the necessary performance at all stages of the data life cycle -- from receiving new online data, storing basic data with different levels of compression to exporting historical data to the Hadoop cluster.
+A flexible backup system allows you to deploy a cluster with a predetermined level of fault tolerance, allowing the database management system to work even if half of the servers in the cluster fail. And a greater choice of data storage strategies in **ADB** provides the necessary performance at all stages of the data life cycle -- from receiving new online data, storing basic data with different levels of compression to exporting historical data to the **Hadoop** cluster.
 
-Key benefits of ADB:
+**Key benefits of ADB**:
 
 * All support and expertise of implementation is available in Russia and in Russian.
 * A package of utilities for offline installations has been developed (without access to the Internet).
@@ -451,37 +437,35 @@ Key benefits of ADB:
 * There is the possibility of improvements and customization of the product for the specific needs of the customer.
 * The implementation is available both on the “bare iron” and in the cloud.
 
-The integration capabilities of ADB with other systems allow using this DBMS for building universal data storage and processing platforms, such as the Arenadata Enterprise Data Platform (EDP) -- an open, horizontally scalable solution for storing and processing large amounts of data of any type. The platform works with loads from OLTP to OLAP, supports data access in the SQL language, as well as working with libraries in Python.
+The integration capabilities of **ADB** with other systems allow using this DBMS for building universal data storage and processing platforms, such as the **Arenadata Enterprise Data Platform** (**EDP**) -- an open, horizontally scalable solution for storing and processing large amounts of data of any type. The platform works with loads from OLTP to OLAP, supports data access in the SQL language, as well as working with libraries in **Python**.
 
-The Arenadata EDP platform consists of three closely related components using a parallel access framework: the Arenadata Hadoop cluster, the ADB cluster and the Arenadata In-memory Grid cluster. In the DBMS ADB, tables are created, the data sources for which are both data from the DBMS itself, and data from the Hadoop HDFS cluster and data from the in-memory Grid cluster's RAM. Nifi, an open source ETL/ELT processor, is used to manage internal processes and data loading processes, and Apache Zeppelin is used to access user data and its analytical processing.
+The **Arenadata EDP** platform consists of three closely related components using a parallel access framework: the **Arenadata Hadoop** cluster, the **Arenadata DB** cluster and the **Arenadata In-memory Grid** cluster. In the DBMS **ADB**, tables are created, the data sources for which are both data from the DBMS itself, and data from the **Hadoop HDFS** cluster and data from the in-memory **Grid** cluster's RAM. **Nifi**, an open source ETL/ELT processor, is used to manage internal processes and data loading processes, and **Apache Zeppelin** is used to access user data and its analytical processing.
 
-To effectively use the DBMS, management and monitoring tools are needed -- the ADB has a package of administrative tools: monitoring software, DBMS management, and sending notifications.
+To effectively use the DBMS, management and monitoring tools are needed -- the **ADB** has a package of administrative tools: monitoring software, DBMS management, and sending notifications.
 
-The high processing speed of complex requests, linear scaling, the absence of specific hardware requirements, open source code, the flexibility of integration allow us to use Arenadata DB as an analytical data warehouse of corporate information systems, which was appreciated by companies close to the IT business ( telecom, e-commerence, fintech), as well as more traditional industries (oil and gas and metallurgical industries).
+The high processing speed of complex requests, linear scaling, the absence of specific hardware requirements, open source code, the flexibility of integration allow us to use **Arenadata DB** as an analytical data warehouse of corporate information systems, which was appreciated by companies close to the IT business (telecom, e-commerence, fintech), as well as more traditional industries (oil and gas and metallurgical industries).
 
 
 Arenadata Grid 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^
 
-Ссылка https://arenadata.tech/products/adg/
+The in-memory computing platform allows to significantly speed up your applications without the need to replace existing DBMS. **Arenadata Grid** (**ADG**) -- provides the ability to flexibly scale the resulting solution into dozens and hundreds of compute nodes. Using RAM as the main drive, the **Arenadata Grid** platform is able to execute and process requests from 1,000 to 1,000,000 times faster than traditional disk DBMS. The computing capacities of the **Arenadata Grid** are easily scaled by adding new nodes to the cluster without the need to stop work, thereby allowing to process hundreds of terabytes of data from multiple databases.
 
-The in-memory computing platform allows to significantly speed up your applications without the need to replace existing DBMS. **Arenadata Grid (ADG)** -- provides the ability to flexibly scale the resulting solution into dozens and hundreds of compute nodes. Using RAM as the main drive, the Arenadata Grid platform is able to execute and process requests from 1,000 to 1,000,000 times faster than traditional disk DBMS. The computing capacities of the Arenadata Grid are easily scaled by adding new nodes to the cluster without the need to stop work, thereby allowing to process hundreds of terabytes of data from multiple databases.
+You can easily modernize the architecture of existing applications, using **ADG** as an intermediate caching level of storage. The **Arenadata Grid** platform is able to transparenty and seamlessly integrate with existing RDBMS, NoSQL DBMS and **Hadoop**. **ADG** implements a single API that supports SQL, MapReduce, as well as programming languages such as Java, C ++, .NET, and PHP. **Arenadata Grid**, along with applications that use it, can be easily launched both in the cloud and in your data center.
 
-You can easily modernize the architecture of existing applications, using ADG as an intermediate caching level of storage. The Arenadata Grid platform is able to transparenty and seamlessly integrate with existing RDBMS, NoSQL DBMS and Hadoop. ADG implements a single API that supports SQL, MapReduce, as well as programming languages such as Java, C ++, .NET, and PHP. Arenadata Grid, along with applications that use it, can be easily launched both in the cloud and in your data center.
+**ADG** can also be used as a distributed transactional DBMS with support for SQL queries, capable of storing data both in memory and on disk. This is achieved through the use of persistent storage technology in combination with the capabilities provided by a built-in SQL engine.
 
-ADG can also be used as a distributed transactional DBMS with support for SQL queries, capable of storing data both in memory and on disk. This is achieved through the use of persistent storage technology in combination with the capabilities provided by a built-in SQL engine.
+**1,000x Better Performance Versus Disk-Based Databases**
 
-1,000x Better Performance Versus Disk-Based Databases
+The in-memory computing platform **Arenadata Grid** allows you to increase the performance of used traditional DBMS by more than 1000 times, by reducing the cost of reading and writing from disk drives. Acting as an intermediate caching storage level, the **ADG** downloads data from your RDBMS or NoSQL DBMS to main memory. In addition to high-performance caching levels, the **Arenadata Grid** implements a number of features, such as streaming data processing, distributed computing, **Spark** and **Hadoop** acceleration.
 
-The in-memory computing platform Arenadata Grid allows you to increase the performance of used traditional DBMS by more than 1000 times, by reducing the cost of reading and writing from disk drives. Acting as an intermediate caching storage level, the ADG downloads data from your RDBMS or NoSQL DBMS to main memory. In addition to high-performance caching levels, the Arenadata Grid implements a number of features, such as streaming data processing, distributed computing, Spark and Hadoop acceleration.
+The **Arenadata Grid** platform is able to scale almost linearly by adding new nodes to an existing cluster. The data in the cluster is optimally located in order to minimize data migration when the cluster topology changes. At the same time, data migration is performed fully automatically.
 
-The Arenadata Grid platform is able to scale almost linearly by adding new nodes to an existing cluster. The data in the cluster is optimally located in order to minimize data migration when the cluster topology changes. At the same time, data migration is performed fully automatically.
+One of the features of the **Arenadata Grid** is the lack of a master-node. The desired node that stores the target entry is determined by calculating the value of the special function.
 
-One of the features of the Arenadata Grid is the lack of a master-node. The desired node that stores the target entry is determined by calculating the value of the special function.
+**ADG** implements a distributed “key-value” cache, located between your applications and the DBMS, thus allowing seamless integration into the existing architecture by performing read-through and write-through.
 
-ADG implements a distributed “key-value” cache, located between your applications and the DBMS, thus allowing seamless integration into the existing architecture by performing read-through and write-through.
-
-Benefits of Arenadata Grid
+**Benefits of Arenadata Grid**:
 
 * Distributed cache in memory.
 * Lightning fast computing speed.
@@ -490,11 +474,11 @@ Benefits of Arenadata Grid
 * Distributed SQL-queries.
 * Multi-level data storage (RAM/Disk) off-heap.
 
-Store and Process Data In-Memory with ACID Transactions and ANSI-99 SQL Support
+**Store and Process Data In-Memory with ACID Transactions and ANSI-99 SQL Support**
 
-The Arenadata Grid platform supports ANSI-SQL 99. You can easily perform queries on an array of data distributed among hundreds of nodes that store data both in memory and on disk, pumping them from third-party sources if necessary. You also have the ability to connect to the Arenadata Grid from your application using familiar interfaces such as ODBC and JDBC. ADG implements ACID transactions at the cache level and supports full ANSI-SQL 99, including DDL and DML. Using the Arenadata Grid, you can easily speed up transactional and analytical queries.
+The **Arenadata Grid** platform supports **ANSI-SQL 99**. You can easily perform queries on an array of data distributed among hundreds of nodes that store data both in memory and on disk, pumping them from third-party sources if necessary. You also have the ability to connect to the **Arenadata Grid** from your application using familiar interfaces such as ODBC and JDBC. **ADG** implements ACID transactions at the cache level and supports full **ANSI-SQL 99**, including DDL and DML. Using the **Arenadata Grid**, you can easily speed up transactional and analytical queries.
 
-As part of the universal data platform, the Arenadata EDP ADG can be integrated with the massively parallel DBMS Arenadata DB (based on the open-source Greenplum project), which allows multi-level data processing, benefiting from high-speed transaction processing in memory and massively parallel processing of very large volume of historical data. Integration is performed using the PXF protocol.
+As part of the universal data platform, the **Arenadata EDP**, **ADG** can be integrated with the massively parallel DBMS **Arenadata DB** (based on the open-source **Greenplum** project), which allows multi-level data processing, benefiting from high-speed transaction processing in memory and massively parallel processing of very large volume of historical data. Integration is performed using the **PXF** protocol.
 
 Among the main usage scenarios for ADG are the following:
 
@@ -504,11 +488,9 @@ Among the main usage scenarios for ADG are the following:
 
 
 Arenadata Streaming
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^
 
-Ссылка https://arenadata.tech/products/ads/
-
-**Arenadata Streaming (ADS)** -- is an efficient scalable fault-tolerant solution for streaming data processing in real time, adapted for corporate use and built on the basis of Apache Kafka and Apache Nifi -- open source projects.
+**Arenadata Streaming** (**ADS**) -- is an efficient scalable fault-tolerant solution for streaming data processing in real time, adapted for corporate use and built on the basis of **Apache Kafka** and **Apache Nifi** -- open source projects.
 
 One of the features of the implementation of the platform is the use of technology, similar to the transaction logs used in database management systems.
 
@@ -518,12 +500,12 @@ The streaming platform has three key capabilities:
 * Storing record streams in a fault-tolerant manner;
 * Processing streams of records as they occur.
 
-ADS is typically used for two broad classes of applications:
+**ADS** is typically used for two broad classes of applications:
 
 * Creating a channel for streaming data in real time to ensure reliable data exchange between systems and applications;
 * Creating applications for streaming data in real time in order to transform and interact  with other streams of data.
 
-Main advantages
+**Main advantages**
 
 Single access point:
 
@@ -543,7 +525,7 @@ Fast and continuous development:
 
 **ADS** contains all the necessary components for collecting, analyzing and processing data in the real time mode, provides storage and transmission in the semantics of “exactly-once delivery” in a safe and fault-tolerant way, providing a convenient interface for administration and development.
 
-Technical features
+**Technical features**
 
 Fault tolerance:
 
@@ -562,6 +544,7 @@ Available equipment:
 * Works on any x86-compatible hardware. Get recommended system requirements from our experts.
 
 Real time:
+
 * Flow control, adding and configuring data sources in real time mode.
 
 Security:
@@ -647,4 +630,4 @@ Para construir un Data Warehouse se necesitan herramientas para ayudar a la migr
 
 + flujo de datos -- поток данных
 
-+ SGBD -- Sistemas de Gestión de Bases de Datos (Систе́ма управле́ния ба́зами да́нных)
++ SGBD -- Sistemas de Gestión de Bases de Datos (Система управления базами данных)
