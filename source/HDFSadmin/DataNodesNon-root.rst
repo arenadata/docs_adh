@@ -1,4 +1,4 @@
- DataNodes от Non-root
+DataNodes от Non-root
 =======================
 
 В главе описываются правила запуска *DataNodes* от пользователя без прав *root*.
