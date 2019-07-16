@@ -109,11 +109,11 @@ HAR. Архивы Hadoop
 
   :command:`hadoop archive -archiveName foo.har -p /user/hadoop dir1 dir2 /user/zoo`
 
-Если изменить данную команду на:
+Если изменить команду на:
 
   :command:`hadoop archive -archiveName foo.har -p /user/ hadoop/dir1 hadoop/dir2 /user/zoo`
 
-И затем выполнить команду:
+И затем выполнить:
 
   :command:`hdfs dfs -ls -R har:///user/zoo/foo.har`
 
@@ -124,7 +124,7 @@ HAR. Архивы Hadoop
  har:///user/zoo/foo.har/hadoop/dir1
  har:///user/zoo/foo.har/hadoop/dir2
 
-Следует оборатить внимание, что с измененным родительским аргументом файлы заархивированы относительно */user/*, а не */user/hadoop*.
+Следует обратить внимание, что с измененным родительским аргументом файлы архивируются относительно */user/*, а не */user/hadoop*.
 
 
 
