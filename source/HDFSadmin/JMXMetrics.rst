@@ -1,5 +1,5 @@
-API-интерфейсы JMX Metrics для HDFS Daemons
-============================================
+APIs JMX Metrics для HDFS Daemons
+===================================
 
 Для доступа к показателям **HDFS** можно использовать методы с помощью API-интерфейсов **Java Management Extensions** (**JMX**).
 
