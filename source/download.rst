@@ -5,11 +5,11 @@
 `Скачать инструкцию по установке ADH`_
  .. _Скачать инструкцию по установке ADH: https://storage.googleapis.com/arenadata-repo/docs/adh/pdf/v1.6.1/Инструкция%20по%20установке%20ADH.pdf
 
+`Скачать руководство администратора по HDFS`_
+ .. _Скачать руководство администратора по HDFS: https://storage.googleapis.com/arenadata-repo/docs/adh/pdf/v1.6.1/Руководство%20администратора%20по%20HDFS.pdf
+
 `Скачать руководство администратора по ADH`_
  .. _Скачать руководство администратора по работе с кластером: https://storage.googleapis.com/arenadata-repo/docs/adh/pdf/v1.6.1/Руководство%20администратора%20по%20работе%20с%20кластером%20Arenadata%20Hadoop.pdf
-
-`Скачать руководство администратора по HDFS`_
-  .. _Скачать руководство администратора по HDFS: https://storage.googleapis.com/arenadata-repo/docs/adh/pdf/v1.6.1/Руководство%20администратора%20по%20HDFS.pdf
 
 `Скачать настройку безопасности для Ambari`_
  .. _Скачать настройку безопасности для Ambari: https://storage.googleapis.com/arenadata-repo/docs/adh/pdf/v1.6.1/Настройка%20безопасности%20для%20Ambari.pdf
