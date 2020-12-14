@@ -113,7 +113,7 @@
        на хост сервера Ambari. При этом использование данного |br|
        инстанса PostgreSQL, MySQL или Oracle необязательно. |br|
        Дополнительная информация указана в главе |br|
-       `Установка сервера Ambari 2.6.2 <https://docs.arenadata.io/adh/install/installation.html>`_
+       `Установка сервера Ambari 2.6.3 <https://docs.arenadata.io/adh/install/installation.html>`_
 
 
        + Hive:
@@ -128,7 +128,7 @@
        инстанс MySQL на хосте Hive Metastore. Также можно |br|
        использовать указанный инстанс PostgreSQL, MySQL или |br|
        Oracle. Дополнительная информация указана в главе |br|
-       `Установка сервера Ambari 2.6.2 <https://docs.arenadata.io/adh/install/installation.html>`_
+       `Установка сервера Ambari 2.6.3 <https://docs.arenadata.io/adh/install/installation.html>`_
 
 
        + Oozie:
@@ -145,7 +145,7 @@
        Использование Derby в качестве базы метаданных Oozie |br|
        не рекомендуется для продуктивного использования. |br|
        Дополнительная информация указана в главе |br|
-       `Установка сервера Ambari 2.6.2 <https://docs.arenadata.io/adh/install/installation.html>`_.
+       `Установка сервера Ambari 2.6.3 <https://docs.arenadata.io/adh/install/installation.html>`_.
 
        Инстанс Derby для рабочей среды не должен |br|
        использоваться по умолчанию. Если планируется |br|

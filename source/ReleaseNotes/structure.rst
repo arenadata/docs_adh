@@ -7,7 +7,7 @@
    :header: "№ пп.", "Компонент", "Версия"
    :widths: 10, 45, 45
 
-   "1", "Apache Ambari", "2.6.2"
+   "1", "Apache Ambari", "2.6.3"
    "2", "Apache HDFS", "2.8.5"
    "3", "Apache YARN", "2.8.5"
    "4", "Apache MapReduce", "2.8.5"
