@@ -23,13 +23,13 @@
 
 Добавьте следующие custom параметры для hdfs-site.xml и core-site.example
 
-.. figure:: ../imgs/configs/hdfs-site.png
+.. figure:: ../../imgs/configs/hdfs-site.png
    :align: center
 
    Custom hdfs-site
 
 
-.. figure:: ../imgs/configs/core-site.png
+.. figure:: ../../imgs/configs/core-site.png
    :align: center
 
    Custom core-site
