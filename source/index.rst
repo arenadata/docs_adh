@@ -56,6 +56,7 @@
    install/index
    administration/index
    userguide/index
+   integration/index
    release_notes
    glossary
 
