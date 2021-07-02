@@ -31,7 +31,7 @@ Release notes
 |       |                  | TezUI                    |                                |
 +-------+------------------+--------------------------+--------------------------------+
 | 4     | Apache Spark     | History server           | `2.3.2 <spark_version_>`_      |
-|       |                  +--------------------------+                                |
+|       |                  +--------------------------+ `3.1.1 <spark3_version_>`_      |
 |       |                  | Thrift server            |                                |
 |       |                  +--------------------------+--------------------------------+
 |       |                  | Livy                     | `0.6.0 <livy_version_>`_       |
@@ -68,6 +68,7 @@ Release notes
 .. _hive_version: https://issues.apache.org/jira/secure/ReleaseNote.jspa?version=12344240&styleName=Text&projectId=12310843
 .. _tez_version: https://tez.apache.org/releases/0.9.2/release-notes.txt
 .. _spark_version: https://spark.apache.org/releases/spark-release-2-3-2.html
+.. _spark3_version: https://spark.apache.org/releases/spark-release-3-1-1.html
 .. _livy_version: https://livy.apache.org/history/#v0-6-0-incubating
 .. _yarn_version: https://hadoop.apache.org/docs/r3.1.2/hadoop-project-dist/hadoop-common/release/3.1.2/RELEASENOTES.3.1.2.html
 .. _zeppelin_version: https://zeppelin.apache.org/releases/zeppelin-release-0.8.1.html
@@ -75,5 +76,17 @@ Release notes
 .. _flink_version: https://flink.apache.org/news/2019/07/02/release-1.8.1.html
 .. _airflow_version: https://airflow.apache.org/docs/1.10.6/changelog.html#airflow-1-10-4-2019-08-06
 .. _solr_version: https://lucene.apache.org/solr/8_2_0/changes/Changes.html
+
+Дополнительно реализован следующий функционал:
+
+- ADH-1387 (Change config httpfs-site)
+- ADH-1167 (Spark3 service)
+- ADH-1421 (Hive meta with proxy)
+- ADH-1477 (Custom hbase env)
+- ADH-1464 (Action remove for MySql)
+- ADH-1456 (External Postgesql for hive metastore)
+- ADH-1400 (Add jvm option for hive2server)
+- ADH-1381 (Yarn ACL problem)
+- ADH-1388 (External Mysql problem)
 
 .. important:: Контактная информация службы поддержки -- e-mail: info@arenadata.io
