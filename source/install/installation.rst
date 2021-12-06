@@ -82,8 +82,8 @@
 
 
 
-Загрузка и распаковка архива Ambari
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Конфигурирование репозитория для онлайн установки Ambari
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Arenadata Ambari** поставляется как архив репозитория, который необходимо извлечь на сервер репозитория.
 
@@ -92,28 +92,32 @@
 + RHEL/CentOS 7:
   ::
 
-   wget https://storage.googleapis.com/arenadata-repo/ambari/2.6.3/repos/ambari.repo -O /etc/yum.repos.d/
+   wget https://downloads.arenadata.io/ambari/2.6.3/repos/ambari.repo -O /etc/yum.repos.d/
 
 + SUSE/SLES 12:
   ::
 
-   wget https://storage.googleapis.com/arenadata-repo/ambari/2.6.3/repos/ambari-sles.repo - O /etc/zypp/repos.d/
-
-+ PPC64le RHEL7:
-  ::
-
-   wget https://storage.googleapis.com/arenadata-repo/ambari/2.6.3/repos/ambari-ppc64le.repo - O /etc/zypp/repos.d/
-
-Необходимо убедиться, что все родительские каталоги до промежуточного имеют доступ *"r + х"* для всех пользователей, поскольку данный каталог будет использоваться для создания локального репозитория.
-
-После загрузки **Ambari 2.6.3** необходимо извлечь архив в промежуточный каталог. Например:
-
-  :command:`tar -xvf /staging/AMBARI-2.6.3.tar -C /staging/`
+   wget https://downloads.arenadata.io/ambari/2.6.3/repos/ambari_2_6_3_sles12.repo - O /etc/zypp/repos.d/
 
 
 
 Настройка локального репозитория
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. important:: Необходимо убедиться, что все родительские каталоги до промежуточного имеют доступ “r + х” для всех пользователей, поскольку данный каталог будет использоваться для создания локального репозитория
+
+Загрузите необходимые архивы на сервер установки Ambari:
+
++ RHEL/CentOS 7:
+  ::
+
+   wget https://downloads.arenadata.io/ambari/2.6.3/tar/ambari-2.6.3-rhel7.tar
+
++ SUSE/SLES 12:
+  ::
+
+   wget https://downloads.arenadata.io/ambari/2.6.3/tar/ambari-2.6.3-sles12.tar
+
 
 Для настройки локального репозитория необходимо на хосте, используемом в качестве репозитория, выполнить скрипт
 *setup_repo.sh*, входящий в состав архива **Ambari**:
