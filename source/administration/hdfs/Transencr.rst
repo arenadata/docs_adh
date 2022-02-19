@@ -131,7 +131,7 @@ listReencryptionStatus
   hadoop fs -mkdir /zone
   hdfs crypto -createZone -keyName mykey -path /zone
 
-  # chown ее обычному пользователю
+  # Передать ее обычному пользователю
   hadoop fs -chown myuser:myuser /zone
 
   # В качестве обычного пользователя, положить в нее файл и считать его
@@ -141,20 +141,3 @@ listReencryptionStatus
   # В качестве обычного пользователя, получить данные шифрования из файла
   hdfs crypto -getFileEncryptionInfo -path /zone/helloWorld
   # Вывод консоли: {cipherSuite: {name: AES/CTR/NoPadding, algorithmBlockSize: 16}, cryptoProtocolVersion: CryptoProtocolVersion{description='Encryption zones', version=1, unknownValue=null}, edek: 2010d301afbd43b58f10737ce4e93b39, iv: ade2293db2bab1a2e337f91361304cb3, keyName: mykey, ezKeyVersionName: mykey@0}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
