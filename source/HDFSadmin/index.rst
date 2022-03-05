@@ -22,6 +22,8 @@
    ACLonHDFS
    Examples
    features
+   Transencr
+   HKMS
    Archiv
    Cache 
    HDFSCompression
