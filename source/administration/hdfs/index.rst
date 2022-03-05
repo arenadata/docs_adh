@@ -18,6 +18,8 @@
    Snapshots
    AWS
    ACLonHDFS
+   Transencr
+   HKMS
    Archiv
    Cache
    DataNodesNon-root
